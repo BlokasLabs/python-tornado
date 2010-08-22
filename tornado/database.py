@@ -17,13 +17,11 @@
 """A lightweight wrapper around MySQLdb."""
 
 import copy
-import MySQLdb
 import MySQLdb.constants
 import MySQLdb.converters
 import MySQLdb.cursors
 import itertools
 import logging
-
 
 class Connection(object):
     """A lightweight wrapper around MySQLdb DB-API connections.
@@ -79,7 +77,7 @@ class Connection(object):
 
     def close(self):
         """Closes this database connection."""
-        if self._db is not None:
+        if getattr(self, "_db", None) is not None:
             self._db.close()
             self._db = None
 
@@ -168,9 +166,12 @@ class Row(dict):
 FIELD_TYPE = MySQLdb.constants.FIELD_TYPE
 FLAG = MySQLdb.constants.FLAG
 CONVERSIONS = copy.deepcopy(MySQLdb.converters.conversions)
-for field_type in \
-        [FIELD_TYPE.BLOB, FIELD_TYPE.STRING, FIELD_TYPE.VAR_STRING] + \
-        ([FIELD_TYPE.VARCHAR] if 'VARCHAR' in vars(FIELD_TYPE) else []):
+
+field_types = [FIELD_TYPE.BLOB, FIELD_TYPE.STRING, FIELD_TYPE.VAR_STRING]
+if 'VARCHAR' in vars(FIELD_TYPE):
+    field_types.append(FIELD_TYPE.VARCHAR)
+
+for field_type in field_types:
     CONVERSIONS[field_type].insert(0, (FLAG.BINARY, str))
 
 
