@@ -23,26 +23,27 @@ License:
     On a Debian system, the license can be found at
     /usr/share/common-licenses/Apache-2.0 .
 
-The following files:
-demos/wsgi/web/httpserver.py: Copyright © 2004 Colin Stewart
-demos/wsgi/web/debugerror.py: Copyright © 2005, the Lawrence Journal-World
-
-and are released under the BSD modified license available at 
-http://www.xfree86.org/3.3.6/COPYRIGHT2.html#5
-
 The following files :
-demos/chat/static/chat.js
-demos/chat/static/chat.css
-demos/blog/schema.sql
+    demos/chat/static/chat.js
+    demos/chat/static/chat.css
+    demos/blog/schema.sql
 are:
 
     Copyright © 2009 FriendFeed
 
 and are under the Apache-2.0 license described above.
 
+The following file:
+    website/website.py
+is:
+
+    Copyright 2009 Bret Taylor
+
+and is under the Apache-2.0 license described above.
+
 The following files:
-demos/appengine/markdown.py
-demos/blog/markdown.py
+    demos/appengine/markdown.py
+    demos/blog/markdown.py
 are:
 
     Copyright © 2007-2008 ActiveState Corp.
@@ -51,13 +52,95 @@ and are under the MIT license available at
 http://www.opensource.org/licenses/mit-license.php
 
 The following file:
-demos/wsgi/web/__init__.py
-is by:
+    website/markdown/__init__.py
+is:
 
-    Aaron Swartz <me@aaronsw.com>
-    Anand Chitipothu <anandology@gmail.com>
+    Started by [Manfred Stienstra](http://www.dwerg.net/).  Continued and
+    maintained  by [Yuri Takhteyev](http://www.freewisdom.org), [Waylan
+    Limberg](http://achinghead.com/) and [Artem Yunusov](http://blog.splyer.com).
 
-and is in the public domain.
+    Contact: markdown@freewisdom.org
+
+    Copyright 2007, 2008 The Python Markdown Project (v. 1.7 and later)
+    Copyright 200? Django Software Foundation (OrderedDict implementation)
+    Copyright 2004, 2005, 2006 Yuri Takhteyev (v. 0.2-1.6b)
+    Copyright 2004 Manfred Stienstra (the original version)
+
+and is under the BSD license:
+
+    Copyright (c) The Regents of the University of California.
+    All rights reserved.
+
+    Redistribution and use in source and binary forms, with or without
+    modification, are permitted provided that the following conditions
+    are met:
+    1. Redistributions of source code must retain the above copyright
+       notice, this list of conditions and the following disclaimer.
+    2. Redistributions in binary form must reproduce the above copyright
+       notice, this list of conditions and the following disclaimer in the
+       documentation and/or other materials provided with the distribution.
+    3. Neither the name of the University nor the names of its contributors
+       may be used to endorse or promote products derived from this software
+       without specific prior written permission.
+
+    THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
+    ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+    IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+    ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+    FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+    DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+    OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+    HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+    LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+    OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+    SUCH DAMAGE.
+
+The following file:
+    website/markdown/html4.py
+is:
+
+    Copyright (c) 1999-2007 by Fredrik Lundh
+
+and is under the BSD license described above.
+
+
+The following file:
+    tornado/ca-certificates.crt
+is under the following copyright and licenses:
+
+    The contents of this file are subject to the Mozilla Public
+    License Version 1.1 (the "License"); you may not use this file
+    except in compliance with the License. You may obtain a copy of
+    the License at http://www.mozilla.org/MPL/
+
+    Software distributed under the License is distributed on an "AS
+    IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or
+    implied. See the License for the specific language governing
+    rights and limitations under the License.
+
+    The Original Code is the Netscape security libraries.
+
+    The Initial Developer of the Original Code is Netscape
+    Communications Corporation.  Portions created by Netscape are 
+    Copyright (C) 1994-2000 Netscape Communications Corporation.  All
+    Rights Reserved.
+
+    Contributor(s):
+
+    Alternatively, the contents of this file may be used under the
+    terms of the GNU General Public License Version 2 or later (the
+    "GPL"), in which case the provisions of the GPL are applicable 
+    instead of those above.  If you wish to allow use of your 
+    version of this file only under the terms of the GPL and not to
+    allow others to use your version of this file under the MPL,
+    indicate your decision by deleting the provisions above and
+    replace them with the notice and other provisions required by
+    the GPL.  If you do not delete the provisions above, a recipient
+    may use your version of this file under either the MPL or the
+    GPL.
+
+On Debian systems, the complete text of the GNU General
+Public License can be found in `/usr/share/common-licenses/GPL-2'.
 
 Debian packaging is:
 

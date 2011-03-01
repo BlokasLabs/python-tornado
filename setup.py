@@ -23,22 +23,36 @@ try:
 except ImportError:
     pass
 
-# Build the epoll extension for Linux systems with Python < 2.6
-extensions = []
 major, minor = sys.version_info[:2]
 python_26 = (major > 2 or (major == 2 and minor >= 6))
+
+requirements = ["pycurl"]
+if not python_26:
+    # Python 2.6 includes a json module in the standard library
+    requirements.append("simplejson")
+
+# Build the epoll extension for Linux systems with Python < 2.6
+extensions = []
 if "linux" in sys.platform.lower() and not python_26:
     extensions.append(distutils.core.Extension(
         "tornado.epoll", ["tornado/epoll.c"]))
 
+version = "1.2"
+
 distutils.core.setup(
     name="tornado",
-    version="1.0.1",
-    packages = ["tornado"],
+    version=version,
+    packages = ["tornado", "tornado.test"],
+    package_data = {
+        "tornado": ["ca-certificates.crt"],
+        "tornado.test": ["README", "test.crt", "test.key"],
+        },
     ext_modules = extensions,
+    install_requires = requirements,
     author="Facebook",
     author_email="python-tornado@googlegroups.com",
     url="http://www.tornadoweb.org/",
+    download_url="http://github.com/downloads/facebook/tornado/tornado-%s.tar.gz" % version,
     license="http://www.apache.org/licenses/LICENSE-2.0",
     description="Tornado is an open source version of the scalable, non-blocking web server and and tools that power FriendFeed",
 )
