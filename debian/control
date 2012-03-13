@@ -10,7 +10,7 @@ Build-Depends: debhelper (>= 7.0.50~),
                python-all (>= 2.6.6-3),
                python3-all,
                python3-setuptools
-Standards-Version: 3.9.2
+Standards-Version: 3.9.3
 Homepage: http://www.tornadoweb.org/
 Vcs-Svn: svn://svn.debian.org/python-modules/packages/python-tornado/trunk/
 Vcs-Browser: http://svn.debian.org/viewsvn/python-modules/packages/python-tornado/trunk/
