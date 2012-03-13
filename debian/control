@@ -4,8 +4,12 @@ X-Python-Version: >= 2.5
 X-Python3-Version: >= 3.2
 Priority: optional
 Maintainer: Debian Python Modules Team <python-modules-team@lists.alioth.debian.org>
-Uploaders: Carl Chenet <chaica@ohmytux.com>, Yaroslav Halchenko <debian@onerussian.com>
-Build-Depends: debhelper (>= 7.0.50~), python-all-dev (>= 2.6.6-3), python3-all-dev, python3-setuptools
+Uploaders: Carl Chenet <chaica@ohmytux.com>,
+           Yaroslav Halchenko <debian@onerussian.com>
+Build-Depends: debhelper (>= 7.0.50~),
+               python-all-dev (>= 2.6.6-3),
+               python3-all-dev,
+               python3-setuptools
 Standards-Version: 3.9.2
 Homepage: http://www.tornadoweb.org/
 Vcs-Svn: svn://svn.debian.org/python-modules/packages/python-tornado/trunk/
@@ -13,8 +17,13 @@ Vcs-Browser: http://svn.debian.org/viewsvn/python-modules/packages/python-tornad
 
 Package: python-tornado
 Architecture: all
-Depends: ${shlibs:Depends}, ${python:Depends}, ${misc:Depends}, python-pycurl, python (>= 2.6) | python-simplejson, ca-certificates
-Recommends: python-mysqldb, python (>= 2.6) | python-multiprocessing
+Depends: ca-certificates,
+         python (>= 2.6) | python-simplejson,
+         python-pycurl,
+         ${misc:Depends},
+         ${python:Depends},
+         ${shlibs:Depends}
+Recommends: python (>= 2.6) | python-multiprocessing, python-mysqldb
 Breaks: ${python:Breaks}
 Description: scalable, non-blocking web server and tools
  Tornado is an open source version of the scalable, non-blocking
@@ -27,7 +36,11 @@ Description: scalable, non-blocking web server and tools
 
 Package: python3-tornado
 Architecture: all
-Depends: ${shlibs:Depends}, ${python3:Depends}, ${misc:Depends}, python3 (>= 3.2), ca-certificates
+Depends: ca-certificates,
+         python3 (>= 3.2),
+         ${misc:Depends},
+         ${python3:Depends},
+         ${shlibs:Depends}
 Breaks: ${python3:Breaks}
 Description: scalable, non-blocking web server and tools
  Tornado is an open source version of the scalable, non-blocking
