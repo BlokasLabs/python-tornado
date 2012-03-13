@@ -1,3 +1,18 @@
+python-tornado (2.1.0-2) unstable; urgency=low
+
+  [ Thomas Kluyver ]
+  * Package for Python 3 (Closes: #653643)
+
+  [ Julian Taylor ]
+  * make packages arch all
+  * debian/control
+    - wrap-and-sort fields
+  * remove unnecessary Dependencies and Breaks
+  * convert copyright to dep5
+  * bump standard to 3.9.3 (no changes)
+
+ -- Yaroslav Halchenko <debian@onerussian.com>  Tue, 13 Mar 2012 18:08:33 -0400
+
 python-tornado (2.1.0-1) unstable; urgency=low
 
   * Team upload
@@ -10,7 +25,7 @@ python-tornado (2.1.0-1) unstable; urgency=low
 
 python-tornado (1.2.1-1) unstable; urgency=low
 
-  * New upstream release 
+  * New upstream release
   * debian/control
     - Bump Standards-Version to 3.9.2
 
