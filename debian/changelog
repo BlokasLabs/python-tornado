@@ -7,9 +7,10 @@ python-tornado (2.1.0-2) UNRELEASED; urgency=low
   * make packages arch all
   * wrap-and-sort debian/
   * remove unnecessary Dependencies and Breaks
+  * convert copyright to dep5
   * bump standard to 3.9.3
 
- -- Julian Taylor <jtaylor.debian@googlemail.com>  Tue, 13 Mar 2012 21:38:19 +0100
+ -- Julian Taylor <jtaylor.debian@googlemail.com>  Tue, 13 Mar 2012 22:19:32 +0100
 
 python-tornado (2.1.0-1) unstable; urgency=low
 
