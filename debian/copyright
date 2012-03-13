@@ -21,7 +21,7 @@ License: Apache-2.0
 
 Files: demos/appengine/markdown.py demos/blog/markdown.py
 Copyright: 2007-2008 ActiveState Corp.
-License MIT
+License: MIT
 
 Files: website/sphinx/sphinx_coverage.py
 Copyright: 2007-2011, the Sphinx team
