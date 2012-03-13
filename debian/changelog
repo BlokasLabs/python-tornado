@@ -1,8 +1,12 @@
 python-tornado (2.1.0-2) UNRELEASED; urgency=low
 
+  [ Thomas Kluyver ]
   * Package for Python 3.
 
- -- Thomas Kluyver <thomas@kluyver.me.uk>  Thu, 08 Mar 2012 21:22:30 +0000
+  [ Julian Taylor ]
+  * make packages arch all
+
+ -- Julian Taylor <jtaylor.debian@googlemail.com>  Tue, 13 Mar 2012 21:17:07 +0100
 
 python-tornado (2.1.0-1) unstable; urgency=low
 
