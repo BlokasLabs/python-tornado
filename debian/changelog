@@ -5,8 +5,9 @@ python-tornado (2.2.1-1) UNRELEASED; urgency=low
     - fixes CVE-2012-2374 (Closes: #673987)
   * bump X-Python-Version to >= 2.6
     lower versions require arch any for custom epoll extension
+  * move to Section: web (Closes: #665854)
 
- -- Julian Taylor <jtaylor.debian@googlemail.com>  Tue, 22 May 2012 19:38:04 +0200
+ -- Julian Taylor <jtaylor.debian@googlemail.com>  Tue, 22 May 2012 19:39:29 +0200
 
 python-tornado (2.1.0-2) unstable; urgency=low
 

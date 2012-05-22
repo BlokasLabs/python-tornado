@@ -1,5 +1,5 @@
 Source: python-tornado
-Section: python
+Section: web
 X-Python-Version: >= 2.6
 X-Python3-Version: >= 3.2
 Priority: optional
