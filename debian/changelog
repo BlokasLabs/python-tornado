@@ -1,3 +1,15 @@
+python-tornado (2.1.0-3) unstable; urgency=high
+
+  [ Julian Taylor ]
+  * Team upload
+  * bump X-Python-Version to >= 2.6
+    lower versions require arch any for custom epoll extension
+  * move to Section: web (Closes: #665854)
+    - override lintian wrong-section-according-to-package-name
+  * CVE-2012-2374.patch adopted from upstream's GIT (Closes: #673987)
+
+ -- Yaroslav Halchenko <debian@onerussian.com>  Tue, 22 May 2012 19:11:51 -0400
+
 python-tornado (2.1.0-2) unstable; urgency=low
 
   [ Thomas Kluyver ]
