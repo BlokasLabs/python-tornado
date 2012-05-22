@@ -1,2 +1,3 @@
 ignore-ca-certificates.patch
 certs-path.patch
+CVE-2012-2374.patch
