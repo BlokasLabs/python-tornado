@@ -1,3 +1,13 @@
+python-tornado (2.3-2) unstable; urgency=low
+
+  * debian/control
+    - Replaced the python3.2 in the Depends field of python3-tornado
+      by $(python3:Depends)
+  * Renamed python-tornado.examples to examples
+  * Removed python3-tornado.examples
+
+ -- Carl Chenet <chaica@debian.org>  Sun, 10 Jun 2012 01:26:50 +0200
+
 python-tornado (2.3-1) unstable; urgency=low
 
   [ Julian Taylor ]
