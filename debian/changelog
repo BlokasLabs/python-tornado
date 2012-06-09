@@ -1,5 +1,6 @@
 python-tornado (2.3-1) unstable; urgency=low
 
+  [ Julian Taylor ]
   * Team upload
   * new upstream release
     - change debian/watch to download section instead of tag tarballs
@@ -7,8 +8,16 @@ python-tornado (2.3-1) unstable; urgency=low
     - drop upstream applied CVE-2012-2374.patch
     - refresh patches
     - closes LP: #998615
+  [ Carl Chenet]
+  * debian/control
+    - Replaced chaica@ohmytux.com by chaica@debian.org
+    - Replace (python3:Depends) in python3-tornado Depends field
+      because of https://github.com/facebook/tornado/issues/450
+    - Modified the short description of python3-tornado package
+  * Renamed examples to python-tornado.examples
+  * Added python3-tornado.examples
 
- -- Julian Taylor <jtaylor.debian@googlemail.com>  Sat, 09 Jun 2012 17:00:37 +0200
+ -- Carl Chenet <chaica@debian.org>  Sun, 10 Jun 2012 00:12:24 +0200
 
 python-tornado (2.1.0-3) unstable; urgency=high
 
