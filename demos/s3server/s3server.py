@@ -33,15 +33,16 @@ S3 client with this module:
 
 import bisect
 import datetime
-import escape
 import hashlib
-import httpserver
-import ioloop
 import os
 import os.path
 import urllib
-import web
 
+from tornado import escape
+from tornado import httpserver
+from tornado import ioloop
+from tornado import web
+from tornado.util import bytes_type
 
 def start(port, root_directory="/tmp/s3", bucket_depth=0):
     """Starts the mock S3 server on the given port at the given path."""
@@ -86,7 +87,7 @@ class BaseRequestHandler(web.RequestHandler):
                     ''.join(parts))
 
     def _render_parts(self, value, parts=[]):
-        if isinstance(value, basestring):
+        if isinstance(value, (unicode, bytes_type)):
             parts.append(escape.xhtml_escape(value))
         elif isinstance(value, int) or isinstance(value, long):
             parts.append(str(value))
