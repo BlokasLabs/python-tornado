@@ -5,6 +5,7 @@ python-tornado (2.4.1-1) experimental; urgency=low
   * add autopkgtests
   * ignoreuserwarning.patch:
     disable warning in test to allow testing with the package already installed
+  * bump standards to 3.9.4, no changes required
 
  -- Julian Taylor <jtaylor.debian@googlemail.com>  Wed, 23 Jan 2013 20:26:46 +0100
 
