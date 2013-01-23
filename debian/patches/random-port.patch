@@ -1,0 +1,20 @@
+Description: get random free port
+Author: Julian Taylor <jtaylor.debian@googlemail.com>
+--- python-tornado-2.4.1.orig/tornado/testing.py
++++ python-tornado-2.4.1/tornado/testing.py
+@@ -47,10 +47,11 @@ _next_port = 10000
+ 
+ 
+ def get_unused_port():
+-    """Returns a (hopefully) unused port number."""
+-    global _next_port
+-    port = _next_port
+-    _next_port = _next_port + 1
++    import socket
++    s = socket.socket()
++    s.bind(('', 0))
++    port = s.getsockname()[1]
++    s.close()
+     return port
+ 
+ 
