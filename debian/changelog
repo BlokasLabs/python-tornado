@@ -1,3 +1,14 @@
+python-tornado (2.4.1-2) unstable; urgency=low
+
+  [ Julian Taylor ]
+  * upload to unstable
+  * debian/rules: replace PWD with CURDIR
+
+  [ Jakub Wilk ]
+  * Use canonical URIs for Vcs-* fields.
+
+ -- Julian Taylor <jtaylor.debian@googlemail.com>  Thu, 09 May 2013 20:08:11 +0200
+
 python-tornado (2.4.1-1) experimental; urgency=low
 
   * New upstream release (Closes: #698566)
