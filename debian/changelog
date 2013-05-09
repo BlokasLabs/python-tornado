@@ -2,6 +2,7 @@ python-tornado (2.4.1-2) unstable; urgency=low
 
   [ Julian Taylor ]
   * upload to unstable
+  * debian/rules: replace PWD with CURDIR
 
   [ Jakub Wilk ]
   * Use canonical URIs for Vcs-* fields.
