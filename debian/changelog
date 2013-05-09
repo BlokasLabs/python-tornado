@@ -1,8 +1,12 @@
-python-tornado (2.4.1-2) UNRELEASED; urgency=low
+python-tornado (2.4.1-2) unstable; urgency=low
 
+  [ Julian Taylor ]
+  * upload to unstable
+
+  [ Jakub Wilk ]
   * Use canonical URIs for Vcs-* fields.
 
- -- Jakub Wilk <jwilk@debian.org>  Sun, 05 May 2013 16:03:32 +0200
+ -- Julian Taylor <jtaylor.debian@googlemail.com>  Thu, 09 May 2013 20:08:11 +0200
 
 python-tornado (2.4.1-1) experimental; urgency=low
 
