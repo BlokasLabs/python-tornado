@@ -2,3 +2,4 @@ ignore-ca-certificates.patch
 certs-path.patch
 ignoreuserwarning.patch
 random-port.patch
+CVE-2013-2099.patch

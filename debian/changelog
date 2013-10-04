@@ -1,3 +1,16 @@
+python-tornado (2.4.1-3) unstable; urgency=low
+
+  * Team upload.
+
+  [ Jakub Wilk ]
+  * Run tests only if DEB_BUILD_OPTIONS=nocheck is not set.
+
+  [ Andrew Starr-Bochicchio ]
+  * Backport fix for CVE 2013-2009. Avoid allowing multiple
+    wildcards in a single SSL cert hostname segment (Closes: #709069).
+
+ -- Andrew Starr-Bochicchio <asb@debian.org>  Fri, 04 Oct 2013 19:18:05 -0400
+
 python-tornado (2.4.1-2) unstable; urgency=low
 
   [ Julian Taylor ]
