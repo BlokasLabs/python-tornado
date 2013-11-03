@@ -1,6 +1,7 @@
 python-tornado (3.1.1-1) unstable; urgency=low
 
-  * New upstream release (Closes: #711806)
+  * New upstream release
+    - fixes localhost binding on disabled network (Closes: #711806)
   * drop upstream applied random-port.patch and CVE-2013-2099.patch
   * bump standard to 3.9.5 no changes required
 
