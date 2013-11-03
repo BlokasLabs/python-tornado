@@ -3,9 +3,9 @@ Author: Carl Chenet <chaica@ohmytux.com>
 
 --- a/tornado/simple_httpclient.py
 +++ b/tornado/simple_httpclient.py
-@@ -32,7 +32,10 @@
+@@ -30,7 +30,10 @@ try:
  except ImportError:
-     ssl = None
+     import urllib.parse as urlparse  # py3
  
 -_DEFAULT_CA_CERTS = os.path.dirname(__file__) + '/ca-certificates.crt'
 +if os.path.exists('/etc/ssl/certs/ca-certificates.crt'):
