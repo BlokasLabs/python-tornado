@@ -1,2 +1,2 @@
 version=3
-https://github.com/facebook/tornado/downloads .*/tornado-(.*).tar.gz
+https://github.com/facebook/tornado/tags .*/v(.*).tar.gz

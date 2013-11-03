@@ -1,3 +1,9 @@
+python-tornado (3.1.1-1) unstable; urgency=low
+
+  * New upstream release (Closes: #711806)
+
+ -- Julian Taylor <jtaylor.debian@googlemail.com>  Sun, 03 Nov 2013 18:48:51 +0100
+
 python-tornado (2.4.1-3) unstable; urgency=low
 
   * Team upload.
