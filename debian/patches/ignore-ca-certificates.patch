@@ -3,7 +3,7 @@ Author: Carl Chenet <chaica@ohmytux.com>
 
 --- a/setup.py
 +++ b/setup.py
-@@ -44,7 +44,7 @@
+@@ -35,7 +35,7 @@ distutils.core.setup(
      version=version,
      packages = ["tornado", "tornado.test", "tornado.platform"],
      package_data = {

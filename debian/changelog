@@ -1,6 +1,7 @@
 python-tornado (3.1.1-1) unstable; urgency=low
 
   * New upstream release (Closes: #711806)
+  * drop upstream applied random-port.patch and CVE-2013-2099.patch
 
  -- Julian Taylor <jtaylor.debian@googlemail.com>  Sun, 03 Nov 2013 18:48:51 +0100
 
