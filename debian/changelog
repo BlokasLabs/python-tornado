@@ -1,3 +1,9 @@
+python-tornado (3.2.0-1) UNRELEASED; urgency=medium
+
+  * New upstream release
+
+ -- Julian Taylor <jtaylor.debian@googlemail.com>  Sun, 23 Feb 2014 20:16:37 +0100
+
 python-tornado (3.1.1-1) unstable; urgency=low
 
   * New upstream release
