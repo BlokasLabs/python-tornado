@@ -1,6 +1,7 @@
 python-tornado (3.2.2-1) unstable; urgency=medium
 
   * New upstream release
+    - update watchfile to new location
   * skip-timing-tests.patch:
     skip tests that need fast machines (Closes: #751343)
 
