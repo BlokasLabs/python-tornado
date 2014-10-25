@@ -1,3 +1,12 @@
+python-tornado (3.2.2-1.1) unstable; urgency=medium
+
+  * Non-Maintainer Upload.
+  * patches/sockopt.patch: New patch to ignore ENOPROTOOPT errors from
+    SO_REUSEADDR or SO_ERROR on AF_UNIX sockets, for systems which do not
+    implement them there. Thanks Svante Signell for the patch. (Closes: #748903)
+
+ -- Samuel Thibault <sthibault@debian.org>  Sat, 25 Oct 2014 21:14:45 +0200
+
 python-tornado (3.2.2-1) unstable; urgency=medium
 
   * New upstream release
