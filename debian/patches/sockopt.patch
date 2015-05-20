@@ -1,0 +1,38 @@
+Ignore ENOPROTOOPT errors from SO_REUSEADDR or SO_ERROR on AF_UNIX sockets, for
+systems which do not implement them there.
+
+Index: python-tornado-3.2.0/tornado/netutil.py
+===================================================================
+--- python-tornado-3.2.0.orig/tornado/netutil.py
++++ python-tornado-3.2.0/tornado/netutil.py
+@@ -119,7 +119,11 @@ if hasattr(socket, 'AF_UNIX'):
+         """
+         sock = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
+         set_close_exec(sock.fileno())
+-        sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
++        try:
++            sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
++        except socket.error as e:
++            if e.args[0] != errno.ENOPROTOOPT:
++                raise
+         sock.setblocking(0)
+         try:
+             st = os.stat(file)
+Index: python-tornado-3.2.0/tornado/iostream.py
+===================================================================
+--- python-tornado-3.2.0.orig/tornado/iostream.py
++++ python-tornado-3.2.0/tornado/iostream.py
+@@ -748,7 +748,12 @@ class IOStream(BaseIOStream):
+         self._add_io_state(self.io_loop.WRITE)
+ 
+     def _handle_connect(self):
+-        err = self.socket.getsockopt(socket.SOL_SOCKET, socket.SO_ERROR)
++        try:
++            err = self.socket.getsockopt(socket.SOL_SOCKET, socket.SO_ERROR)
++        except socket.error as e:
++            err = e.args[0]
++            if err == errno.ENOPROTOOPT:
++                err = 0
+         if err != 0:
+             self.error = socket.error(err, os.strerror(err))
+             # IOLoop implementations may vary: some of them return
