@@ -1,5 +1,3 @@
-ignore-ca-certificates.patch
-certs-path.patch
 ignoreuserwarning.patch
 domain-test.patch
 skip-timing-tests.patch
