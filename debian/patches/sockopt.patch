@@ -1,29 +1,11 @@
-Ignore ENOPROTOOPT errors from SO_REUSEADDR or SO_ERROR on AF_UNIX sockets, for
+Description: Ignore ENOPROTOOPT errors from SO_REUSEADDR or SO_ERROR on AF_UNIX sockets, for
 systems which do not implement them there.
-
-Index: python-tornado-3.2.0/tornado/netutil.py
-===================================================================
---- python-tornado-3.2.0.orig/tornado/netutil.py
-+++ python-tornado-3.2.0/tornado/netutil.py
-@@ -119,7 +119,11 @@ if hasattr(socket, 'AF_UNIX'):
-         """
-         sock = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
-         set_close_exec(sock.fileno())
--        sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-+        try:
-+            sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-+        except socket.error as e:
-+            if e.args[0] != errno.ENOPROTOOPT:
-+                raise
-         sock.setblocking(0)
-         try:
-             st = os.stat(file)
-Index: python-tornado-3.2.0/tornado/iostream.py
-===================================================================
---- python-tornado-3.2.0.orig/tornado/iostream.py
-+++ python-tornado-3.2.0/tornado/iostream.py
-@@ -748,7 +748,12 @@ class IOStream(BaseIOStream):
-         self._add_io_state(self.io_loop.WRITE)
+diff --git a/tornado/iostream.py b/tornado/iostream.py
+index cdb6250..dd2624c 100644
+--- a/tornado/iostream.py
++++ b/tornado/iostream.py
+@@ -1114,7 +1114,12 @@ class IOStream(BaseIOStream):
+         return future
  
      def _handle_connect(self):
 -        err = self.socket.getsockopt(socket.SOL_SOCKET, socket.SO_ERROR)
@@ -36,3 +18,20 @@ Index: python-tornado-3.2.0/tornado/iostream.py
          if err != 0:
              self.error = socket.error(err, os.strerror(err))
              # IOLoop implementations may vary: some of them return
+diff --git a/tornado/netutil.py b/tornado/netutil.py
+index 17e9580..895fb1d 100644
+--- a/tornado/netutil.py
++++ b/tornado/netutil.py
+@@ -122,7 +122,11 @@ def bind_sockets(port, address=None, family=socket.AF_UNSPEC,
+             raise
+         set_close_exec(sock.fileno())
+         if os.name != 'nt':
+-            sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
++            try:
++                sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
++            except socket.error as e:
++                if e.args[0] != errno.ENOPROTOOPT:
++                    raise
+         if af == socket.AF_INET6:
+             # On linux, ipv6 sockets accept ipv4 too by default,
+             # but this makes it impossible to bind to both
