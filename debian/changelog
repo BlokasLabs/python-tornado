@@ -1,4 +1,4 @@
-python-tornado (4.1.0-1) UNRELEASED; urgency=medium
+python-tornado (4.2.0-1) UNRELEASED; urgency=medium
 
   * Update to latest upstream (Closes: #779035)
   * Remove patches/certs-path.patch and ignore-ca-certificates.patch (now useless).

@@ -1,9 +1,7 @@
 Description: like travis buildd are often slow so skip the same tests
-diff --git a/tornado/test/util.py b/tornado/test/util.py
-index 358809f..786e72e 100644
 --- a/tornado/test/util.py
 +++ b/tornado/test/util.py
-@@ -21,7 +21,7 @@ skipIfNonUnix = unittest.skipIf(os.name != 'posix' or sys.platform == 'cygwin',
+@@ -21,7 +21,7 @@
  
  # travis-ci.org runs our tests in an overworked virtual machine, which makes
  # timing-related tests unreliable.

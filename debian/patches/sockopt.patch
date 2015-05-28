@@ -1,10 +1,8 @@
 Description: Ignore ENOPROTOOPT errors from SO_REUSEADDR or SO_ERROR on AF_UNIX sockets, for
 systems which do not implement them there.
-diff --git a/tornado/iostream.py b/tornado/iostream.py
-index cdb6250..dd2624c 100644
 --- a/tornado/iostream.py
 +++ b/tornado/iostream.py
-@@ -1114,7 +1114,12 @@ class IOStream(BaseIOStream):
+@@ -1158,7 +1158,12 @@
          return future
  
      def _handle_connect(self):
@@ -18,11 +16,9 @@ index cdb6250..dd2624c 100644
          if err != 0:
              self.error = socket.error(err, os.strerror(err))
              # IOLoop implementations may vary: some of them return
-diff --git a/tornado/netutil.py b/tornado/netutil.py
-index 17e9580..895fb1d 100644
 --- a/tornado/netutil.py
 +++ b/tornado/netutil.py
-@@ -122,7 +122,11 @@ def bind_sockets(port, address=None, family=socket.AF_UNSPEC,
+@@ -164,7 +164,11 @@
              raise
          set_close_exec(sock.fileno())
          if os.name != 'nt':

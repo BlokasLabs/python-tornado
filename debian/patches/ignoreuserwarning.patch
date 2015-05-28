@@ -1,11 +1,9 @@
 Description: ignore userwarning in tests
  Required to run tests from source with the package already installed.
  Else one gets check_version_conflict warning from pkg_resources.
-diff --git a/tornado/test/runtests.py b/tornado/test/runtests.py
-index acbb569..ee3c603 100644
 --- a/tornado/test/runtests.py
 +++ b/tornado/test/runtests.py
-@@ -95,6 +95,7 @@ def main():
+@@ -99,6 +99,7 @@
      # setuptools sometimes gives ImportWarnings about things that are on
      # sys.path even if they're not being used.
      warnings.filterwarnings("ignore", category=ImportWarning)

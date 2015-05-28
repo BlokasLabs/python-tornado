@@ -1,10 +1,8 @@
 Description: use a domain that is more likely invalid
  avoids test failures in unisolated builds
-diff --git a/tornado/test/netutil_test.py b/tornado/test/netutil_test.py
-index 1df1e32..ee664dc 100644
 --- a/tornado/test/netutil_test.py
 +++ b/tornado/test/netutil_test.py
-@@ -56,7 +56,7 @@ class _ResolverErrorTestMixin(object):
+@@ -56,7 +56,7 @@
              return True  # Halt propagation.
  
          with ExceptionStackContext(handler):
@@ -13,7 +11,7 @@ index 1df1e32..ee664dc 100644
  
          result = self.wait()
          self.assertIsInstance(result, Exception)
-@@ -64,7 +64,7 @@ class _ResolverErrorTestMixin(object):
+@@ -64,7 +64,7 @@
      @gen_test
      def test_future_interface_bad_host(self):
          with self.assertRaises(Exception):
@@ -21,4 +19,4 @@ index 1df1e32..ee664dc 100644
 +            yield self.resolver.resolve('ana8sdasdadasdasdas1d12invalidsdasdbwefrwfejnefsegfsdomain', 80,
                                          socket.AF_UNSPEC)
  
- def _failing_getaddrinfo(*args):
+ 
