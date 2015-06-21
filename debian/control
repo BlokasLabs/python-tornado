@@ -17,7 +17,7 @@ Standards-Version: 3.9.6
 Homepage: http://www.tornadoweb.org/
 Vcs-Svn: svn://anonscm.debian.org/python-modules/packages/python-tornado/trunk/
 Vcs-Browser: http://anonscm.debian.org/viewvc/python-modules/packages/python-tornado/trunk/
-XS-Testsuite: autopkgtest
+Testsuite: autopkgtest
 
 Package: python-tornado
 Architecture: any
