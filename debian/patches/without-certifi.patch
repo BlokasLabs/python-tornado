@@ -1,3 +1,9 @@
+Description: remove dependance on certifi
+ Since Debian is a distribution, we know where the certificates are
+ and don't need certifi to find them.
+Author: Julien Puydt <julien.puydt@laposte.net>
+Forwarded: no
+
 --- a/setup.py
 +++ b/setup.py
 @@ -128,7 +128,7 @@
