@@ -1,9 +1,11 @@
 python-tornado (4.2.0-1) UNRELEASED; urgency=medium
 
   * Update to latest upstream (Closes: #779035)
-  * Remove patches/certs-path.patch and ignore-ca-certificates.patch (now useless).
+  * Remove patches/certs-path.patch and ignore-ca-certificates.patch
+    (now useless).
   * Refresh all other patches.
-  * Add patches/without-certifi.patch so we directly look where we know the certs are.
+  * Add patches/without-certifi.patch so we directly look where we
+    know the certs are.
   * Push standards-version up.
   * Add ca-certificates as a build-dep so tests pass.
   * Add myself as uploaders.
