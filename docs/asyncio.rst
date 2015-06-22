@@ -15,6 +15,12 @@ default ``asyncio`` event loop.  Applications that need to run event
 loops on multiple threads may use `AsyncIOLoop` to create multiple
 loops.
 
+.. note::
+
+   Tornado requires the `~asyncio.BaseEventLoop.add_reader` family of methods,
+   so it is not compatible with the `~asyncio.ProactorEventLoop` on Windows.
+   Use the `~asyncio.SelectorEventLoop` instead.
+
 .. py:class:: AsyncIOMainLoop
 
     ``AsyncIOMainLoop`` creates an `.IOLoop` that corresponds to the
@@ -35,4 +41,19 @@ loops.
 
         from tornado.ioloop import IOLoop
         IOLoop.configure('tornado.platform.asyncio.AsyncIOLoop')
-        IOLoop.instance().start()
+        IOLoop.current().start()
+
+    Each ``AsyncIOLoop`` creates a new ``asyncio.EventLoop``; this object
+    can be accessed with the ``asyncio_loop`` attribute.
+
+.. py:function:: to_tornado_future
+
+   Convert an ``asyncio.Future`` to a `tornado.concurrent.Future`.
+
+   .. versionadded:: 4.1
+
+.. py:function:: to_asyncio_future
+
+   Convert a `tornado.concurrent.Future` to an ``asyncio.Future``.
+
+   .. versionadded:: 4.1

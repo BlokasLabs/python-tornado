@@ -17,18 +17,9 @@ can scale to tens of thousands of open connections, making it ideal for
 `WebSockets <http://en.wikipedia.org/wiki/WebSocket>`_, and other
 applications that require a long-lived connection to each user.
 
-Upgrade notes
--------------
-
-As of Tornado 3.2, the `backports.ssl_match_hostname
-<https://pypi.python.org/pypi/backports.ssl_match_hostname>`_ package
-must be installed when running Tornado on Python 2.  This will be
-installed automatically when using ``pip`` or ``easy_install``.
-
 Quick links
 -----------
 
-* :doc:`Documentation <documentation>`
 * |Download current version|: :current_tarball:`z` (:doc:`release notes <releases>`)
 * `Source (github) <https://github.com/tornadoweb/tornado>`_
 * Mailing lists: `discussion <http://groups.google.com/group/python-tornado>`_ and `announcements <http://groups.google.com/group/python-tornado-announce>`_
@@ -55,11 +46,11 @@ Here is a simple "Hello, world" example web app for Tornado::
 
     if __name__ == "__main__":
         application.listen(8888)
-        tornado.ioloop.IOLoop.instance().start()
+        tornado.ioloop.IOLoop.current().start()
 
 This example does not use any of Tornado's asynchronous features; for
 that see this `simple chat room
-<https://github.com/tornadoweb/tornado/tree/master/demos/chat>`_.
+<https://github.com/tornadoweb/tornado/tree/stable/demos/chat>`_.
 
 Installation
 ------------
@@ -86,12 +77,12 @@ copy of the source tarball as well.
 The Tornado source code is `hosted on GitHub
 <https://github.com/tornadoweb/tornado>`_.
 
-**Prerequisites**: Tornado runs on Python 2.6, 2.7, 3.2, and 3.3.  On
-Python 2, the `backports.ssl_match_hostname
+**Prerequisites**: Tornado runs on Python 2.6, 2.7, 3.2, 3.3, and 3.4.  It
+requires the `certifi <https://pypi.python.org/pypi/certifi>`_ package
+on all Python versions, and the `backports.ssl_match_hostname
 <https://pypi.python.org/pypi/backports.ssl_match_hostname>`_ package
-must be installed (This will be installed automatically when using
-``pip`` or ``easy_install``); on Python 3 there are no strict
-dependencies outside the standard library.  Some Tornado features may
+on Python 2.  These will be installed automatically when using
+``pip`` or ``easy_install``).  Some Tornado features may
 require one of the following optional libraries:
 
 * `unittest2 <https://pypi.python.org/pypi/unittest2>`_ is needed to run
@@ -122,6 +113,29 @@ development use).  Tornado will also run on Windows, although this
 configuration is not officially supported and is recommended only for
 development use.
 
+Documentation
+-------------
+
+This documentation is also available in `PDF and Epub formats
+<https://readthedocs.org/projects/tornado/downloads/>`_.
+
+.. toctree::
+   :titlesonly:
+
+   guide
+   webframework
+   http
+   networking
+   coroutine
+   integration
+   utilities
+   faq
+   releases
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
+
 Discussion and support
 ----------------------
 
@@ -141,8 +155,3 @@ the `Apache License, Version 2.0
 
 This web site and all documentation is licensed under `Creative
 Commons 3.0 <http://creativecommons.org/licenses/by/3.0/>`_.
-
-.. toctree::
-   :hidden:
-
-   documentation

@@ -3,7 +3,7 @@ Description: ignore userwarning in tests
  Else one gets check_version_conflict warning from pkg_resources.
 --- a/tornado/test/runtests.py
 +++ b/tornado/test/runtests.py
-@@ -72,6 +72,7 @@ if __name__ == '__main__':
+@@ -99,6 +99,7 @@
      # setuptools sometimes gives ImportWarnings about things that are on
      # sys.path even if they're not being used.
      warnings.filterwarnings("ignore", category=ImportWarning)

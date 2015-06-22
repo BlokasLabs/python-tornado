@@ -30,7 +30,9 @@ Quick links
 Hello, world
 ------------
 
-Here is a simple "Hello, world" example web app for Tornado::
+Here is a simple "Hello, world" example web app for Tornado:
+    
+.. code-block:: python
 
     import tornado.ioloop
     import tornado.web
@@ -49,7 +51,7 @@ Here is a simple "Hello, world" example web app for Tornado::
 
 This example does not use any of Tornado's asynchronous features; for
 that see this `simple chat room
-<https://github.com/tornadoweb/tornado/tree/master/demos/chat>`_.
+<https://github.com/tornadoweb/tornado/tree/stable/demos/chat>`_.
 
 Installation
 ------------
@@ -77,12 +79,12 @@ copy of the source tarball as well.
 The Tornado source code is `hosted on GitHub
 <https://github.com/tornadoweb/tornado>`_.
 
-**Prerequisites**: Tornado runs on Python 2.6, 2.7, 3.2, and 3.3.  On
-Python 2, the `backports.ssl_match_hostname
+**Prerequisites**: Tornado runs on Python 2.6, 2.7, 3.2, 3.3, and 3.4.  It
+requires the `certifi <https://pypi.python.org/pypi/certifi>`_ package
+on all Python versions, and the `backports.ssl_match_hostname
 <https://pypi.python.org/pypi/backports.ssl_match_hostname>`_ package
-must be installed (This will be installed automatically when using
-``pip`` or ``easy_install``); on Python 3 there are no strict
-dependencies outside the standard library.  Some Tornado features may
+on Python 2.  These will be installed automatically when using
+``pip`` or ``easy_install``).  Some Tornado features may
 require one of the following optional libraries:
 
 * `unittest2 <https://pypi.python.org/pypi/unittest2>`_ is needed to run
