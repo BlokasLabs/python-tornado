@@ -1,2 +1,6 @@
-ignore-ca-certificates.patch
-certs-path.patch
+domain-test.patch
+ignoreuserwarning.patch
+skip-timing-tests.patch
+sockopt.patch
+without-certifi.patch
+skip-ipv6.patch

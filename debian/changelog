@@ -1,9 +1,94 @@
-python-tornado (2.3-2~bpo60+1) squeeze-backports; urgency=low
+python-tornado (4.2.0-1~bpo8+1) jessie-backports; urgency=low
 
-  * Rebuild for squeeze-backports.
-  * Don't build python3-tornado package.
+  * Rebuild for jessie-backports.
+  * added debian/patches/skip-ipv6.patch, test fails on Jessie
 
- -- Julien Cristau <julien.cristau@logilab.fr>  Mon, 27 Aug 2012 10:58:48 +0200
+ -- Sandro Tosi <morph@debian.org>  Tue, 30 Jun 2015 15:00:45 -0400
+
+python-tornado (4.2.0-1) unstable; urgency=medium
+
+  * Update to latest upstream (Closes: #779035)
+  * Remove patches/certs-path.patch and ignore-ca-certificates.patch
+    (now useless).
+  * Refresh all other patches.
+  * Add patches/without-certifi.patch so we directly look where we
+    know the certs are.
+  * Push standards-version up.
+  * Add ca-certificates as a build-dep so tests pass.
+  * Add myself as uploaders.
+
+ -- Julien Puydt <julien.puydt@laposte.net>  Mon, 22 Jun 2015 11:24:38 +0200
+
+python-tornado (3.2.2-1.1) unstable; urgency=medium
+
+  * Non-Maintainer Upload.
+  * patches/sockopt.patch: New patch to ignore ENOPROTOOPT errors from
+    SO_REUSEADDR or SO_ERROR on AF_UNIX sockets, for systems which do not
+    implement them there. Thanks Svante Signell for the patch. (Closes: #748903)
+
+ -- Samuel Thibault <sthibault@debian.org>  Sat, 25 Oct 2014 21:14:45 +0200
+
+python-tornado (3.2.2-1) unstable; urgency=medium
+
+  * New upstream release
+    - update watchfile to new location
+  * skip-timing-tests.patch:
+    skip tests that need fast machines (Closes: #751343)
+
+ -- Julian Taylor <jtaylor.debian@googlemail.com>  Mon, 19 May 2014 21:42:13 +0200
+
+python-tornado (3.2.0-1) unstable; urgency=medium
+
+  * New upstream release
+    - now arch: any package with binary extension for faster websockets
+
+ -- Julian Taylor <jtaylor.debian@googlemail.com>  Sun, 23 Feb 2014 20:16:37 +0100
+
+python-tornado (3.1.1-1) unstable; urgency=low
+
+  * New upstream release
+    - fixes localhost binding on disabled network (Closes: #711806)
+  * drop upstream applied random-port.patch and CVE-2013-2099.patch
+  * bump standard to 3.9.5 no changes required
+
+ -- Julian Taylor <jtaylor.debian@googlemail.com>  Sun, 03 Nov 2013 18:48:51 +0100
+
+python-tornado (2.4.1-3) unstable; urgency=low
+
+  * Team upload.
+
+  [ Jakub Wilk ]
+  * Run tests only if DEB_BUILD_OPTIONS=nocheck is not set.
+
+  [ Andrew Starr-Bochicchio ]
+  * Backport fix for CVE 2013-2009. Avoid allowing multiple
+    wildcards in a single SSL cert hostname segment (Closes: #709069).
+
+ -- Andrew Starr-Bochicchio <asb@debian.org>  Fri, 04 Oct 2013 19:18:05 -0400
+
+python-tornado (2.4.1-2) unstable; urgency=low
+
+  [ Julian Taylor ]
+  * upload to unstable
+  * debian/rules: replace PWD with CURDIR
+
+  [ Jakub Wilk ]
+  * Use canonical URIs for Vcs-* fields.
+
+ -- Julian Taylor <jtaylor.debian@googlemail.com>  Thu, 09 May 2013 20:08:11 +0200
+
+python-tornado (2.4.1-1) experimental; urgency=low
+
+  * New upstream release (Closes: #698566)
+  * run python2 test during build (Closes: #663928)
+  * add autopkgtests
+  * ignoreuserwarning.patch:
+    disable warning in test to allow testing with the package already installed
+  * bump standards to 3.9.4, no changes required
+  * random-port.patch: get a random free port for tests
+  * don't compress example python files
+
+ -- Julian Taylor <jtaylor.debian@googlemail.com>  Wed, 23 Jan 2013 20:26:46 +0100
 
 python-tornado (2.3-2) unstable; urgency=low
 

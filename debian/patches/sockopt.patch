@@ -1,0 +1,33 @@
+Description: Ignore ENOPROTOOPT errors from SO_REUSEADDR or SO_ERROR on AF_UNIX sockets, for
+systems which do not implement them there.
+--- a/tornado/iostream.py
++++ b/tornado/iostream.py
+@@ -1158,7 +1158,12 @@
+         return future
+ 
+     def _handle_connect(self):
+-        err = self.socket.getsockopt(socket.SOL_SOCKET, socket.SO_ERROR)
++        try:
++            err = self.socket.getsockopt(socket.SOL_SOCKET, socket.SO_ERROR)
++        except socket.error as e:
++            err = e.args[0]
++            if err == errno.ENOPROTOOPT:
++                err = 0
+         if err != 0:
+             self.error = socket.error(err, os.strerror(err))
+             # IOLoop implementations may vary: some of them return
+--- a/tornado/netutil.py
++++ b/tornado/netutil.py
+@@ -164,7 +164,11 @@
+             raise
+         set_close_exec(sock.fileno())
+         if os.name != 'nt':
+-            sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
++            try:
++                sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
++            except socket.error as e:
++                if e.args[0] != errno.ENOPROTOOPT:
++                    raise
+         if af == socket.AF_INET6:
+             # On linux, ipv6 sockets accept ipv4 too by default,
+             # but this makes it impossible to bind to both
