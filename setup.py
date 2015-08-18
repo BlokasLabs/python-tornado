@@ -99,7 +99,7 @@ http://api.mongodb.org/python/current/installation.html#osx
 
 kwargs = {}
 
-version = "4.2"
+version = "4.2.1"
 
 with open('README.rst') as f:
     kwargs['long_description'] = f.read()
@@ -147,6 +147,7 @@ setup(
             "options_test.cfg",
             "static/robots.txt",
             "static/dir/index.html",
+            "static_foo.txt",
             "templates/utf8.html",
             "test.crt",
             "test.key",

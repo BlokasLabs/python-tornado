@@ -1,3 +1,13 @@
+python-tornado (4.2.1-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release.
+  * debian/patches/python35-compat.patch: Python 3.5 compatibility fixes
+    pulled from upstream.
+  * debian/tests/control: Remove an obsolete comment.
+
+ -- Barry Warsaw <barry@debian.org>  Tue, 18 Aug 2015 16:04:34 -0400
+
 python-tornado (4.2.0-1) unstable; urgency=medium
 
   * Update to latest upstream (Closes: #779035)
