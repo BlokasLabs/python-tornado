@@ -34,18 +34,8 @@ except ImportError:
     # ssl is not available on Google App Engine.
     ssl = None
 
-try:
-    import certifi
-except ImportError:
-    certifi = None
-
-
 def _default_ca_certs():
-    if certifi is None:
-        raise Exception("The 'certifi' package is required to use https "
-                        "in simple_httpclient")
-    return certifi.where()
-
+    return '/etc/ssl/certs/ca-certificates.crt'
 
 class SimpleAsyncHTTPClient(AsyncHTTPClient):
     """Non-blocking HTTP client with no external dependencies.
