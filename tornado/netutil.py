@@ -36,15 +36,6 @@ except ImportError:
     ssl = None
 
 try:
-    import certifi
-except ImportError:
-    # certifi is optional as long as we have ssl.create_default_context.
-    if ssl is None or hasattr(ssl, 'create_default_context'):
-        certifi = None
-    else:
-        raise
-
-try:
     xrange  # py2
 except NameError:
     xrange = range  # py3
@@ -72,7 +63,7 @@ if hasattr(ssl, 'SSLContext'):
         # Python 3.2-3.3
         _client_ssl_defaults = ssl.SSLContext(ssl.PROTOCOL_SSLv23)
         _client_ssl_defaults.verify_mode = ssl.CERT_REQUIRED
-        _client_ssl_defaults.load_verify_locations(certifi.where())
+        _client_ssl_defaults.load_verify_locations('/etc/ssl/certs/ca-certificates.crt')
         _server_ssl_defaults = ssl.SSLContext(ssl.PROTOCOL_SSLv23)
         if hasattr(ssl, 'OP_NO_COMPRESSION'):
             # Disable TLS compression to avoid CRIME and related attacks.
@@ -83,7 +74,7 @@ if hasattr(ssl, 'SSLContext'):
 elif ssl:
     # Python 2.6-2.7.8
     _client_ssl_defaults = dict(cert_reqs=ssl.CERT_REQUIRED,
-                                ca_certs=certifi.where())
+                                ca_certs='/etc/ssl/certs/ca-certificates.crt')
     _server_ssl_defaults = {}
 else:
     # Google App Engine
