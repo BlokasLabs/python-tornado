@@ -1,35 +1,22 @@
-Description: Various Python 3.5 compatibility patches pulled from upstream.
+From 08dc66dc453085f5f3a0cf4ad34d37dac64d7457 Mon Sep 17 00:00:00 2001
+From: SVN-Git Migration <python-modules-team@lists.alioth.debian.org>
+Date: Thu, 8 Oct 2015 13:13:35 -0700
+Subject: Various Python 3.5 compatibility patches pulled from upstream.
+
 Origin: https://github.com/tornadoweb/tornado
 Forwarded: not-needed
 
---- a/tornado/util.py
-+++ b/tornado/util.py
-@@ -24,6 +24,13 @@
- except NameError:
-     xrange = range  # py3
- 
-+# inspect.getargspec() raises DeprecationWarnings in Python 3.5.
-+# The two functions have compatible interfaces for the parts we need.
-+try:
-+    from inspect import getfullargspec as getargspec  # py3
-+except ImportError:
-+    from inspect import getargspec  # py2
-+
- 
- class ObjectDict(dict):
-     """Makes a dictionary behave like an object, with attribute-style access.
-@@ -284,7 +291,7 @@
-     def __init__(self, func, name):
-         self.name = name
-         try:
--            self.arg_pos = inspect.getargspec(func).args.index(self.name)
-+            self.arg_pos = getargspec(func).args.index(self.name)
-         except ValueError:
-             # Not a positional parameter
-             self.arg_pos = None
+Patch-Name: python35-compat.patch
+---
+ tornado/test/web_test.py | 7 +++++--
+ tornado/util.py          | 9 ++++++++-
+ 2 files changed, 13 insertions(+), 3 deletions(-)
+
+diff --git a/tornado/test/web_test.py b/tornado/test/web_test.py
+index 9374c48..5d8a207 100644
 --- a/tornado/test/web_test.py
 +++ b/tornado/test/web_test.py
-@@ -1547,8 +1547,11 @@
+@@ -1547,8 +1547,11 @@ class ClearAllCookiesTest(SimpleHandlerTestCase):
      def test_clear_all_cookies(self):
          response = self.fetch('/', headers={'Cookie': 'foo=bar; baz=xyzzy'})
          set_cookies = sorted(response.headers.get_list('Set-Cookie'))
@@ -43,3 +30,30 @@ Forwarded: not-needed
  
  
  class PermissionError(Exception):
+diff --git a/tornado/util.py b/tornado/util.py
+index 606ced1..0b390ff 100644
+--- a/tornado/util.py
++++ b/tornado/util.py
+@@ -24,6 +24,13 @@ try:
+ except NameError:
+     xrange = range  # py3
+ 
++# inspect.getargspec() raises DeprecationWarnings in Python 3.5.
++# The two functions have compatible interfaces for the parts we need.
++try:
++    from inspect import getfullargspec as getargspec  # py3
++except ImportError:
++    from inspect import getargspec  # py2
++
+ 
+ class ObjectDict(dict):
+     """Makes a dictionary behave like an object, with attribute-style access.
+@@ -284,7 +291,7 @@ class ArgReplacer(object):
+     def __init__(self, func, name):
+         self.name = name
+         try:
+-            self.arg_pos = inspect.getargspec(func).args.index(self.name)
++            self.arg_pos = getargspec(func).args.index(self.name)
+         except ValueError:
+             # Not a positional parameter
+             self.arg_pos = None

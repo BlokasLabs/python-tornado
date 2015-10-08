@@ -1,8 +1,21 @@
-Description: Ignore ENOPROTOOPT errors from SO_REUSEADDR or SO_ERROR on AF_UNIX sockets, for
+From ebddf84c91675d1e82da89b08827b4ef70c1e0c6 Mon Sep 17 00:00:00 2001
+From: SVN-Git Migration <python-modules-team@lists.alioth.debian.org>
+Date: Thu, 8 Oct 2015 13:13:33 -0700
+Subject: Ignore ENOPROTOOPT errors from SO_REUSEADDR or SO_ERROR on AF_UNIX
+ sockets, for
+
 systems which do not implement them there.
+Patch-Name: sockopt.patch
+---
+ tornado/iostream.py | 7 ++++++-
+ tornado/netutil.py  | 6 +++++-
+ 2 files changed, 11 insertions(+), 2 deletions(-)
+
+diff --git a/tornado/iostream.py b/tornado/iostream.py
+index 3a175a6..32b9748 100644
 --- a/tornado/iostream.py
 +++ b/tornado/iostream.py
-@@ -1158,7 +1158,12 @@
+@@ -1158,7 +1158,12 @@ class IOStream(BaseIOStream):
          return future
  
      def _handle_connect(self):
@@ -16,9 +29,11 @@ systems which do not implement them there.
          if err != 0:
              self.error = socket.error(err, os.strerror(err))
              # IOLoop implementations may vary: some of them return
+diff --git a/tornado/netutil.py b/tornado/netutil.py
+index 9aa292c..96a8d57 100644
 --- a/tornado/netutil.py
 +++ b/tornado/netutil.py
-@@ -164,7 +164,11 @@
+@@ -164,7 +164,11 @@ def bind_sockets(port, address=None, family=socket.AF_UNSPEC,
              raise
          set_close_exec(sock.fileno())
          if os.name != 'nt':
