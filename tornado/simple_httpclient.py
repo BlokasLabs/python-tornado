@@ -34,7 +34,6 @@ except ImportError:
     # ssl is not available on Google App Engine.
     ssl = None
 
-
 class SimpleAsyncHTTPClient(AsyncHTTPClient):
     """Non-blocking HTTP client with no external dependencies.
 
