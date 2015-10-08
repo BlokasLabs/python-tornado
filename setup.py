@@ -14,6 +14,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import os
 import platform
 import sys
 import warnings
@@ -41,7 +42,8 @@ if sys.platform == 'win32' and sys.version_info > (2, 6):
     build_errors = (CCompilerError, DistutilsExecError,
                     DistutilsPlatformError, IOError)
 else:
-    build_errors = (CCompilerError, DistutilsExecError, DistutilsPlatformError)
+    build_errors = (CCompilerError, DistutilsExecError, DistutilsPlatformError,
+                    SystemError)
 
 class custom_build_ext(build_ext):
     """Allow C extension building to fail.
@@ -113,18 +115,24 @@ http://api.mongodb.org/python/current/installation.html#osx
 
 kwargs = {}
 
-version = "3.2"
+version = "3.2.2"
 
 with open('README.rst') as f:
     kwargs['long_description'] = f.read()
 
-if platform.python_implementation() == 'CPython':
+if (platform.python_implementation() == 'CPython' and
+    os.environ.get('TORNADO_EXTENSION') != '0'):
     # This extension builds and works on pypy as well, although pypy's jit
     # produces equivalent performance.
     kwargs['ext_modules'] = [
         Extension('tornado.speedups',
                   sources=['tornado/speedups.c']),
     ]
+
+    if os.environ.get('TORNADO_EXTENSION') != '1':
+        # Unless the user has specified that the extension is mandatory,
+        # fall back to the pure-python implementation on any build failure.
+        kwargs['cmdclass'] = {'build_ext': custom_build_ext}
 
 if setuptools is not None:
     # If setuptools is not available, you're on your own for dependencies.
@@ -170,6 +178,5 @@ setup(
         'Programming Language :: Python :: Implementation :: CPython',
         'Programming Language :: Python :: Implementation :: PyPy',
         ],
-    cmdclass={"build_ext": custom_build_ext},
     **kwargs
 )
