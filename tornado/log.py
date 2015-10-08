@@ -83,10 +83,10 @@ class LogFormatter(logging.Formatter):
     DEFAULT_FORMAT = '%(color)s[%(levelname)1.1s %(asctime)s %(module)s:%(lineno)d]%(end_color)s %(message)s'
     DEFAULT_DATE_FORMAT = '%y%m%d %H:%M:%S'
     DEFAULT_COLORS = {
-        logging.DEBUG:      4,  # Blue
-        logging.INFO:       2,  # Green
-        logging.WARNING:    3,  # Yellow
-        logging.ERROR:      1,  # Red
+        logging.DEBUG: 4,  # Blue
+        logging.INFO: 2,  # Green
+        logging.WARNING: 3,  # Yellow
+        logging.ERROR: 1,  # Red
     }
 
     def __init__(self, color=True, fmt=DEFAULT_FORMAT,
@@ -179,12 +179,12 @@ class LogFormatter(logging.Formatter):
 def enable_pretty_logging(options=None, logger=None):
     """Turns on formatted logging output as configured.
 
-    This is called automaticaly by `tornado.options.parse_command_line`
+    This is called automatically by `tornado.options.parse_command_line`
     and `tornado.options.parse_config_file`.
     """
     if options is None:
         from tornado.options import options
-    if options.logging == 'none':
+    if options.logging is None or options.logging.lower() == 'none':
         return
     if logger is None:
         logger = logging.getLogger()
@@ -206,6 +206,14 @@ def enable_pretty_logging(options=None, logger=None):
 
 
 def define_logging_options(options=None):
+    """Add logging-related flags to ``options``.
+
+    These options are present automatically on the default options instance;
+    this method is only necessary if you have created your own `.OptionParser`.
+
+    .. versionadded:: 4.2
+        This function existed in prior versions but was broken and undocumented until 4.2.
+    """
     if options is None:
         # late import to prevent cycle
         from tornado.options import options
@@ -227,4 +235,4 @@ def define_logging_options(options=None):
     options.define("log_file_num_backups", type=int, default=10,
                    help="number of log files to keep")
 
-    options.add_parse_callback(enable_pretty_logging)
+    options.add_parse_callback(lambda: enable_pretty_logging(options))

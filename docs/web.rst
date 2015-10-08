@@ -1,6 +1,10 @@
 ``tornado.web`` --- ``RequestHandler`` and ``Application`` classes
 ==================================================================
 
+.. testsetup::
+
+   from tornado.web import *
+
 .. automodule:: tornado.web
 
    Request handlers
@@ -21,11 +25,21 @@
    These methods can be made asynchronous with one of the following
    decorators: `.gen.coroutine`, `.return_future`, or `asynchronous`.
 
+   To support a method not on this list, override the class variable
+   ``SUPPORTED_METHODS``::
+
+     class WebDAVHandler(RequestHandler):
+         SUPPORTED_METHODS = RequestHandler.SUPPORTED_METHODS + ('PROPFIND',)
+
+         def propfind(self):
+             pass
+
    .. automethod:: RequestHandler.get
-   .. automethod:: RequestHandler.post
-   .. automethod:: RequestHandler.put
-   .. automethod:: RequestHandler.delete
    .. automethod:: RequestHandler.head
+   .. automethod:: RequestHandler.post
+   .. automethod:: RequestHandler.delete
+   .. automethod:: RequestHandler.patch
+   .. automethod:: RequestHandler.put
    .. automethod:: RequestHandler.options
 
    Input
@@ -40,7 +54,7 @@
    .. automethod:: RequestHandler.decode_argument
    .. attribute:: RequestHandler.request
 
-      The `tornado.httpserver.HTTPRequest` object containing additional
+      The `tornado.httputil.HTTPServerRequest` object containing additional
       request parameters including e.g. headers and body data.
 
    .. attribute:: RequestHandler.path_args
@@ -70,6 +84,7 @@
    .. automethod:: RequestHandler.send_error
    .. automethod:: RequestHandler.write_error
    .. automethod:: RequestHandler.clear
+   .. automethod:: RequestHandler.data_received
 
 
    Cookies
@@ -81,6 +96,7 @@
    .. automethod:: RequestHandler.clear_cookie
    .. automethod:: RequestHandler.clear_all_cookies
    .. automethod:: RequestHandler.get_secure_cookie
+   .. automethod:: RequestHandler.get_secure_cookie_key_version
    .. automethod:: RequestHandler.set_secure_cookie
    .. automethod:: RequestHandler.create_signed_value
    .. autodata:: MIN_SUPPORTED_SIGNED_VALUE_VERSION
@@ -95,17 +111,18 @@
 
       The `Application` object serving this request
 
-   .. automethod:: RequestHandler.async_callback
    .. automethod:: RequestHandler.check_etag_header
    .. automethod:: RequestHandler.check_xsrf_cookie
    .. automethod:: RequestHandler.compute_etag
    .. automethod:: RequestHandler.create_template_loader
+   .. autoattribute:: RequestHandler.current_user
    .. automethod:: RequestHandler.get_browser_locale
    .. automethod:: RequestHandler.get_current_user
    .. automethod:: RequestHandler.get_login_url
    .. automethod:: RequestHandler.get_status
    .. automethod:: RequestHandler.get_template_path
    .. automethod:: RequestHandler.get_user_locale
+   .. autoattribute:: RequestHandler.locale
    .. automethod:: RequestHandler.log_exception
    .. automethod:: RequestHandler.on_connection_close
    .. automethod:: RequestHandler.require_setting
@@ -149,8 +166,10 @@
          * ``default_handler_class`` and ``default_handler_args``:
            This handler will be used if no other match is found;
            use this to implement custom 404 pages (new in Tornado 3.2).
-         * ``gzip``: If ``True``, responses in textual formats will be
-           gzipped automatically.
+         * ``compress_response``: If ``True``, responses in textual formats
+           will be compressed automatically.  New in Tornado 4.0.
+         * ``gzip``: Deprecated alias for ``compress_response`` since
+           Tornado 4.0.
          * ``log_function``: This function will be called at the end
            of every request to log the result (with one argument, the
            `RequestHandler` object).  The default implementation
@@ -169,6 +188,9 @@
 
          * ``cookie_secret``: Used by `RequestHandler.get_secure_cookie`
            and `.set_secure_cookie` to sign cookies.
+         * ``key_version``: Used by requestHandler `.set_secure_cookie`
+           to sign cookies with a specific key when ``cookie_secret``
+           is a key dictionary.
          * ``login_url``: The `authenticated` decorator will redirect
            to this url if the user is not logged in.  Can be further
            customized by overriding `RequestHandler.get_login_url`
@@ -230,10 +252,12 @@
    .. autofunction:: authenticated
    .. autofunction:: addslash
    .. autofunction:: removeslash
+   .. autofunction:: stream_request_body
 
    Everything else
    ---------------
    .. autoexception:: HTTPError
+   .. autoexception:: Finish
    .. autoexception:: MissingArgumentError
    .. autoclass:: UIModule
       :members:
