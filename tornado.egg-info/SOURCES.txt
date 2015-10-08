@@ -68,6 +68,7 @@ tornado/netutil.py
 tornado/options.py
 tornado/process.py
 tornado/simple_httpclient.py
+tornado/speedups.c
 tornado/stack_context.py
 tornado/tcpserver.py
 tornado/template.py
@@ -79,8 +80,10 @@ tornado/wsgi.py
 tornado.egg-info/PKG-INFO
 tornado.egg-info/SOURCES.txt
 tornado.egg-info/dependency_links.txt
+tornado.egg-info/requires.txt
 tornado.egg-info/top_level.txt
 tornado/platform/__init__.py
+tornado/platform/asyncio.py
 tornado/platform/auto.py
 tornado/platform/caresresolver.py
 tornado/platform/common.py
@@ -110,6 +113,7 @@ tornado/test/netutil_test.py
 tornado/test/options_test.cfg
 tornado/test/options_test.py
 tornado/test/process_test.py
+tornado/test/resolve_test_helper.py
 tornado/test/runtests.py
 tornado/test/simple_httpclient_test.py
 tornado/test/stack_context_test.py
