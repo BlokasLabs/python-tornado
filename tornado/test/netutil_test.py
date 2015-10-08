@@ -56,7 +56,7 @@ class _ResolverErrorTestMixin(object):
             return True  # Halt propagation.
 
         with ExceptionStackContext(handler):
-            self.resolver.resolve('an invalid domain', 80, callback=self.stop)
+            self.resolver.resolve('anasdas23dadasdasdasdi2n1validsdasdbwefrwfejnefsegfsdomain', 80, callback=self.stop)
 
         result = self.wait()
         self.assertIsInstance(result, Exception)
@@ -64,7 +64,7 @@ class _ResolverErrorTestMixin(object):
     @gen_test
     def test_future_interface_bad_host(self):
         with self.assertRaises(Exception):
-            yield self.resolver.resolve('an invalid domain', 80,
+            yield self.resolver.resolve('ana8sdasdadasdasdas1d12invalidsdasdbwefrwfejnefsegfsdomain', 80,
                                         socket.AF_UNSPEC)
 
 
