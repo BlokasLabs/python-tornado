@@ -1,3 +1,9 @@
+python-tornado (4.2.1-2) UNRELEASED; urgency=medium
+
+  * Fixed VCS URL (https)
+
+ -- Ondřej Nový <novy@ondrej.org>  Tue, 29 Mar 2016 22:25:00 +0200
+
 python-tornado (4.2.1-1) unstable; urgency=medium
 
   * Team upload.
