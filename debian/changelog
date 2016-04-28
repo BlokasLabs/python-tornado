@@ -1,6 +1,19 @@
 python-tornado (4.2.1-2) UNRELEASED; urgency=medium
 
-  * Fixed VCS URL (https)
+  * Team upload.
+
+  [ SVN-Git Migration ]
+  * git-dpm config.
+  * Update Vcs fields for git migration.
+
+  [ Ondřej Nový ]
+  * Fixed VCS URL (https).
+
+  [ Mattia Rizzolo ]
+  * Add a patch to skip failing test and fix ftbfs on hurd.
+  * Bump Standards-Version to 3.9.8, no changes needed.
+  * Bump debhelper compat level to 9.
+  * Build using pybuild.
 
  -- Ondřej Nový <novy@ondrej.org>  Tue, 29 Mar 2016 22:25:00 +0200
 
