@@ -8,8 +8,8 @@ Uploaders: Carl Chenet <chaica@debian.org>,
            Yaroslav Halchenko <debian@onerussian.com>,
            Julian Taylor <jtaylor.debian@googlemail.com>,
            Julien Puydt <julien.puydt@laposte.net>
-Build-Depends: debhelper (>= 7.0.50~),
-               python-all-dev (>= 2.6.6-3),
+Build-Depends: debhelper (>= 9),
+               python-all-dev,
                python3-all-dev,
                python3-setuptools,
                ca-certificates
