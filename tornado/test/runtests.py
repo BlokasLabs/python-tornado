@@ -99,7 +99,6 @@ def main():
     # setuptools sometimes gives ImportWarnings about things that are on
     # sys.path even if they're not being used.
     warnings.filterwarnings("ignore", category=ImportWarning)
-    warnings.filterwarnings("ignore", category=UserWarning)
     # Tornado generally shouldn't use anything deprecated, but some of
     # our dependencies do (last match wins).
     warnings.filterwarnings("ignore", category=DeprecationWarning)

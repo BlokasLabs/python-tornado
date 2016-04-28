@@ -1547,11 +1547,8 @@ class ClearAllCookiesTest(SimpleHandlerTestCase):
     def test_clear_all_cookies(self):
         response = self.fetch('/', headers={'Cookie': 'foo=bar; baz=xyzzy'})
         set_cookies = sorted(response.headers.get_list('Set-Cookie'))
-        # Python 3.5 sends 'baz="";'; older versions use 'baz=;'
-        self.assertTrue(set_cookies[0].startswith('baz=;') or
-                        set_cookies[0].startswith('baz="";'))
-        self.assertTrue(set_cookies[1].startswith('foo=;') or
-                        set_cookies[1].startswith('foo="";'))
+        self.assertTrue(set_cookies[0].startswith('baz=;'))
+        self.assertTrue(set_cookies[1].startswith('foo=;'))
 
 
 class PermissionError(Exception):

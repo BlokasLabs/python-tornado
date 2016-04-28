@@ -128,7 +128,7 @@ if setuptools is not None:
         # Certifi is also optional on 2.7.9+, although making our dependencies
         # conditional on micro version numbers seems like a bad idea
         # until we have more declarative metadata.
-        pass # install_requires.append('certifi')
+        install_requires.append('certifi')
     kwargs['install_requires'] = install_requires
 
 setup(

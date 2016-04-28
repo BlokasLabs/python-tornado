@@ -21,7 +21,7 @@ skipIfNonUnix = unittest.skipIf(os.name != 'posix' or sys.platform == 'cygwin',
 
 # travis-ci.org runs our tests in an overworked virtual machine, which makes
 # timing-related tests unreliable.
-skipOnTravis = unittest.skipIf(True,
+skipOnTravis = unittest.skipIf('TRAVIS' in os.environ,
                                'timing tests unreliable on travis')
 
 # Set the environment variable NO_NETWORK=1 to disable any tests that
