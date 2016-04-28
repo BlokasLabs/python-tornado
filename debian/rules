@@ -1,38 +1,16 @@
 #!/usr/bin/make -f
 
-#DH_VERBOSE=1
-
-PYTHON2=$(shell pyversions -vr)
-PYTHON3=$(shell py3versions -vr)
+export DH_VERBOSE=1
+export PYBUILD_NAME=tornado
+export PYBUILD_TEST_ARGS_python2={interpreter} ./tornado/test/runtests.py
+# python3 tests are covered in autopkgtest only for now
+export PYBUILD_TEST_ARGS_python3=echo skipping python3 tests for now
 
 %:
-	dh $@ --with python2,python3
-
-build-python%:
-	python$* setup.py build
-
-override_dh_auto_build: $(PYTHON3:%=build-python%)
-	dh_auto_build
-
-install-python%:
-	python$* setup.py install --root=$(CURDIR)/debian/tmp \
-	  --force --no-compile -O0 --install-layout=deb
-
-override_dh_auto_install: $(PYTHON3:%=install-python%)
-	dh_auto_install
-
-override_dh_auto_clean:
-	dh_auto_clean
-	rm -rf build
-	rm -rf *.egg-info
+	dh $@ --with python2,python3 --buildsystem=pybuild
 
 override_dh_auto_test:
-ifeq "$(filter nocheck,$(DEB_BUILD_OPTIONS))" ""
-	# python3 tests only in autopkgtest because I'm lazy
-	set -e && for pyvers in $(PYTHON2); do \
-	    PYTHONPATH=$(CURDIR) python$$pyvers ./tornado/test/runtests.py; \
-	done
-endif
+	PYBUILD_SYSTEM=custom PYTHONPATH=. dh_auto_test
 
 override_dh_compress:
 	dh_compress -X.py
