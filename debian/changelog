@@ -6,6 +6,7 @@ python-tornado (4.3.0-1) UNRELEASED; urgency=medium
   * New upstream release.
   * Refreshed patches (and dropped the Python 3.5 patch -- gone upstream).
   * Added dep on singledispatch and backports_abc.
+  * Added lintian override for the facebook example (not a privacy breach)
 
  -- Julien Puydt <julien.puydt@laposte.net>  Fri, 20 May 2016 14:05:22 +0200
 
