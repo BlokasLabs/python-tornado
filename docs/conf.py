@@ -1,13 +1,14 @@
 # Ensure we get the local copy of tornado instead of what's on the standard path
 import os
 import sys
+import time
 sys.path.insert(0, os.path.abspath(".."))
 import tornado
 
 master_doc = "index"
 
 project = "Tornado"
-copyright = "2011, Facebook"
+copyright = "2009-%s, The Tornado Authors" % time.strftime("%Y")
 
 version = release = tornado.version
 
@@ -75,7 +76,7 @@ coverage_ignore_functions = [
 html_favicon = 'favicon.ico'
 
 latex_documents = [
-    ('documentation', 'tornado.tex', 'Tornado Documentation', 'Facebook', 'manual', False),
+    ('index', 'tornado.tex', 'Tornado Documentation', 'The Tornado Authors', 'manual', False),
     ]
 
 # HACK: sphinx has limited support for substitutions with the |version|
@@ -87,7 +88,7 @@ latex_documents = [
 # this link must be referenced as :current_tarball:`z`
 extlinks = {
     'current_tarball': (
-'https://pypi.python.org/packages/source/t/tornado/tornado-%s.tar.g%%s' % version,
+        'https://pypi.python.org/packages/source/t/tornado/tornado-%s.tar.g%%s' % version,
         'tornado-%s.tar.g' % version),
     }
 

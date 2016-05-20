@@ -201,6 +201,9 @@
            version), but may be set to a lower value temporarily
            during version transitions.  New in Tornado 3.2.2, which
            introduced XSRF cookie version 2.
+         * ``xsrf_cookie_kwargs``: May be set to a dictionary of
+           additional arguments to be passed to `.RequestHandler.set_cookie`
+           for the XSRF cookie.
          * ``twitter_consumer_key``, ``twitter_consumer_secret``,
            ``friendfeed_consumer_key``, ``friendfeed_consumer_secret``,
            ``google_consumer_key``, ``google_consumer_secret``,
@@ -225,6 +228,9 @@
            If this setting is used the ``template_path`` and ``autoescape``
            settings are ignored.  Can be further customized by overriding
            `RequestHandler.create_template_loader`.
+         * ``template_whitespace``: Controls handling of whitespace in
+           templates; see `tornado.template.filter_whitespace` for allowed
+           values. New in Tornado 4.3.
 
          Static file settings:
 
