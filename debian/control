@@ -12,6 +12,8 @@ Build-Depends: debhelper (>= 9),
                python-all-dev,
                python3-all-dev,
                python3-setuptools,
+               python-singledispatch, python3-singledispatch,
+               python-backports-abc,
                ca-certificates
 Standards-Version: 3.9.8
 Homepage: http://www.tornadoweb.org/
