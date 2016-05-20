@@ -1,3 +1,12 @@
+python-tornado (4.3.0-1) UNRELEASED; urgency=medium
+
+  * Team upload.
+
+  [ Julien Puydt ]
+  * New upstream release.
+
+ -- Julien Puydt <julien.puydt@laposte.net>  Fri, 20 May 2016 14:05:22 +0200
+
 python-tornado (4.2.1-2) unstable; urgency=medium
 
   * Team upload.
