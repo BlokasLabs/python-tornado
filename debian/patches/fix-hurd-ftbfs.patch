@@ -7,7 +7,7 @@ Last-Update: 2016-04-28
 
 --- a/tornado/test/httpserver_test.py
 +++ b/tornado/test/httpserver_test.py
-@@ -534,6 +534,8 @@
+@@ -544,6 +544,8 @@
  
  @unittest.skipIf(not hasattr(socket, 'AF_UNIX') or sys.platform == 'cygwin',
                   "unix sockets not supported on this platform")

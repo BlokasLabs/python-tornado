@@ -8,11 +8,9 @@ Patch-Name: skip-timing-tests.patch
  tornado/test/util.py | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/tornado/test/util.py b/tornado/test/util.py
-index 9dd9c0c..656e041 100644
 --- a/tornado/test/util.py
 +++ b/tornado/test/util.py
-@@ -21,7 +21,7 @@ skipIfNonUnix = unittest.skipIf(os.name != 'posix' or sys.platform == 'cygwin',
+@@ -23,7 +23,7 @@
  
  # travis-ci.org runs our tests in an overworked virtual machine, which makes
  # timing-related tests unreliable.
@@ -20,4 +18,4 @@ index 9dd9c0c..656e041 100644
 +skipOnTravis = unittest.skipIf(True,
                                 'timing tests unreliable on travis')
  
- # Set the environment variable NO_NETWORK=1 to disable any tests that
+ skipOnAppEngine = unittest.skipIf('APPENGINE_RUNTIME' in os.environ,

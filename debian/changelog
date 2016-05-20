@@ -4,6 +4,7 @@ python-tornado (4.3.0-1) UNRELEASED; urgency=medium
 
   [ Julien Puydt ]
   * New upstream release.
+  * Refreshed patches (and dropped the Python 3.5 patch -- gone upstream).
 
  -- Julien Puydt <julien.puydt@laposte.net>  Fri, 20 May 2016 14:05:22 +0200
 
