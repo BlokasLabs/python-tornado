@@ -99,7 +99,7 @@ http://api.mongodb.org/python/current/installation.html#osx
 
 kwargs = {}
 
-version = "4.2.1"
+version = "4.3"
 
 with open('README.rst') as f:
     kwargs['long_description'] = f.read()
@@ -122,13 +122,19 @@ if (platform.python_implementation() == 'CPython' and
 if setuptools is not None:
     # If setuptools is not available, you're on your own for dependencies.
     install_requires = []
+    if sys.version_info < (2, 7):
+        # Only needed indirectly, for singledispatch.
+        install_requires.append('ordereddict')
     if sys.version_info < (3, 2):
         install_requires.append('backports.ssl_match_hostname')
     if sys.version_info < (3, 4):
+        install_requires.append('singledispatch')
         # Certifi is also optional on 2.7.9+, although making our dependencies
         # conditional on micro version numbers seems like a bad idea
         # until we have more declarative metadata.
         install_requires.append('certifi')
+    if sys.version_info < (3, 5):
+        install_requires.append('backports_abc>=0.4')
     kwargs['install_requires'] = install_requires
 
 setup(
@@ -146,6 +152,9 @@ setup(
             "gettext_translations/fr_FR/LC_MESSAGES/tornado_test.po",
             "options_test.cfg",
             "static/robots.txt",
+            "static/sample.xml",
+            "static/sample.xml.gz",
+            "static/sample.xml.bz2",
             "static/dir/index.html",
             "static_foo.txt",
             "templates/utf8.html",
