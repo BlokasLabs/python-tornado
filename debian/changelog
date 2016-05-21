@@ -1,15 +1,12 @@
-python-tornado (4.3.0-1) UNRELEASED; urgency=medium
+python-tornado (4.3.0-1) unstable; urgency=medium
 
-  * Team upload.
-
-  [ Julien Puydt ]
   * New upstream release.
   * Refreshed patches (and dropped the Python 3.5 patch -- gone upstream).
   * Added dep on singledispatch and backports_abc.
   * Added lintian override for the facebook example (not a privacy breach)
   * Added lintian overrides for sample.xml compressed versions.
 
- -- Julien Puydt <julien.puydt@laposte.net>  Fri, 20 May 2016 14:05:22 +0200
+ -- Julien Puydt <julien.puydt@laposte.net>  Sat, 21 May 2016 21:57:17 +0000
 
 python-tornado (4.2.1-2) unstable; urgency=medium
 
