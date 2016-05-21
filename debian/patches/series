@@ -3,4 +3,3 @@ ignoreuserwarning.patch
 skip-timing-tests.patch
 sockopt.patch
 without-certifi.patch
-fix-hurd-ftbfs.patch
