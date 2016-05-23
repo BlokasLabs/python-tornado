@@ -5,8 +5,6 @@ python-tornado binary: privacy-breach-may-use-debian-package
 python-tornado binary: privacy-breach-generic
 # examples on how to connect to facebook are expected to connect to the web
 python-tornado: privacy-breach-facebook usr/share/doc/python-tornado/examples/facebook/templates/modules/post.html (//graph.facebook.com/{{ escape(post[)
-# plugin, does not use libc directly
-python-tornado binary: missing-dependency-on-libc
 # test sample, so duplication and timestamps shouldn't be a problem
 python-tornado: duplicated-compressed-file usr/lib/python2.7/dist-packages/tornado/test/static/sample.xml.bz2
 python-tornado: duplicated-compressed-file usr/lib/python2.7/dist-packages/tornado/test/static/sample.xml.gz
