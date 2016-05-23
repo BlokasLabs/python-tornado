@@ -7,15 +7,16 @@ Maintainer: Debian Python Modules Team <python-modules-team@lists.alioth.debian.
 Uploaders: Carl Chenet <chaica@debian.org>,
            Yaroslav Halchenko <debian@onerussian.com>,
            Julian Taylor <jtaylor.debian@googlemail.com>,
-           Julien Puydt <julien.puydt@laposte.net>
-Build-Depends: debhelper (>= 9),
+           Julien Puydt <julien.puydt@laposte.net>,
+Build-Depends: ca-certificates,
+               debhelper (>= 9),
                dh-python,
                python-all-dev,
+               python-backports-abc,
+               python-singledispatch,
                python3-all-dev,
                python3-setuptools,
-               python-singledispatch, python3-singledispatch,
-               python-backports-abc,
-               ca-certificates
+               python3-singledispatch,
 Standards-Version: 3.9.8
 Homepage: http://www.tornadoweb.org/
 Vcs-Git: https://anonscm.debian.org/git/python-modules/packages/python-tornado.git
@@ -28,8 +29,9 @@ Depends: ca-certificates,
          python (>= 2.6) | python-simplejson,
          python-pycurl,
          ${misc:Depends},
-         ${python:Depends}
-Recommends: python (>= 2.6) | python-multiprocessing, python-mysqldb
+         ${python:Depends},
+Recommends: python (>= 2.6) | python-multiprocessing,
+            python-mysqldb,
 Description: scalable, non-blocking web server and tools
  Tornado is an open source version of the scalable, non-blocking
  web server and tools that power FriendFeed. The FriendFeed application
@@ -41,7 +43,9 @@ Description: scalable, non-blocking web server and tools
 
 Package: python3-tornado
 Architecture: any
-Depends: ca-certificates, ${misc:Depends}, ${python3:Depends}
+Depends: ca-certificates,
+         ${misc:Depends},
+         ${python3:Depends},
 Description: scalable, non-blocking web server and tools - Python 3 package
  Tornado is an open source version of the scalable, non-blocking
  web server and tools that power FriendFeed. The FriendFeed application
