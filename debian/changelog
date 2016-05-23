@@ -2,6 +2,8 @@ python-tornado (4.3.0-2) UNRELEASED; urgency=medium
 
   * Added Build-Depends to dh-python and python-setuptools
   * Added ${shlibs:Depends} and removed lintian override for libc
+  * Lintian tag rename:
+    privacy-breach-may-use-debian-package -> privacy-breach-uses-embedded-file
 
  -- Ondřej Nový <novy@ondrej.org>  Mon, 23 May 2016 21:28:03 +0200
 
