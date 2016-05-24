@@ -1,0 +1,23 @@
+From 665ea0e820a18f441329cdcf9f104278c32ffd99 Mon Sep 17 00:00:00 2001
+From: Corey Bryant <corey.bryant@canonical.com>
+Date: Tue, 24 May 2016 12:58:59 +0200
+Subject: Use pymysql as a drop-in replacement for MySQLdb.
+
+---
+ demos/blog/blog.py | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/demos/blog/blog.py b/demos/blog/blog.py
+index c78e532..14dd699 100755
+--- a/demos/blog/blog.py
++++ b/demos/blog/blog.py
+@@ -14,6 +14,9 @@
+ # License for the specific language governing permissions and limitations
+ # under the License.
+ 
++import pymysql
++pymysql.install_as_MySQLdb()
++
+ import bcrypt
+ import concurrent.futures
+ import MySQLdb
