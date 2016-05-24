@@ -6,3 +6,4 @@ without-certifi.patch
 fix-ftbfs-on-hurd.patch
 0007-Fix-testsuite-failure-when-sockets-is-not-defined.patch
 0008-Use-pymysql-as-a-drop-in-replacement-for-MySQLdb.patch
+0009-Revert-Use-pymysql-as-a-drop-in-replacement-for-MySQ.patch
