@@ -6,6 +6,7 @@ python-tornado (4.3.0-3) UNRELEASED; urgency=medium
   * Moved python{3,}-pycurl from Depends to Suggests, it's not strictly needed
     and added to B-D to run related unit tests
   * Added python-concurrent.futures to Build-Depends and Recommends
+  * Added python{3,}-twisted to Build-Depends and Suggests
 
  -- Ondřej Nový <novy@ondrej.org>  Mon, 06 Jun 2016 09:30:16 +0200
 
