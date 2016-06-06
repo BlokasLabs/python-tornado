@@ -2,9 +2,9 @@
 
 export DH_VERBOSE=1
 export PYBUILD_NAME=tornado
-export PYBUILD_TEST_ARGS_python2={interpreter} ./tornado/test/runtests.py
-# python3 tests are covered in autopkgtest only for now
-export PYBUILD_TEST_ARGS_python3=echo skipping python3 tests for now
+export PYBUILD_TEST_ARGS={interpreter} ./tornado/test/runtests.py --verbose
+# py3 tests is failling without this
+export HOME=/tmp
 
 %:
 	dh $@ --with python2,python3 --buildsystem=pybuild
