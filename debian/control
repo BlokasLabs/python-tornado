@@ -42,11 +42,11 @@ Suggests: python-mysqldb,
           python-twisted,
 Recommends: python-concurrent.futures,
 Description: scalable, non-blocking web server and tools
- Tornado is an open source version of the scalable, non-blocking
- web server and tools that power FriendFeed. The FriendFeed application
- is written using a web framework that looks a bit like web.py or
- Google's webapp, but with additional tools and optimizations to take
- advantage of the underlying non-blocking infrastructure.
+ Tornado is a Python web framework and asynchronous networking library,
+ originally developed at FriendFeed. By using non-blocking network I/O,
+ Tornado can scale to tens of thousands of open connections, making it ideal
+ for long polling, WebSockets, and other applications that require a
+ long-lived connection to each user.
  .
  This is the Python 2 version of the package.
 
@@ -59,10 +59,10 @@ Depends: ca-certificates,
 Suggests: python3-pycurl,
           python3-twisted,
 Description: scalable, non-blocking web server and tools - Python 3 package
- Tornado is an open source version of the scalable, non-blocking
- web server and tools that power FriendFeed. The FriendFeed application
- is written using a web framework that looks a bit like web.py or
- Google's webapp, but with additional tools and optimizations to take
- advantage of the underlying non-blocking infrastructure.
+ Tornado is a Python web framework and asynchronous networking library,
+ originally developed at FriendFeed. By using non-blocking network I/O,
+ Tornado can scale to tens of thousands of open connections, making it ideal
+ for long polling, WebSockets, and other applications that require a
+ long-lived connection to each user.
  .
  This is the Python 3 version of the package.
