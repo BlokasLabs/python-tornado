@@ -3,6 +3,8 @@ python-tornado (4.3.0-3) UNRELEASED; urgency=medium
   * Removed python-simplejson and python-multiprocessing from B-D/R,
     because Python < 2.6 is not supported anymore (Closes: #826455)
   * Moved python-mysqldb from Recommends to Suggests, it's only used in demo
+  * Moved python{3,}-pycurl from Depends to Suggests, it's not strictly needed
+    and added to B-D to run related unit tests
 
  -- Ondřej Nový <novy@ondrej.org>  Mon, 06 Jun 2016 09:30:16 +0200
 
