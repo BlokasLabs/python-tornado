@@ -13,6 +13,7 @@ Build-Depends: ca-certificates,
                dh-python,
                python-all-dev,
                python-backports-abc,
+               python-concurrent.futures,
                python-pycurl,
                python-singledispatch,
                python-setuptools,
@@ -34,6 +35,7 @@ Depends: ca-certificates,
          ${shlibs:Depends},
 Suggests: python-mysqldb,
           python-pycurl,
+Recommends: python-concurrent.futures,
 Description: scalable, non-blocking web server and tools
  Tornado is an open source version of the scalable, non-blocking
  web server and tools that power FriendFeed. The FriendFeed application
