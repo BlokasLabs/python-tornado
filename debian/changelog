@@ -17,6 +17,7 @@ python-tornado (4.4.0~b1-1) UNRELEASED; urgency=medium
   * Run Py3 unit tests during build and enable verbose mode
   * Bumped required Python version to 2.7 and 3.3
   * Added python-tornado-doc package with docs and examples
+  * Enabled all but PIE hardening
 
  -- Ondřej Nový <novy@ondrej.org>  Mon, 06 Jun 2016 09:30:16 +0200
 
