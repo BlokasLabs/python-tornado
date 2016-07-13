@@ -1,6 +1,7 @@
 python-tornado (4.4.0~b1-1) UNRELEASED; urgency=medium
 
   * New upstream release (Closes: #830859)
+  * Rearranged lintian overrides for new release
   * Added myself as uploader
   * Removed python-simplejson and python-multiprocessing from B-D/R,
     because Python < 2.6 is not supported anymore (Closes: #826455)

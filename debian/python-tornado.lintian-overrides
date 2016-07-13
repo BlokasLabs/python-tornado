@@ -5,7 +5,10 @@ python-tornado binary: privacy-breach-uses-embedded-file
 python-tornado binary: privacy-breach-generic
 # examples on how to connect to facebook are expected to connect to the web
 python-tornado: privacy-breach-facebook usr/share/doc/python-tornado/examples/facebook/templates/modules/post.html (//graph.facebook.com/{{ escape(post[)
-# test sample, so duplication and timestamps shouldn't be a problem
+# test sample, so duplication shouldn't be a problem
 python-tornado: duplicated-compressed-file usr/lib/python2.7/dist-packages/tornado/test/static/sample.xml.bz2
 python-tornado: duplicated-compressed-file usr/lib/python2.7/dist-packages/tornado/test/static/sample.xml.gz
-python-tornado: package-contains-timestamped-gzip usr/lib/python2.7/dist-packages/tornado/test/static/sample.xml.gz
+# examples, so duplication shouldn't be a problem
+python-tornado: duplicate-files usr/share/doc/python-tornado/examples/chat/static/chat.css usr/share/doc/python-tornado/examples/websocket/static/chat.css
+python-tornado: duplicate-files usr/share/doc/python-tornado/examples/appengine/templates/archive.html usr/share/doc/python-tornado/examples/blog/templates/archive.html
+python-tornado: duplicate-files usr/share/doc/python-tornado/examples/chat/templates/message.html usr/share/doc/python-tornado/examples/websocket/templates/message.html

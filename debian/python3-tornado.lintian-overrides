@@ -1,4 +1,3 @@
-# test sample, so duplication and timestamps shouldn't be a problem
+# test sample, so duplication shouldn't be a problem
 python3-tornado: duplicated-compressed-file usr/lib/python3/dist-packages/tornado/test/static/sample.xml.bz2
 python3-tornado: duplicated-compressed-file usr/lib/python3/dist-packages/tornado/test/static/sample.xml.gz
-python3-tornado: package-contains-timestamped-gzip usr/lib/python3/dist-packages/tornado/test/static/sample.xml.gz
