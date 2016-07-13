@@ -1,4 +1,4 @@
-From 8f74c06250d37edccf2cfa2b971522c9041fdfdb Mon Sep 17 00:00:00 2001
+From 4077934083d0bf1b20e9e45ac08eadff3334cacb Mon Sep 17 00:00:00 2001
 From: SVN-Git Migration <python-modules-team@lists.alioth.debian.org>
 Date: Thu, 8 Oct 2015 13:13:30 -0700
 Subject: use a domain that is more likely invalid
@@ -10,10 +10,10 @@ Patch-Name: domain-test.patch
  1 file changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/tornado/test/netutil_test.py b/tornado/test/netutil_test.py
-index 9ef5f7c..78331ce 100644
+index 549c4fe..842a195 100644
 --- a/tornado/test/netutil_test.py
 +++ b/tornado/test/netutil_test.py
-@@ -56,7 +56,7 @@ class _ResolverErrorTestMixin(object):
+@@ -57,7 +57,7 @@ class _ResolverErrorTestMixin(object):
              return True  # Halt propagation.
  
          with ExceptionStackContext(handler):
@@ -22,10 +22,10 @@ index 9ef5f7c..78331ce 100644
  
          result = self.wait()
          self.assertIsInstance(result, Exception)
-@@ -64,7 +64,7 @@ class _ResolverErrorTestMixin(object):
+@@ -65,7 +65,7 @@ class _ResolverErrorTestMixin(object):
      @gen_test
      def test_future_interface_bad_host(self):
-         with self.assertRaises(Exception):
+         with self.assertRaises(IOError):
 -            yield self.resolver.resolve('an invalid domain', 80,
 +            yield self.resolver.resolve('ana8sdasdadasdasdas1d12invalidsdasdbwefrwfejnefsegfsdomain', 80,
                                          socket.AF_UNSPEC)

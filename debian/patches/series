@@ -4,4 +4,3 @@ skip-timing-tests.patch
 sockopt.patch
 without-certifi.patch
 fix-ftbfs-on-hurd.patch
-0007-Fix-testsuite-failure-when-sockets-is-not-defined.patch

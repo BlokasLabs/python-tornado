@@ -51,12 +51,12 @@ import re
 
 from tornado import escape
 from tornado.log import gen_log
-from tornado.util import u
+from tornado.util import PY3
 
 from tornado._locale_data import LOCALE_NAMES
 
 _default_locale = "en_US"
-_translations = {}
+_translations = {}  # type: dict
 _supported_locales = frozenset([_default_locale])
 _use_gettext = False
 CONTEXT_SEPARATOR = "\x04"
@@ -148,11 +148,11 @@ def load_translations(directory, encoding=None):
                 # in most cases but is common with CSV files because Excel
                 # cannot read utf-8 files without a BOM.
                 encoding = 'utf-8-sig'
-        try:
+        if PY3:
             # python 3: csv.reader requires a file open in text mode.
             # Force utf8 to avoid dependence on $LANG environment variable.
             f = open(full_path, "r", encoding=encoding)
-        except TypeError:
+        else:
             # python 2: csv can only handle byte strings (in ascii-compatible
             # encodings), which we decode below. Transcode everything into
             # utf8 before passing it to csv.reader.
@@ -274,7 +274,7 @@ class Locale(object):
 
     def __init__(self, code, translations):
         self.code = code
-        self.name = LOCALE_NAMES.get(code, {}).get("name", u("Unknown"))
+        self.name = LOCALE_NAMES.get(code, {}).get("name", u"Unknown")
         self.rtl = False
         for prefix in ["fa", "ar", "he"]:
             if self.code.startswith(prefix):
@@ -376,7 +376,7 @@ class Locale(object):
             str_time = "%d:%02d" % (local_date.hour, local_date.minute)
         elif self.code == "zh_CN":
             str_time = "%s%d:%02d" % (
-                (u('\u4e0a\u5348'), u('\u4e0b\u5348'))[local_date.hour >= 12],
+                (u'\u4e0a\u5348', u'\u4e0b\u5348')[local_date.hour >= 12],
                 local_date.hour % 12 or 12, local_date.minute)
         else:
             str_time = "%d:%02d %s" % (
@@ -422,7 +422,7 @@ class Locale(object):
             return ""
         if len(parts) == 1:
             return parts[0]
-        comma = u(' \u0648 ') if self.code.startswith("fa") else u(", ")
+        comma = u' \u0648 ' if self.code.startswith("fa") else u", "
         return _("%(commas)s and %(last)s") % {
             "commas": comma.join(parts[:-1]),
             "last": parts[len(parts) - 1],

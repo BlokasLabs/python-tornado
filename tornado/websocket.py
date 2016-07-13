@@ -36,17 +36,13 @@ from tornado.iostream import StreamClosedError
 from tornado.log import gen_log, app_log
 from tornado import simple_httpclient
 from tornado.tcpclient import TCPClient
-from tornado.util import _websocket_mask
+from tornado.util import _websocket_mask, PY3
 
-try:
+if PY3:
     from urllib.parse import urlparse  # py2
-except ImportError:
+    xrange = range
+else:
     from urlparse import urlparse  # py3
-
-try:
-    xrange  # py2
-except NameError:
-    xrange = range  # py3
 
 
 class WebSocketError(Exception):
@@ -128,8 +124,7 @@ class WebSocketHandler(tornado.web.RequestHandler):
     to accept it before the websocket connection will succeed.
     """
     def __init__(self, application, request, **kwargs):
-        tornado.web.RequestHandler.__init__(self, application, request,
-                                            **kwargs)
+        super(WebSocketHandler, self).__init__(application, request, **kwargs)
         self.ws_connection = None
         self.close_code = None
         self.close_reason = None
