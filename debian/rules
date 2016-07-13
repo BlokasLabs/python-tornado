@@ -7,10 +7,16 @@ export PYBUILD_TEST_ARGS={interpreter} ./tornado/test/runtests.py --verbose
 export HOME=/tmp
 
 %:
-	dh $@ --with python2,python3 --buildsystem=pybuild
+	dh $@ --with python2,python3,sphinxdoc --buildsystem=pybuild
 
 override_dh_auto_test:
 	PYBUILD_SYSTEM=custom PYTHONPATH=. dh_auto_test
 
 override_dh_compress:
 	dh_compress -X.py
+
+override_dh_sphinxdoc:
+ifeq (,$(findstring nodocs, $(DEB_BUILD_OPTIONS)))
+	sphinx-build -b html docs $(CURDIR)/debian/python-tornado-doc/usr/share/doc/python-tornado-doc/html
+	dh_sphinxdoc
+endif

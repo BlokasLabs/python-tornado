@@ -25,6 +25,8 @@ Build-Depends: ca-certificates,
                python3-pycurl,
                python3-setuptools,
                python3-singledispatch,
+               python3-sphinx,
+               python3-sphinx-rtd-theme,
                python3-twisted,
 Standards-Version: 3.9.8
 Homepage: http://www.tornadoweb.org/
@@ -40,6 +42,7 @@ Depends: ca-certificates,
          ${shlibs:Depends},
 Suggests: python-mysqldb,
           python-pycurl,
+          python-tornado-doc,
           python-twisted,
 Recommends: python-concurrent.futures,
 Description: scalable, non-blocking web server and tools
@@ -58,6 +61,7 @@ Depends: ca-certificates,
          ${python3:Depends},
          ${shlibs:Depends},
 Suggests: python3-pycurl,
+          python-tornado-doc,
           python3-twisted,
 Description: scalable, non-blocking web server and tools - Python 3 package
  Tornado is a Python web framework and asynchronous networking library,
@@ -67,3 +71,17 @@ Description: scalable, non-blocking web server and tools - Python 3 package
  long-lived connection to each user.
  .
  This is the Python 3 version of the package.
+
+Package: python-tornado-doc
+Architecture: all
+Section: doc
+Depends: ${misc:Depends},
+         ${sphinxdoc:Depends},
+Description: scalable, non-blocking web server and tools - documentation
+ Tornado is a Python web framework and asynchronous networking library,
+ originally developed at FriendFeed. By using non-blocking network I/O,
+ Tornado can scale to tens of thousands of open connections, making it ideal
+ for long polling, WebSockets, and other applications that require a
+ long-lived connection to each user.
+ .
+ This package contains the documentation.
