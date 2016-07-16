@@ -1,4 +1,4 @@
-From 2998294384b06ad3d32359a0ca4bdd85e988149f Mon Sep 17 00:00:00 2001
+From d788743197974e6172dd415564125a001d52cb79 Mon Sep 17 00:00:00 2001
 From: Mattia Rizzolo <mattia@debian.org>
 Date: Sat, 21 May 2016 21:55:27 +0000
 Subject: skip UnixSocketTest on hurd, as unix sockets with SO_REUSEADDR are
