@@ -1,4 +1,4 @@
-python-tornado (4.4.0~b1-1) UNRELEASED; urgency=medium
+python-tornado (4.4.0-1) UNRELEASED; urgency=medium
 
   * New upstream release (Closes: #830859)
   * Rearranged lintian overrides for new release
