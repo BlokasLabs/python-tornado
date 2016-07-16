@@ -18,9 +18,8 @@ python-tornado (4.4.0-1) UNRELEASED; urgency=medium
   * Bumped required Python version to 2.7 and 3.3
   * Added python-tornado-doc package with docs and examples
   * Enabled all but PIE hardening
-  * d/{control,copyright}: Use my @debian.org email address
 
- -- Ondřej Nový <novy@ondrej.org>  Mon, 06 Jun 2016 09:30:16 +0200
+ -- Ondřej Nový <onovy@debian.org>  Sat, 16 Jul 2016 22:56:08 +0200
 
 python-tornado (4.3.0-2) unstable; urgency=medium
 
