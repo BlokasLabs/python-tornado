@@ -19,6 +19,7 @@ python-tornado (4.4.1-1) UNRELEASED; urgency=medium
   * Added python-tornado-doc package with docs and examples
   * Enabled all but PIE hardening
   * Generate upstream changelog file during build
+  * Added python3-backports-abc to B-D for older Python 3
 
  -- Ondřej Nový <onovy@debian.org>  Sat, 16 Jul 2016 22:56:08 +0200
 
