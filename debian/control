@@ -22,6 +22,7 @@ Build-Depends: ca-certificates,
                python-twisted,
                python3-all-dev,
                python3 (>= 3.5) | python3-backports-abc,
+               python3-doc,
                python3-mock,
                python3-pycurl,
                python3-setuptools,
@@ -78,6 +79,7 @@ Architecture: all
 Section: doc
 Depends: ${misc:Depends},
          ${sphinxdoc:Depends},
+         python3-doc,
 Description: scalable, non-blocking web server and tools - documentation
  Tornado is a Python web framework and asynchronous networking library,
  originally developed at FriendFeed. By using non-blocking network I/O,
