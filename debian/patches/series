@@ -1,4 +1,4 @@
-domain-test.patch
+disable-domain-tests.patch
 ignoreuserwarning.patch
 skip-timing-tests.patch
 sockopt.patch

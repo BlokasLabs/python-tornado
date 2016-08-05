@@ -1,4 +1,4 @@
-From 8f700489b5c86a13daca2a42d791783436dd4233 Mon Sep 17 00:00:00 2001
+From 3647bac45c11b815cb1a44fe0682d3c9de61661e Mon Sep 17 00:00:00 2001
 From: Julien Puydt <julien.puydt@laposte.net>
 Date: Thu, 8 Oct 2015 13:13:34 -0700
 Subject: remove dependance on certifi
