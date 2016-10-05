@@ -1,3 +1,9 @@
+python-tornado (4.4.2-1) UNRELEASED; urgency=medium
+
+  * New upstream release.
+
+ -- Julien Puydt <julien.puydt@laposte.net>  Wed, 05 Oct 2016 18:13:06 +0200
+
 python-tornado (4.4.1-2) unstable; urgency=medium
 
   * Prevent internet access during build (Closes: #833351)
