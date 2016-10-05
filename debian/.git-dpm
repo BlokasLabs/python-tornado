@@ -2,10 +2,10 @@
 e04af85a7f5919ad748884b2ce8fc146816cbe57
 e04af85a7f5919ad748884b2ce8fc146816cbe57
 78b250c7a19799d2e1ccf68f36725ea2f61bff7b
-78b250c7a19799d2e1ccf68f36725ea2f61bff7b
-python-tornado_4.4.1.orig.tar.gz
-74e6c017e073952febf4341d9d57b4876d2058c1
-481547
+7a2ee17932b535c4d34ba2661d88ed59083a96a2
+python-tornado_4.4.2.orig.tar.gz
+af99573dfb404ef58a7569405c6d13917e01ed8b
+484329
 debianTag="debian/%e%v"
 patchedTag="patched/%e%v"
 upstreamTag="upstream/%e%u"
