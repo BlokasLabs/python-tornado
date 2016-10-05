@@ -1,4 +1,4 @@
-From 3647bac45c11b815cb1a44fe0682d3c9de61661e Mon Sep 17 00:00:00 2001
+From c7a12ed6191ea5fe0cf5112ff2be806dafae9806 Mon Sep 17 00:00:00 2001
 From: Julien Puydt <julien.puydt@laposte.net>
 Date: Thu, 8 Oct 2015 13:13:34 -0700
 Subject: remove dependance on certifi
@@ -15,7 +15,7 @@ Patch-Name: without-certifi.patch
  3 files changed, 4 insertions(+), 23 deletions(-)
 
 diff --git a/setup.py b/setup.py
-index 9eddaef..61ea7f6 100644
+index 8d81095..8549368 100644
 --- a/setup.py
 +++ b/setup.py
 @@ -136,7 +136,7 @@ if setuptools is not None:
@@ -28,7 +28,7 @@ index 9eddaef..61ea7f6 100644
          install_requires.append('backports_abc>=0.4')
      kwargs['install_requires'] = install_requires
 diff --git a/tornado/netutil.py b/tornado/netutil.py
-index b7113d6..d5479ec 100644
+index 130966c..10ef8d3 100644
 --- a/tornado/netutil.py
 +++ b/tornado/netutil.py
 @@ -35,15 +35,6 @@ except ImportError:
