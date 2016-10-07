@@ -1,9 +1,9 @@
-python-tornado (4.4.2-1) UNRELEASED; urgency=medium
+python-tornado (4.4.2-1) unstable; urgency=medium
 
   * New upstream release.
   * Push dh compat to 10.
 
- -- Julien Puydt <julien.puydt@laposte.net>  Wed, 05 Oct 2016 18:13:06 +0200
+ -- Julien Puydt <julien.puydt@laposte.net>  Fri, 07 Oct 2016 15:58:20 +0200
 
 python-tornado (4.4.1-2) unstable; urgency=medium
 
