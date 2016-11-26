@@ -1,7 +1,5 @@
 # webserver belongs to web (#665854)
 python-tornado binary: wrong-section-according-to-package-name
-# examples on how to use google appengine and blogs, communication with the web is expected
-python-tornado binary: privacy-breach-may-use-debian-package
-python-tornado binary: privacy-breach-generic
-# plugin, does not use libc directly
-python-tornado binary: missing-dependency-on-libc
+# test sample, so duplication shouldn't be a problem
+python-tornado: duplicated-compressed-file usr/lib/python2.7/dist-packages/tornado/test/static/sample.xml.bz2
+python-tornado: duplicated-compressed-file usr/lib/python2.7/dist-packages/tornado/test/static/sample.xml.gz

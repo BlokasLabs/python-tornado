@@ -1,7 +1,18 @@
-Description: like travis buildd are often slow so skip the same tests
+From b36d0a091fa0ab497fe2948c584cccc073fbaf23 Mon Sep 17 00:00:00 2001
+From: SVN-Git Migration <python-modules-team@lists.alioth.debian.org>
+Date: Thu, 8 Oct 2015 13:13:32 -0700
+Subject: like travis buildd are often slow so skip the same tests
+
+Patch-Name: skip-timing-tests.patch
+---
+ tornado/test/util.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/tornado/test/util.py b/tornado/test/util.py
+index 2e3d779..33b9cf0 100644
 --- a/tornado/test/util.py
 +++ b/tornado/test/util.py
-@@ -21,7 +21,7 @@
+@@ -23,7 +23,7 @@ skipIfNonUnix = unittest.skipIf(os.name != 'posix' or sys.platform == 'cygwin',
  
  # travis-ci.org runs our tests in an overworked virtual machine, which makes
  # timing-related tests unreliable.
@@ -9,4 +20,4 @@ Description: like travis buildd are often slow so skip the same tests
 +skipOnTravis = unittest.skipIf(True,
                                 'timing tests unreliable on travis')
  
- # Set the environment variable NO_NETWORK=1 to disable any tests that
+ skipOnAppEngine = unittest.skipIf('APPENGINE_RUNTIME' in os.environ,

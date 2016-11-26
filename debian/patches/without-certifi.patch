@@ -1,23 +1,75 @@
-Description: remove dependance on certifi
+From c7a12ed6191ea5fe0cf5112ff2be806dafae9806 Mon Sep 17 00:00:00 2001
+From: Julien Puydt <julien.puydt@laposte.net>
+Date: Thu, 8 Oct 2015 13:13:34 -0700
+Subject: remove dependance on certifi
+
  Since Debian is a distribution, we know where the certificates are
  and don't need certifi to find them.
-Author: Julien Puydt <julien.puydt@laposte.net>
 Forwarded: no
 
+Patch-Name: without-certifi.patch
+---
+ setup.py                     |  2 +-
+ tornado/netutil.py           | 13 ++-----------
+ tornado/simple_httpclient.py | 12 +-----------
+ 3 files changed, 4 insertions(+), 23 deletions(-)
+
+diff --git a/setup.py b/setup.py
+index 8d81095..8549368 100644
 --- a/setup.py
 +++ b/setup.py
-@@ -128,7 +128,7 @@
+@@ -136,7 +136,7 @@ if setuptools is not None:
          # Certifi is also optional on 2.7.9+, although making our dependencies
          # conditional on micro version numbers seems like a bad idea
          # until we have more declarative metadata.
 -        install_requires.append('certifi')
-+        pass # install_requires.append('certifi')
++        # install_requires.append('certifi')
+     if sys.version_info < (3, 5):
+         install_requires.append('backports_abc>=0.4')
      kwargs['install_requires'] = install_requires
+diff --git a/tornado/netutil.py b/tornado/netutil.py
+index 130966c..10ef8d3 100644
+--- a/tornado/netutil.py
++++ b/tornado/netutil.py
+@@ -35,15 +35,6 @@ except ImportError:
+     # ssl is not available on Google App Engine
+     ssl = None
  
- setup(
+-try:
+-    import certifi
+-except ImportError:
+-    # certifi is optional as long as we have ssl.create_default_context.
+-    if ssl is None or hasattr(ssl, 'create_default_context'):
+-        certifi = None
+-    else:
+-        raise
+-
+ if PY3:
+     xrange = range
+ 
+@@ -70,7 +61,7 @@ if hasattr(ssl, 'SSLContext'):
+         # Python 3.2-3.3
+         _client_ssl_defaults = ssl.SSLContext(ssl.PROTOCOL_SSLv23)
+         _client_ssl_defaults.verify_mode = ssl.CERT_REQUIRED
+-        _client_ssl_defaults.load_verify_locations(certifi.where())
++        _client_ssl_defaults.load_verify_locations('/etc/ssl/certs/ca-certificates.crt')
+         _server_ssl_defaults = ssl.SSLContext(ssl.PROTOCOL_SSLv23)
+         if hasattr(ssl, 'OP_NO_COMPRESSION'):
+             # Disable TLS compression to avoid CRIME and related attacks.
+@@ -81,7 +72,7 @@ if hasattr(ssl, 'SSLContext'):
+ elif ssl:
+     # Python 2.6-2.7.8
+     _client_ssl_defaults = dict(cert_reqs=ssl.CERT_REQUIRED,
+-                                ca_certs=certifi.where())
++                                ca_certs='/etc/ssl/certs/ca-certificates.crt')
+     _server_ssl_defaults = {}
+ else:
+     # Google App Engine
+diff --git a/tornado/simple_httpclient.py b/tornado/simple_httpclient.py
+index 82f8686..ad49675 100644
 --- a/tornado/simple_httpclient.py
 +++ b/tornado/simple_httpclient.py
-@@ -33,18 +33,8 @@
+@@ -34,18 +34,8 @@ except ImportError:
      # ssl is not available on Google App Engine.
      ssl = None
  
@@ -37,39 +89,3 @@ Forwarded: no
  
  class SimpleAsyncHTTPClient(AsyncHTTPClient):
      """Non-blocking HTTP client with no external dependencies.
---- a/tornado/netutil.py
-+++ b/tornado/netutil.py
-@@ -36,15 +36,6 @@
-     ssl = None
- 
- try:
--    import certifi
--except ImportError:
--    # certifi is optional as long as we have ssl.create_default_context.
--    if ssl is None or hasattr(ssl, 'create_default_context'):
--        certifi = None
--    else:
--        raise
--
--try:
-     xrange  # py2
- except NameError:
-     xrange = range  # py3
-@@ -72,7 +63,7 @@
-         # Python 3.2-3.3
-         _client_ssl_defaults = ssl.SSLContext(ssl.PROTOCOL_SSLv23)
-         _client_ssl_defaults.verify_mode = ssl.CERT_REQUIRED
--        _client_ssl_defaults.load_verify_locations(certifi.where())
-+        _client_ssl_defaults.load_verify_locations('/etc/ssl/certs/ca-certificates.crt')
-         _server_ssl_defaults = ssl.SSLContext(ssl.PROTOCOL_SSLv23)
-         if hasattr(ssl, 'OP_NO_COMPRESSION'):
-             # Disable TLS compression to avoid CRIME and related attacks.
-@@ -83,7 +74,7 @@
- elif ssl:
-     # Python 2.6-2.7.8
-     _client_ssl_defaults = dict(cert_reqs=ssl.CERT_REQUIRED,
--                                ca_certs=certifi.where())
-+                                ca_certs='/etc/ssl/certs/ca-certificates.crt')
-     _server_ssl_defaults = {}
- else:
-     # Google App Engine

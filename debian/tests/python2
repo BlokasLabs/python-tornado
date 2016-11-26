@@ -7,5 +7,5 @@ cd "$ADTTMP"
 
 for py in $PYS; do
     echo "=== $py ==="
-    $py /usr/lib/$py/dist-packages/tornado/test/runtests.py 2>&1
+    $py /usr/lib/$py/dist-packages/tornado/test/runtests.py --verbose 2>&1
 done

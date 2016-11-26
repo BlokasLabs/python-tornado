@@ -1,49 +1,90 @@
 Source: python-tornado
 Section: web
-X-Python-Version: >= 2.6
-X-Python3-Version: >= 3.2
+X-Python-Version: >= 2.7
+X-Python3-Version: >= 3.3
 Priority: optional
 Maintainer: Debian Python Modules Team <python-modules-team@lists.alioth.debian.org>
 Uploaders: Carl Chenet <chaica@debian.org>,
            Yaroslav Halchenko <debian@onerussian.com>,
            Julian Taylor <jtaylor.debian@googlemail.com>,
-           Julien Puydt <julien.puydt@laposte.net>
-Build-Depends: debhelper (>= 7.0.50~),
-               python-all-dev (>= 2.6.6-3),
+           Julien Puydt <julien.puydt@laposte.net>,
+           Ondřej Nový <onovy@debian.org>,
+Build-Depends: ca-certificates,
+               debhelper (>= 10),
+               dh-python,
+               python-all-dev,
+               python-backports-abc,
+               python-concurrent.futures,
+               python-mock,
+               python-pycurl,
+               python-setuptools,
+               python-singledispatch,
+               python-twisted,
                python3-all-dev,
+               python3 (>= 3.5) | python3-backports-abc,
+               python3-doc,
+               python3-mock,
+               python3-pycurl,
                python3-setuptools,
-               ca-certificates
-Standards-Version: 3.9.6
+               python3-singledispatch,
+               python3-sphinx,
+               python3-sphinx-rtd-theme,
+               python3-twisted,
+Standards-Version: 3.9.8
 Homepage: http://www.tornadoweb.org/
-Vcs-Svn: svn://anonscm.debian.org/python-modules/packages/python-tornado/trunk/
-Vcs-Browser: http://anonscm.debian.org/viewvc/python-modules/packages/python-tornado/trunk/
+Vcs-Git: https://anonscm.debian.org/git/python-modules/packages/python-tornado.git
+Vcs-Browser: https://anonscm.debian.org/cgit/python-modules/packages/python-tornado.git
 Testsuite: autopkgtest
 
 Package: python-tornado
 Architecture: any
 Depends: ca-certificates,
-         python (>= 2.6) | python-simplejson,
-         python-pycurl,
          ${misc:Depends},
-         ${python:Depends}
-Recommends: python (>= 2.6) | python-multiprocessing, python-mysqldb
+         ${python:Depends},
+         ${shlibs:Depends},
+Suggests: python-mysqldb,
+          python-pycurl,
+          python-tornado-doc,
+          python-twisted,
+Recommends: python-concurrent.futures,
 Description: scalable, non-blocking web server and tools
- Tornado is an open source version of the scalable, non-blocking
- web server and tools that power FriendFeed. The FriendFeed application
- is written using a web framework that looks a bit like web.py or
- Google's webapp, but with additional tools and optimizations to take
- advantage of the underlying non-blocking infrastructure.
+ Tornado is a Python web framework and asynchronous networking library,
+ originally developed at FriendFeed. By using non-blocking network I/O,
+ Tornado can scale to tens of thousands of open connections, making it ideal
+ for long polling, WebSockets, and other applications that require a
+ long-lived connection to each user.
  .
  This is the Python 2 version of the package.
 
 Package: python3-tornado
 Architecture: any
-Depends: ca-certificates, ${misc:Depends}, ${python3:Depends}
+Depends: ca-certificates,
+         ${misc:Depends},
+         ${python3:Depends},
+         ${shlibs:Depends},
+Suggests: python3-pycurl,
+          python-tornado-doc,
+          python3-twisted,
 Description: scalable, non-blocking web server and tools - Python 3 package
- Tornado is an open source version of the scalable, non-blocking
- web server and tools that power FriendFeed. The FriendFeed application
- is written using a web framework that looks a bit like web.py or
- Google's webapp, but with additional tools and optimizations to take
- advantage of the underlying non-blocking infrastructure.
+ Tornado is a Python web framework and asynchronous networking library,
+ originally developed at FriendFeed. By using non-blocking network I/O,
+ Tornado can scale to tens of thousands of open connections, making it ideal
+ for long polling, WebSockets, and other applications that require a
+ long-lived connection to each user.
  .
  This is the Python 3 version of the package.
+
+Package: python-tornado-doc
+Architecture: all
+Section: doc
+Depends: ${misc:Depends},
+         ${sphinxdoc:Depends},
+         python3-doc,
+Description: scalable, non-blocking web server and tools - documentation
+ Tornado is a Python web framework and asynchronous networking library,
+ originally developed at FriendFeed. By using non-blocking network I/O,
+ Tornado can scale to tens of thousands of open connections, making it ideal
+ for long polling, WebSockets, and other applications that require a
+ long-lived connection to each user.
+ .
+ This package contains the documentation.
