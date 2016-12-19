@@ -1,3 +1,9 @@
+python-tornado (4.4.2-1~bpo8+2) jessie-backports; urgency=medium
+
+  * Remove OR from B-D, because wanna-build doesn't consider alternatives
+
+ -- Ondřej Nový <onovy@debian.org>  Mon, 19 Dec 2016 12:16:21 +0100
+
 python-tornado (4.4.2-1~bpo8+1) jessie-backports; urgency=medium
 
   * Rebuild for jessie-backports.
