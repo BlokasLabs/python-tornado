@@ -1,5 +1,6 @@
-python-tornado (4.4.2-2) UNRELEASED; urgency=medium
+python-tornado (4.4.3-1) UNRELEASED; urgency=medium
 
+  * New upstream bugfix release
   * No longer disable PIE during build
 
  -- Ondřej Nový <onovy@debian.org>  Mon, 03 Apr 2017 14:49:00 +0200
