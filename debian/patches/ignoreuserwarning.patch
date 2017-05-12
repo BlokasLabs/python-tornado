@@ -1,4 +1,4 @@
-From 1314798c20180df3b389d5a357b978edc968f69a Mon Sep 17 00:00:00 2001
+From c01678888c625b66234618eb9250c3cb5f3290eb Mon Sep 17 00:00:00 2001
 From: SVN-Git Migration <python-modules-team@lists.alioth.debian.org>
 Date: Thu, 8 Oct 2015 13:13:31 -0700
 Subject: ignore userwarning in tests
