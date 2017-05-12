@@ -1,4 +1,4 @@
-From 568f0450d4cead0595436bdb48d2811bbaa33788 Mon Sep 17 00:00:00 2001
+From 50e3471c4b9bbdb18f92a2ee8ea3690b52069f5b Mon Sep 17 00:00:00 2001
 From: SVN-Git Migration <python-modules-team@lists.alioth.debian.org>
 Date: Thu, 8 Oct 2015 13:13:32 -0700
 Subject: like travis buildd are often slow so skip the same tests
@@ -9,7 +9,7 @@ Patch-Name: skip-timing-tests.patch
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/tornado/test/util.py b/tornado/test/util.py
-index 2e3d779..33b9cf0 100644
+index 6c032da..e819771 100644
 --- a/tornado/test/util.py
 +++ b/tornado/test/util.py
 @@ -23,7 +23,7 @@ skipIfNonUnix = unittest.skipIf(os.name != 'posix' or sys.platform == 'cygwin',

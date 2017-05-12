@@ -1,4 +1,4 @@
-From c01678888c625b66234618eb9250c3cb5f3290eb Mon Sep 17 00:00:00 2001
+From 177428d63e78a27f2167242ef4732d1f42d64c81 Mon Sep 17 00:00:00 2001
 From: SVN-Git Migration <python-modules-team@lists.alioth.debian.org>
 Date: Thu, 8 Oct 2015 13:13:31 -0700
 Subject: ignore userwarning in tests
@@ -11,10 +11,10 @@ Patch-Name: ignoreuserwarning.patch
  1 file changed, 1 insertion(+)
 
 diff --git a/tornado/test/runtests.py b/tornado/test/runtests.py
-index f4dd46d..a0c8684 100644
+index b81c5f2..b4b2569 100644
 --- a/tornado/test/runtests.py
 +++ b/tornado/test/runtests.py
-@@ -101,6 +101,7 @@ def main():
+@@ -102,6 +102,7 @@ def main():
      # setuptools sometimes gives ImportWarnings about things that are on
      # sys.path even if they're not being used.
      warnings.filterwarnings("ignore", category=ImportWarning)

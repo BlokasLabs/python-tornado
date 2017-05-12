@@ -1,4 +1,4 @@
-From 6d57b019a63677b8771c55489a161b06942e57c7 Mon Sep 17 00:00:00 2001
+From 1796ee69175f8f4cbbb7d42835f54ae1f9c47c94 Mon Sep 17 00:00:00 2001
 From: Mattia Rizzolo <mattia@debian.org>
 Date: Sat, 21 May 2016 21:55:27 +0000
 Subject: skip UnixSocketTest on hurd, as unix sockets with SO_REUSEADDR are
@@ -14,10 +14,10 @@ Patch-Name: fix-ftbfs-on-hurd.patch
  1 file changed, 2 insertions(+)
 
 diff --git a/tornado/test/httpserver_test.py b/tornado/test/httpserver_test.py
-index 27052e6..1e1a561 100644
+index 11cb723..3535c56 100644
 --- a/tornado/test/httpserver_test.py
 +++ b/tornado/test/httpserver_test.py
-@@ -555,6 +555,8 @@ class ManualProtocolTest(HandlerBaseTestCase):
+@@ -581,6 +581,8 @@ class ManualProtocolTest(HandlerBaseTestCase):
  
  @unittest.skipIf(not hasattr(socket, 'AF_UNIX') or sys.platform == 'cygwin',
                   "unix sockets not supported on this platform")

@@ -4,6 +4,8 @@ Release notes
 .. toctree::
    :maxdepth: 2
 
+   releases/v4.5.1
+   releases/v4.5.0
    releases/v4.4.3
    releases/v4.4.2
    releases/v4.4.1
