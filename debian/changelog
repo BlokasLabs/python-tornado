@@ -1,3 +1,11 @@
+python-tornado (4.4.3-1~bpo8+1) jessie-backports; urgency=medium
+
+  * Rebuild for jessie-backports.
+  * Remove OR from B-D, because wanna-build doesn't consider alternatives
+  * Disable PIE during build
+
+ -- Ondřej Nový <onovy@debian.org>  Fri, 12 May 2017 16:36:06 +0200
+
 python-tornado (4.4.3-1) unstable; urgency=medium
 
   * New upstream bugfix release
