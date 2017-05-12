@@ -1,3 +1,9 @@
+python-tornado (4.5.1-1) UNRELEASED; urgency=medium
+
+  * New upstream release
+
+ -- Ondřej Nový <onovy@debian.org>  Fri, 12 May 2017 16:14:57 +0200
+
 python-tornado (4.4.3-1) unstable; urgency=medium
 
   * New upstream bugfix release
