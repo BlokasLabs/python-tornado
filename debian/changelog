@@ -1,7 +1,9 @@
 python-tornado (4.5.1-1) UNRELEASED; urgency=medium
 
   * New upstream release
-  * d/copyright: Bump my copyright year
+  * d/copyright
+    - Bump my copyright year
+    - Adjust for new upstream release
 
  -- Ondřej Nový <onovy@debian.org>  Fri, 12 May 2017 16:14:57 +0200
 
