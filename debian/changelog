@@ -1,6 +1,7 @@
 python-tornado (4.5.2-1) UNRELEASED; urgency=medium
 
   * New upstream release.
+  * Bump std-ver to 4.1.0.
 
  -- Julien Puydt <julien.puydt@laposte.net>  Sun, 03 Sep 2017 16:23:50 +0200
 
