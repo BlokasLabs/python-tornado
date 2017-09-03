@@ -1,3 +1,9 @@
+python-tornado (4.5.2-1) UNRELEASED; urgency=medium
+
+  * New upstream release.
+
+ -- Julien Puydt <julien.puydt@laposte.net>  Sun, 03 Sep 2017 16:23:50 +0200
+
 python-tornado (4.5.1-2) unstable; urgency=medium
 
   * Uploading to unstable
