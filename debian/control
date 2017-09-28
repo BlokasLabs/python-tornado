@@ -34,7 +34,6 @@ Standards-Version: 4.1.0
 Homepage: http://www.tornadoweb.org/
 Vcs-Git: https://anonscm.debian.org/git/python-modules/packages/python-tornado.git
 Vcs-Browser: https://anonscm.debian.org/cgit/python-modules/packages/python-tornado.git
-Testsuite: autopkgtest
 
 Package: python-tornado
 Architecture: any
