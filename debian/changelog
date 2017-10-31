@@ -1,4 +1,4 @@
-python-tornado (4.5.2-1) UNRELEASED; urgency=medium
+python-tornado (4.5.2-1) unstable; urgency=medium
 
   [ Julien Puydt ]
   * New upstream release.
@@ -8,7 +8,7 @@ python-tornado (4.5.2-1) UNRELEASED; urgency=medium
   [ Ondřej Nový ]
   * Bump std-ver to 4.1.1.
 
- -- Julien Puydt <julien.puydt@laposte.net>  Sun, 03 Sep 2017 16:23:50 +0200
+ -- Ondřej Nový <onovy@debian.org>  Tue, 31 Oct 2017 21:26:31 +0100
 
 python-tornado (4.5.1-2) unstable; urgency=medium
 
