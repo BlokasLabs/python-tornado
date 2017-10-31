@@ -1,4 +1,4 @@
-From 50e3471c4b9bbdb18f92a2ee8ea3690b52069f5b Mon Sep 17 00:00:00 2001
+From 1209b9b0d8883e9a141385b5e47bdf4f66853321 Mon Sep 17 00:00:00 2001
 From: SVN-Git Migration <python-modules-team@lists.alioth.debian.org>
 Date: Thu, 8 Oct 2015 13:13:32 -0700
 Subject: like travis buildd are often slow so skip the same tests

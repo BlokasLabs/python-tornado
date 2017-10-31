@@ -35,15 +35,6 @@ except ImportError:
     # ssl is not available on Google App Engine
     ssl = None
 
-try:
-    import certifi
-except ImportError:
-    # certifi is optional as long as we have ssl.create_default_context.
-    if ssl is None or hasattr(ssl, 'create_default_context'):
-        certifi = None
-    else:
-        raise
-
 if PY3:
     xrange = range
 
@@ -70,7 +61,7 @@ if hasattr(ssl, 'SSLContext'):
         # Python 3.2-3.3
         _client_ssl_defaults = ssl.SSLContext(ssl.PROTOCOL_SSLv23)
         _client_ssl_defaults.verify_mode = ssl.CERT_REQUIRED
-        _client_ssl_defaults.load_verify_locations(certifi.where())
+        _client_ssl_defaults.load_verify_locations('/etc/ssl/certs/ca-certificates.crt')
         _server_ssl_defaults = ssl.SSLContext(ssl.PROTOCOL_SSLv23)
         if hasattr(ssl, 'OP_NO_COMPRESSION'):
             # Disable TLS compression to avoid CRIME and related attacks.
@@ -81,7 +72,7 @@ if hasattr(ssl, 'SSLContext'):
 elif ssl:
     # Python 2.6-2.7.8
     _client_ssl_defaults = dict(cert_reqs=ssl.CERT_REQUIRED,
-                                ca_certs=certifi.where())
+                                ca_certs='/etc/ssl/certs/ca-certificates.crt')
     _server_ssl_defaults = {}
 else:
     # Google App Engine
@@ -172,9 +163,17 @@ def bind_sockets(port, address=None, family=socket.AF_UNSPEC,
             raise
         set_close_exec(sock.fileno())
         if os.name != 'nt':
-            sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+            try:
+                sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+            except socket.error as e:
+                if e.args[0] != errno.ENOPROTOOPT:
+                    raise
         if reuse_port:
-            sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEPORT, 1)
+            try:
+                sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEPORT, 1)
+            except socket.error as e:
+                if e.args[0] != errno.ENOPROTOOPT:
+                    raise
         if af == socket.AF_INET6:
             # On linux, ipv6 sockets accept ipv4 too by default,
             # but this makes it impossible to bind to both

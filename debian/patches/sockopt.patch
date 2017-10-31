@@ -1,4 +1,4 @@
-From 0ee0b386d8ba476b158abb404c41028d04329243 Mon Sep 17 00:00:00 2001
+From 372e881ad0340313dce63bbce2bbc1ef55110cb5 Mon Sep 17 00:00:00 2001
 From: SVN-Git Migration <python-modules-team@lists.alioth.debian.org>
 Date: Thu, 8 Oct 2015 13:13:33 -0700
 Subject: Ignore ENOPROTOOPT errors from SO_REUSEADDR or SO_ERROR on AF_UNIX
@@ -30,7 +30,7 @@ index a1619c4..1b64723 100644
              self.error = socket.error(err, os.strerror(err))
              # IOLoop implementations may vary: some of them return
 diff --git a/tornado/netutil.py b/tornado/netutil.py
-index c34c8c8..c973698 100644
+index 5233b20..af8e0ca 100644
 --- a/tornado/netutil.py
 +++ b/tornado/netutil.py
 @@ -172,9 +172,17 @@ def bind_sockets(port, address=None, family=socket.AF_UNSPEC,
