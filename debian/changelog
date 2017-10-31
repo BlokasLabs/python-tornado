@@ -1,9 +1,12 @@
 python-tornado (4.5.2-1) UNRELEASED; urgency=medium
 
+  [ Julien Puydt ]
   * New upstream release.
-  * Bump std-ver to 4.1.0.
   * Bump d/watch to version 4.
   * d/control: Remove Testsuite: autopkgtest, it's not needed
+
+  [ Ondřej Nový ]
+  * Bump std-ver to 4.1.1.
 
  -- Julien Puydt <julien.puydt@laposte.net>  Sun, 03 Sep 2017 16:23:50 +0200
 
