@@ -30,7 +30,7 @@ Build-Depends: ca-certificates,
                python3-sphinx,
                python3-sphinx-rtd-theme,
                python3-twisted,
-Standards-Version: 4.1.1
+Standards-Version: 4.1.3
 Homepage: http://www.tornadoweb.org/
 Vcs-Git: https://anonscm.debian.org/git/python-modules/packages/python-tornado.git
 Vcs-Browser: https://anonscm.debian.org/cgit/python-modules/packages/python-tornado.git
