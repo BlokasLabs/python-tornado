@@ -1,4 +1,4 @@
-From 2e6b95748a85d9110f1cc76cfe8b83ebf0d2a76b Mon Sep 17 00:00:00 2001
+From d2f9e204430b258a05de0d81776a41b654809788 Mon Sep 17 00:00:00 2001
 From: Mattia Rizzolo <mattia@debian.org>
 Date: Sat, 21 May 2016 21:55:27 +0000
 Subject: skip UnixSocketTest on hurd, as unix sockets with SO_REUSEADDR are
@@ -14,7 +14,7 @@ Patch-Name: fix-ftbfs-on-hurd.patch
  1 file changed, 2 insertions(+)
 
 diff --git a/tornado/test/httpserver_test.py b/tornado/test/httpserver_test.py
-index 11cb723..3535c56 100644
+index 59eb6fd..5da7271 100644
 --- a/tornado/test/httpserver_test.py
 +++ b/tornado/test/httpserver_test.py
 @@ -581,6 +581,8 @@ class ManualProtocolTest(HandlerBaseTestCase):

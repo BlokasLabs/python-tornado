@@ -1,4 +1,4 @@
-From a5406c8674f27e9800fe8e17f7cc95d4b4db168d Mon Sep 17 00:00:00 2001
+From 072a0c3c557ff1da84c2a2b641edf57db20147df Mon Sep 17 00:00:00 2001
 From: Julien Puydt <julien.puydt@laposte.net>
 Date: Thu, 8 Oct 2015 13:13:34 -0700
 Subject: remove dependance on certifi
@@ -15,7 +15,7 @@ Patch-Name: without-certifi.patch
  3 files changed, 4 insertions(+), 23 deletions(-)
 
 diff --git a/setup.py b/setup.py
-index 66d846b..026775f 100644
+index a1feea6..a475920 100644
 --- a/setup.py
 +++ b/setup.py
 @@ -136,7 +136,7 @@ if setuptools is not None:

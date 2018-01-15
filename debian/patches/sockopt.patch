@@ -1,4 +1,4 @@
-From 372e881ad0340313dce63bbce2bbc1ef55110cb5 Mon Sep 17 00:00:00 2001
+From 7d1cb0dd05fedcdb13740ce24b798b7adf673f31 Mon Sep 17 00:00:00 2001
 From: SVN-Git Migration <python-modules-team@lists.alioth.debian.org>
 Date: Thu, 8 Oct 2015 13:13:33 -0700
 Subject: Ignore ENOPROTOOPT errors from SO_REUSEADDR or SO_ERROR on AF_UNIX
@@ -12,10 +12,10 @@ Patch-Name: sockopt.patch
  2 files changed, 16 insertions(+), 3 deletions(-)
 
 diff --git a/tornado/iostream.py b/tornado/iostream.py
-index a1619c4..1b64723 100644
+index 639ed50..279e558 100644
 --- a/tornado/iostream.py
 +++ b/tornado/iostream.py
-@@ -1214,7 +1214,12 @@ class IOStream(BaseIOStream):
+@@ -1219,7 +1219,12 @@ class IOStream(BaseIOStream):
          return future
  
      def _handle_connect(self):
