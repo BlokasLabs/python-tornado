@@ -5,6 +5,7 @@ python-tornado (4.5.3-1) UNRELEASED; urgency=medium
   * Push dh compat to 11
   * d/copyright: Bump my copyright year
   * Move docs and examples into /usr/share/python-tornado
+  * Override wrong-section-according-to-package-name for python3-tornado too
 
  -- Ondřej Nový <onovy@debian.org>  Mon, 15 Jan 2018 12:57:07 +0100
 
