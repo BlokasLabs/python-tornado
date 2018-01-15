@@ -18,7 +18,7 @@ override_dh_compress:
 
 override_dh_sphinxdoc:
 ifeq (,$(findstring nodocs, $(DEB_BUILD_OPTIONS)))
-	sphinx-build -b html docs $(CURDIR)/debian/python-tornado-doc/usr/share/doc/python-tornado-doc/html
+	sphinx-build -b html docs $(CURDIR)/debian/python-tornado-doc/usr/share/doc/python-tornado/html
 	dh_sphinxdoc
 endif
 

@@ -5,5 +5,5 @@ Abstract: This documentation gives an introduction to Python Tornado.
 Section: Programming/Python
 
 Format: HTML
-Index: /usr/share/doc/python-tornado-doc/html/index.html
-Files: /usr/share/doc/python-tornado-doc/html/*.html
+Index: /usr/share/doc/python-tornado/html/index.html
+Files: /usr/share/doc/python-tornado/html/*.html

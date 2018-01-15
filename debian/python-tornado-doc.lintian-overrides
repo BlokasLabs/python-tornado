@@ -2,11 +2,11 @@
 python-tornado-doc binary: privacy-breach-uses-embedded-file
 python-tornado-doc binary: privacy-breach-generic
 # examples on how to connect to facebook are expected to connect to the web
-python-tornado-doc: privacy-breach-facebook usr/share/doc/python-tornado-doc/examples/facebook/templates/modules/post.html (//graph.facebook.com/{{ escape(post[)
+python-tornado-doc: privacy-breach-facebook usr/share/doc/python-tornado/examples/facebook/templates/modules/post.html (//graph.facebook.com/{{ escape(post[)
 # examples, so duplication shouldn't be a problem
-python-tornado-doc: duplicate-files usr/share/doc/python-tornado-doc/examples/appengine/templates/archive.html usr/share/doc/python-tornado-doc/examples/blog/templates/archive.html
-python-tornado-doc: duplicate-files usr/share/doc/python-tornado-doc/examples/appengine/templates/entry.html usr/share/doc/python-tornado-doc/examples/blog/templates/entry.html
-python-tornado-doc: duplicate-files usr/share/doc/python-tornado-doc/examples/appengine/templates/feed.xml usr/share/doc/python-tornado-doc/examples/blog/templates/feed.xml
-python-tornado-doc: duplicate-files usr/share/doc/python-tornado-doc/examples/appengine/templates/home.html usr/share/doc/python-tornado-doc/examples/blog/templates/home.html
-python-tornado-doc: duplicate-files usr/share/doc/python-tornado-doc/examples/chat/static/chat.css usr/share/doc/python-tornado-doc/examples/websocket/static/chat.css
-python-tornado-doc: duplicate-files usr/share/doc/python-tornado-doc/examples/chat/templates/message.html usr/share/doc/python-tornado-doc/examples/websocket/templates/message.html
+python-tornado-doc: duplicate-files usr/share/doc/python-tornado/examples/appengine/templates/archive.html usr/share/doc/python-tornado/examples/blog/templates/archive.html
+python-tornado-doc: duplicate-files usr/share/doc/python-tornado/examples/appengine/templates/entry.html usr/share/doc/python-tornado/examples/blog/templates/entry.html
+python-tornado-doc: duplicate-files usr/share/doc/python-tornado/examples/appengine/templates/feed.xml usr/share/doc/python-tornado/examples/blog/templates/feed.xml
+python-tornado-doc: duplicate-files usr/share/doc/python-tornado/examples/appengine/templates/home.html usr/share/doc/python-tornado/examples/blog/templates/home.html
+python-tornado-doc: duplicate-files usr/share/doc/python-tornado/examples/chat/static/chat.css usr/share/doc/python-tornado/examples/websocket/static/chat.css
+python-tornado-doc: duplicate-files usr/share/doc/python-tornado/examples/chat/templates/message.html usr/share/doc/python-tornado/examples/websocket/templates/message.html
