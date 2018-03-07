@@ -1,4 +1,4 @@
-``tornado.gen`` --- Simplify asynchronous code
+``tornado.gen`` --- Generator-based coroutines
 ==============================================
 
 .. testsetup::
@@ -21,7 +21,6 @@
    .. autoexception:: Return
 
    .. autofunction:: with_timeout
-   .. autoexception:: TimeoutError
 
    .. autofunction:: sleep
 
