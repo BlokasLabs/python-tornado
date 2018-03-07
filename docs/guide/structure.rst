@@ -165,7 +165,7 @@ of form-encoding may override `~.RequestHandler.prepare` to parse their
 requests::
 
     def prepare(self):
-        if self.request.headers["Content-Type"].startswith("application/json"):
+        if self.request.headers.get("Content-Type", "").startswith("application/json"):
             self.json_args = json.loads(self.request.body)
         else:
             self.json_args = None
@@ -305,9 +305,10 @@ non-blocking way.  This topic is covered in more detail in
 asynchronous techniques in `.RequestHandler` subclasses.
 
 The simplest way to make a handler asynchronous is to use the
-`.coroutine` decorator.  This allows you to perform non-blocking I/O
-with the ``yield`` keyword, and no response will be sent until the
-coroutine has returned.  See :doc:`coroutines` for more details.
+`.coroutine` decorator or ``async def``. This allows you to perform
+non-blocking I/O with the ``yield`` or ``await`` keywords, and no
+response will be sent until the coroutine has returned. See
+:doc:`coroutines` for more details.
 
 In some cases, coroutines may be less convenient than a
 callback-oriented style, in which case the `.tornado.web.asynchronous`
