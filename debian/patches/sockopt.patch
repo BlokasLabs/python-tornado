@@ -11,11 +11,9 @@ Patch-Name: sockopt.patch
  tornado/netutil.py  | 12 ++++++++++--
  2 files changed, 16 insertions(+), 3 deletions(-)
 
-diff --git a/tornado/iostream.py b/tornado/iostream.py
-index 639ed50..279e558 100644
 --- a/tornado/iostream.py
 +++ b/tornado/iostream.py
-@@ -1219,7 +1219,12 @@ class IOStream(BaseIOStream):
+@@ -1349,7 +1349,12 @@
          return future
  
      def _handle_connect(self):
@@ -29,11 +27,9 @@ index 639ed50..279e558 100644
          if err != 0:
              self.error = socket.error(err, os.strerror(err))
              # IOLoop implementations may vary: some of them return
-diff --git a/tornado/netutil.py b/tornado/netutil.py
-index 5233b20..af8e0ca 100644
 --- a/tornado/netutil.py
 +++ b/tornado/netutil.py
-@@ -172,9 +172,17 @@ def bind_sockets(port, address=None, family=socket.AF_UNSPEC,
+@@ -138,9 +138,17 @@
              raise
          set_close_exec(sock.fileno())
          if os.name != 'nt':
@@ -53,3 +49,17 @@ index 5233b20..af8e0ca 100644
          if af == socket.AF_INET6:
              # On linux, ipv6 sockets accept ipv4 too by default,
              # but this makes it impossible to bind to both
+@@ -180,7 +188,12 @@
+         """
+         sock = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
+         set_close_exec(sock.fileno())
+-        sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
++        try:
++            sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
++        except socket.error as e:
++            if e.args[0] != errno.ENOPROTOOPT:
++                raise
++
+         sock.setblocking(0)
+         try:
+             st = os.stat(file)

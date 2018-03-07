@@ -6,6 +6,7 @@ python-tornado (5.0.0-1) UNRELEASED; urgency=medium
 
   [ Julien Puydt ]
   * New upstream release.
+  * Refresh patches.
 
  -- Julien Puydt <julien.puydt@laposte.net>  Wed, 07 Mar 2018 11:28:55 +0100
 

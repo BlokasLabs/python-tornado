@@ -10,11 +10,9 @@ Patch-Name: ignoreuserwarning.patch
  tornado/test/runtests.py | 1 +
  1 file changed, 1 insertion(+)
 
-diff --git a/tornado/test/runtests.py b/tornado/test/runtests.py
-index b81c5f2..b4b2569 100644
 --- a/tornado/test/runtests.py
 +++ b/tornado/test/runtests.py
-@@ -102,6 +102,7 @@ def main():
+@@ -124,6 +124,7 @@
      # setuptools sometimes gives ImportWarnings about things that are on
      # sys.path even if they're not being used.
      warnings.filterwarnings("ignore", category=ImportWarning)
