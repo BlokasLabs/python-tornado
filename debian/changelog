@@ -1,4 +1,4 @@
-python-tornado (5.0.0-1) UNRELEASED; urgency=medium
+python-tornado (5.0.0-1) unstable; urgency=medium
 
   [ Ondřej Nový ]
   * d/control: Set Vcs-* to salsa.debian.org
@@ -8,7 +8,7 @@ python-tornado (5.0.0-1) UNRELEASED; urgency=medium
   * New upstream release.
   * Refresh patches.
 
- -- Julien Puydt <julien.puydt@laposte.net>  Wed, 07 Mar 2018 11:28:55 +0100
+ -- Julien Puydt <julien.puydt@laposte.net>  Tue, 13 Mar 2018 23:55:49 +0100
 
 python-tornado (4.5.3-1) unstable; urgency=medium
 
