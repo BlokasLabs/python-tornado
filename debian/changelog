@@ -1,8 +1,9 @@
-python-tornado (5.0.0-2) UNRELEASED; urgency=medium
+python-tornado (5.0.0-2) unstable; urgency=medium
 
+  [ Ondřej Nový ]
   * Add Breaks: python{,3}-zmq (<< 17) (Closes: #893360)
 
- -- Ondřej Nový <onovy@debian.org>  Mon, 19 Mar 2018 08:44:18 +0100
+ -- Julien Puydt <julien.puydt@laposte.net>  Wed, 21 Mar 2018 08:54:46 +0100
 
 python-tornado (5.0.0-1) unstable; urgency=medium
 
