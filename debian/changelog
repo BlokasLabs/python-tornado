@@ -1,3 +1,10 @@
+python-tornado (5.0.0-3) UNRELEASED; urgency=medium
+
+  * Breaks python{,3}-zmq (<< 17.0.0-1~), because we need patch
+    from -1 Debian version
+
+ -- Ondřej Nový <onovy@debian.org>  Fri, 06 Apr 2018 15:17:55 +0200
+
 python-tornado (5.0.0-2) unstable; urgency=medium
 
   [ Ondřej Nový ]
