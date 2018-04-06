@@ -1,4 +1,4 @@
-From 8707fa40704fd540fed95455640cb5be41644943 Mon Sep 17 00:00:00 2001
+From 2d0dc676b7cb1d8c944c3ac6a46a2d4073c1be26 Mon Sep 17 00:00:00 2001
 From: SVN-Git Migration <python-modules-team@lists.alioth.debian.org>
 Date: Thu, 8 Oct 2015 13:13:30 -0700
 Subject: Disable domain tests to prevent internet access during build
