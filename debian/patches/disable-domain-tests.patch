@@ -1,4 +1,4 @@
-From 31b5f00e4189ec7e619992eca1770398a2e4dbaf Mon Sep 17 00:00:00 2001
+From b96098fe689bc676e029d44c681605e955322639 Mon Sep 17 00:00:00 2001
 From: SVN-Git Migration <python-modules-team@lists.alioth.debian.org>
 Date: Thu, 8 Oct 2015 13:13:30 -0700
 Subject: Disable domain tests to prevent internet access during build
@@ -8,9 +8,11 @@ Patch-Name: disable-domain-tests.patch
  tornado/test/netutil_test.py | 2 ++
  1 file changed, 2 insertions(+)
 
+diff --git a/tornado/test/netutil_test.py b/tornado/test/netutil_test.py
+index f987994..a81e4ac 100644
 --- a/tornado/test/netutil_test.py
 +++ b/tornado/test/netutil_test.py
-@@ -53,6 +53,7 @@
+@@ -53,6 +53,7 @@ class _ResolverTestMixin(object):
  # It is impossible to quickly and consistently generate an error in name
  # resolution, so test this case separately, using mocks as needed.
  class _ResolverErrorTestMixin(object):
@@ -18,7 +20,7 @@ Patch-Name: disable-domain-tests.patch
      def test_bad_host(self):
          def handler(exc_typ, exc_val, exc_tb):
              self.stop(exc_val)
-@@ -65,6 +66,7 @@
+@@ -65,6 +66,7 @@ class _ResolverErrorTestMixin(object):
          self.assertIsInstance(result, Exception)
  
      @gen_test
