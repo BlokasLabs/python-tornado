@@ -1,4 +1,4 @@
-From 319f6effe4c974bc51f77e6dc9013bd2533528e1 Mon Sep 17 00:00:00 2001
+From e0782086f74acb82fdb9da066244eea794c1f863 Mon Sep 17 00:00:00 2001
 From: SVN-Git Migration <python-modules-team@lists.alioth.debian.org>
 Date: Thu, 8 Oct 2015 13:13:33 -0700
 Subject: Ignore ENOPROTOOPT errors from SO_REUSEADDR or SO_ERROR on AF_UNIX
@@ -8,8 +8,8 @@ systems which do not implement them there.
 Patch-Name: sockopt.patch
 ---
  tornado/iostream.py |  7 ++++++-
- tornado/netutil.py  | 17 +++++++++++++++--
- 2 files changed, 21 insertions(+), 3 deletions(-)
+ tornado/netutil.py  | 18 +++++++++++++++---
+ 2 files changed, 21 insertions(+), 4 deletions(-)
 
 diff --git a/tornado/iostream.py b/tornado/iostream.py
 index ad50be5..e80f82d 100644
@@ -30,7 +30,7 @@ index ad50be5..e80f82d 100644
              self.error = socket.error(err, os.strerror(err))
              # IOLoop implementations may vary: some of them return
 diff --git a/tornado/netutil.py b/tornado/netutil.py
-index 2d55ccf..b61a4b5 100644
+index 2d55ccf..b358659 100644
 --- a/tornado/netutil.py
 +++ b/tornado/netutil.py
 @@ -138,9 +138,17 @@ def bind_sockets(port, address=None, family=socket.AF_UNSPEC,
@@ -53,10 +53,11 @@ index 2d55ccf..b61a4b5 100644
          if af == socket.AF_INET6:
              # On linux, ipv6 sockets accept ipv4 too by default,
              # but this makes it impossible to bind to both
-@@ -181,6 +189,11 @@ if hasattr(socket, 'AF_UNIX'):
+@@ -180,7 +188,11 @@ if hasattr(socket, 'AF_UNIX'):
+         """
          sock = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
          set_close_exec(sock.fileno())
-         sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+-        sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 +        try:
 +            sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 +        except socket.error as e:
