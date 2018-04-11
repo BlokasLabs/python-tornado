@@ -1,4 +1,4 @@
-From e0782086f74acb82fdb9da066244eea794c1f863 Mon Sep 17 00:00:00 2001
+From 7ebb02a162a6567d816389c5703d449c62f28132 Mon Sep 17 00:00:00 2001
 From: SVN-Git Migration <python-modules-team@lists.alioth.debian.org>
 Date: Thu, 8 Oct 2015 13:13:33 -0700
 Subject: Ignore ENOPROTOOPT errors from SO_REUSEADDR or SO_ERROR on AF_UNIX
