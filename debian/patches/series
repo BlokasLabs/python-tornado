@@ -2,6 +2,5 @@ disable-domain-tests.patch
 ignoreuserwarning.patch
 skip-timing-tests.patch
 sockopt.patch
-without-certifi.patch
 fix-ftbfs-on-hurd.patch
-0007-Use-local-objects.inv-for-intersphinx-mapping.patch
+0006-Use-local-objects.inv-for-intersphinx-mapping.patch
