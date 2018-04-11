@@ -2,10 +2,10 @@
 4cb2e3ca8901762af1880a7de431709be49b49a5
 4cb2e3ca8901762af1880a7de431709be49b49a5
 391c917a0597fdbd790bbc80b941fde4f3d2fb9f
-391c917a0597fdbd790bbc80b941fde4f3d2fb9f
-python-tornado_5.0.0.orig.tar.gz
-f0cb896fab583bf549ff8889939819ac41aadd01
-527322
+1013ace1adc269ea4edfb8475cf7ddd219652389
+python-tornado_5.0.2.orig.tar.gz
+c8690c8108ce9edd6c55151f66ade61e0a11ab10
+529841
 debianTag="debian/%e%v"
 patchedTag="patched/%e%v"
 upstreamTag="upstream/%e%u"
