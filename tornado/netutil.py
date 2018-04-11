@@ -189,6 +189,11 @@ if hasattr(socket, 'AF_UNIX'):
         sock = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
         set_close_exec(sock.fileno())
         sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+        try:
+            sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+        except socket.error as e:
+            if e.args[0] != errno.ENOPROTOOPT:
+                raise
         sock.setblocking(0)
         try:
             st = os.stat(file)
