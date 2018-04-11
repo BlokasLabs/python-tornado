@@ -1,5 +1,6 @@
-python-tornado (5.0.0-3) UNRELEASED; urgency=medium
+python-tornado (5.0.2-1) UNRELEASED; urgency=medium
 
+  * New upstream release
   * Breaks python{,3}-zmq (<< 17.0.0-1~), because we need patch
     from -1 Debian version
   * Bump std-ver to 4.1.4 (no changes needed)
