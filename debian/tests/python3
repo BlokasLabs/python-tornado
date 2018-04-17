@@ -3,9 +3,9 @@ set -efu
 
 PYS=${PYS:-"$(py3versions -r 2>/dev/null)"}
 
-cd "$ADTTMP"
+cd "$AUTOPKGTEST_TMP"
 # subprocess tests get unexpected output if $HOME/.python_history is not readable
-export HOME=$ADTTMP
+export HOME=$AUTOPKGTEST_TMP
 
 for py in $PYS; do
     echo "=== $py ==="

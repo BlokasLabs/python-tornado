@@ -3,7 +3,7 @@ set -efu
 
 PYS=${PYS:-"$(pyversions -r 2>/dev/null)"}
 
-cd "$ADTTMP"
+cd "$AUTOPKGTEST_TMP"
 
 for py in $PYS; do
     echo "=== $py ==="
