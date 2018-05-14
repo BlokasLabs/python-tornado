@@ -1,6 +1,5 @@
 Source: python-tornado
 Section: web
-X-Python-Version: >= 2.7
 X-Python3-Version: >= 3.3
 Priority: optional
 Maintainer: Debian Python Modules Team <python-modules-team@lists.alioth.debian.org>
