@@ -604,8 +604,6 @@ class ManualProtocolTest(HandlerBaseTestCase):
 
 @unittest.skipIf(not hasattr(socket, 'AF_UNIX') or sys.platform == 'cygwin',
                  "unix sockets not supported on this platform")
-@unittest.skipIf(sys.platform == 'gnu0',
-                 "unix sockets with SO_REUSEADDR not supported on this platform")
 class UnixSocketTest(AsyncTestCase):
     """HTTPServers can listen on Unix sockets too.
 

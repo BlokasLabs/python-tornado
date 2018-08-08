@@ -53,7 +53,6 @@ class _ResolverTestMixin(object):
 # It is impossible to quickly and consistently generate an error in name
 # resolution, so test this case separately, using mocks as needed.
 class _ResolverErrorTestMixin(object):
-    @unittest.skip("Prevent internet access during build")
     def test_bad_host(self):
         def handler(exc_typ, exc_val, exc_tb):
             self.stop(exc_val)
@@ -66,7 +65,6 @@ class _ResolverErrorTestMixin(object):
         self.assertIsInstance(result, Exception)
 
     @gen_test
-    @unittest.skip("Prevent internet access during build")
     def test_future_interface_bad_host(self):
         with self.assertRaises(IOError):
             yield self.resolver.resolve('an invalid domain', 80,

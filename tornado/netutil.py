@@ -138,17 +138,9 @@ def bind_sockets(port, address=None, family=socket.AF_UNSPEC,
             raise
         set_close_exec(sock.fileno())
         if os.name != 'nt':
-            try:
-                sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-            except socket.error as e:
-                if e.args[0] != errno.ENOPROTOOPT:
-                    raise
+            sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         if reuse_port:
-            try:
-                sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEPORT, 1)
-            except socket.error as e:
-                if e.args[0] != errno.ENOPROTOOPT:
-                    raise
+            sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEPORT, 1)
         if af == socket.AF_INET6:
             # On linux, ipv6 sockets accept ipv4 too by default,
             # but this makes it impossible to bind to both
@@ -188,11 +180,7 @@ if hasattr(socket, 'AF_UNIX'):
         """
         sock = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
         set_close_exec(sock.fileno())
-        try:
-            sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-        except socket.error as e:
-            if e.args[0] != errno.ENOPROTOOPT:
-                raise
+        sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         sock.setblocking(0)
         try:
             st = os.stat(file)
