@@ -6,6 +6,7 @@ python-tornado (5.1.1-1) UNRELEASED; urgency=medium
   * d/control: Remove ancient X-Python3-Version field
   * Convert git repository from git-dpm to gbp layout
   * Use 'python3 -m sphinx' instead of sphinx-build for building docs
+  * Rebase patches, drop sockopt.patch (applied upstream)
 
  -- Ondřej Nový <onovy@debian.org>  Tue, 17 Apr 2018 13:18:00 +0200
 

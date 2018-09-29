@@ -8,11 +8,9 @@ Patch-Name: skip-timing-tests.patch
  tornado/test/util.py | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/tornado/test/util.py b/tornado/test/util.py
-index 63a9762..f2c58fc 100644
 --- a/tornado/test/util.py
 +++ b/tornado/test/util.py
-@@ -17,7 +17,7 @@ skipIfNonUnix = unittest.skipIf(os.name != 'posix' or sys.platform == 'cygwin',
+@@ -18,7 +18,7 @@
  
  # travis-ci.org runs our tests in an overworked virtual machine, which makes
  # timing-related tests unreliable.
