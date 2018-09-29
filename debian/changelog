@@ -1,4 +1,4 @@
-python-tornado (5.1.1-1) UNRELEASED; urgency=medium
+python-tornado (5.1.1-1) unstable; urgency=medium
 
   * New upstream release
   * d/tests: Use AUTOPKGTEST_TMP instead of ADTTMP
@@ -13,7 +13,7 @@ python-tornado (5.1.1-1) UNRELEASED; urgency=medium
   * Add upstream metadata
   * Standards version is 4.2.1 now (no changes)
 
- -- Ondřej Nový <onovy@debian.org>  Tue, 17 Apr 2018 13:18:00 +0200
+ -- Ondřej Nový <onovy@debian.org>  Sat, 29 Sep 2018 16:15:02 +0200
 
 python-tornado (5.0.2-1) unstable; urgency=medium
 
