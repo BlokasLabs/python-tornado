@@ -8,6 +8,8 @@ python-tornado (5.1.1-1) UNRELEASED; urgency=medium
   * Use 'python3 -m sphinx' instead of sphinx-build for building docs
   * Rebase patches, drop sockopt.patch (applied upstream)
   * Regenerate test crt, newer OpenSSL require at least RSA 2048bit
+  * d/p/skip-timing-tests.patch:
+    Drop and set TRAVIS+NO_NETWORK envs in d/rules instead
 
  -- Ondřej Nový <onovy@debian.org>  Tue, 17 Apr 2018 13:18:00 +0200
 

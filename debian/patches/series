@@ -1,6 +1,5 @@
 disable-domain-tests.patch
 ignoreuserwarning.patch
-skip-timing-tests.patch
 fix-ftbfs-on-hurd.patch
 0006-Use-local-objects.inv-for-intersphinx-mapping.patch
 New_test_crt.patch

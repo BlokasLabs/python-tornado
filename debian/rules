@@ -4,6 +4,8 @@ export DH_VERBOSE=1
 export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 export PYBUILD_NAME=tornado
 export PYBUILD_TEST_ARGS={interpreter} ./tornado/test/runtests.py --verbose
+export TRAVIS=1
+export NO_NETWORK=1
 # py3 tests is failling without this
 export HOME=/tmp
 
