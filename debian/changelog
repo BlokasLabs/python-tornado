@@ -11,6 +11,7 @@ python-tornado (5.1.1-1) UNRELEASED; urgency=medium
   * d/p/skip-timing-tests.patch:
     Drop and set TRAVIS+NO_NETWORK envs in d/rules instead
   * Add upstream metadata
+  * Standards version is 4.2.1 now (no changes)
 
  -- Ondřej Nový <onovy@debian.org>  Tue, 17 Apr 2018 13:18:00 +0200
 
