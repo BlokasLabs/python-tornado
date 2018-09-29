@@ -7,6 +7,7 @@ python-tornado (5.1.1-1) UNRELEASED; urgency=medium
   * Convert git repository from git-dpm to gbp layout
   * Use 'python3 -m sphinx' instead of sphinx-build for building docs
   * Rebase patches, drop sockopt.patch (applied upstream)
+  * Regenerate test crt, newer OpenSSL require at least RSA 2048bit
 
  -- Ondřej Nový <onovy@debian.org>  Tue, 17 Apr 2018 13:18:00 +0200
 
