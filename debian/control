@@ -1,6 +1,5 @@
 Source: python-tornado
 Section: web
-X-Python-Version: >= 2.7
 X-Python3-Version: >= 3.3
 Priority: optional
 Maintainer: Debian Python Modules Team <python-modules-team@lists.alioth.debian.org>
@@ -12,14 +11,6 @@ Uploaders: Carl Chenet <chaica@debian.org>,
 Build-Depends: ca-certificates,
                debhelper (>= 11),
                dh-python,
-               python-all-dev,
-               python-backports-abc,
-               python-concurrent.futures,
-               python-mock,
-               python-pycurl,
-               python-setuptools,
-               python-singledispatch,
-               python-twisted,
                python3-all-dev,
                python3 (>= 3.5) | python3-backports-abc,
                python3-doc,
@@ -34,26 +25,6 @@ Standards-Version: 4.1.3
 Homepage: http://www.tornadoweb.org/
 Vcs-Git: https://salsa.debian.org/python-team/modules/python-tornado.git
 Vcs-Browser: https://salsa.debian.org/python-team/modules/python-tornado
-
-Package: python-tornado
-Architecture: any
-Depends: ca-certificates,
-         ${misc:Depends},
-         ${python:Depends},
-         ${shlibs:Depends},
-Suggests: python-mysqldb,
-          python-pycurl,
-          python-tornado-doc,
-          python-twisted,
-Recommends: python-concurrent.futures,
-Description: scalable, non-blocking web server and tools
- Tornado is a Python web framework and asynchronous networking library,
- originally developed at FriendFeed. By using non-blocking network I/O,
- Tornado can scale to tens of thousands of open connections, making it ideal
- for long polling, WebSockets, and other applications that require a
- long-lived connection to each user.
- .
- This is the Python 2 version of the package.
 
 Package: python3-tornado
 Architecture: any
