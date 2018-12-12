@@ -1,9 +1,9 @@
-Document: python-tornado
+Document: python-tornado4
 Title: Python Tornado Documentation
 Author: The Tornado Authors
 Abstract: This documentation gives an introduction to Python Tornado.
 Section: Programming/Python
 
 Format: HTML
-Index: /usr/share/doc/python-tornado/html/index.html
-Files: /usr/share/doc/python-tornado/html/*.html
+Index: /usr/share/doc/python-tornado4/html/index.html
+Files: /usr/share/doc/python-tornado4/html/*.html

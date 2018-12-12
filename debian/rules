@@ -2,13 +2,17 @@
 
 export DH_VERBOSE=1
 export DEB_BUILD_MAINT_OPTIONS = hardening=+all
-export PYBUILD_NAME=tornado
-export PYBUILD_TEST_ARGS={interpreter} ./tornado/test/runtests.py --verbose
+export PYBUILD_NAME=tornado4
+export PYBUILD_TEST_ARGS={interpreter} ./tornado4/test/runtests.py --verbose
 # py3 tests is failling without this
 export HOME=/tmp
 
 %:
 	dh $@ --with python3,sphinxdoc --buildsystem=pybuild
+
+override_dh_auto_configure:
+	ln -sf tornado tornado4
+	dh_auto_configure
 
 override_dh_auto_test:
 	PYBUILD_SYSTEM=custom PYTHONPATH=. dh_auto_test
@@ -18,7 +22,7 @@ override_dh_compress:
 
 override_dh_sphinxdoc:
 ifeq (,$(findstring nodocs, $(DEB_BUILD_OPTIONS)))
-	sphinx-build -b html docs $(CURDIR)/debian/python-tornado-doc/usr/share/doc/python-tornado/html
+	sphinx-build -b html docs $(CURDIR)/debian/python-tornado4-doc/usr/share/doc/python-tornado4/html
 	dh_sphinxdoc
 endif
 

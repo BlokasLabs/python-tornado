@@ -1,0 +1,5 @@
+# webserver belongs to web (#665854)
+python3-tornado4 binary: wrong-section-according-to-package-name
+# test sample, so duplication shouldn't be a problem
+python3-tornado4: duplicated-compressed-file usr/lib/python3/dist-packages/tornado4/test/static/sample.xml.bz2
+python3-tornado4: duplicated-compressed-file usr/lib/python3/dist-packages/tornado4/test/static/sample.xml.gz

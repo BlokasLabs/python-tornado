@@ -9,5 +9,5 @@ export HOME=$ADTTMP
 
 for py in $PYS; do
     echo "=== $py ==="
-    $py /usr/lib/python3/dist-packages/tornado/test/runtests.py --verbose 2>&1
+    $py /usr/lib/python3/dist-packages/tornado4/test/runtests.py --verbose 2>&1
 done

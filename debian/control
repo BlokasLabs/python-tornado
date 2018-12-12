@@ -1,4 +1,4 @@
-Source: python-tornado
+Source: python-tornado4
 Section: web
 Priority: optional
 Maintainer: Debian Python Modules Team <python-modules-team@lists.alioth.debian.org>
@@ -25,7 +25,7 @@ Homepage: http://www.tornadoweb.org/
 Vcs-Git: https://salsa.debian.org/python-team/modules/python-tornado.git
 Vcs-Browser: https://salsa.debian.org/python-team/modules/python-tornado
 
-Package: python3-tornado
+Package: python3-tornado4
 Architecture: any
 Depends: ca-certificates,
          ${misc:Depends},
@@ -43,7 +43,7 @@ Description: scalable, non-blocking web server and tools - Python 3 package
  .
  This is the Python 3 version of the package.
 
-Package: python-tornado-doc
+Package: python-tornado4-doc
 Architecture: all
 Section: doc
 Depends: ${misc:Depends},
