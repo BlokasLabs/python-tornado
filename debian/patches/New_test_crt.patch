@@ -1,7 +1,15 @@
-Author: Ondřej Nový <onovy@debian.org>
-Description: Regenerate test crt
-Forwarded: https://github.com/tornadoweb/tornado/pull/2509
+From: =?utf-8?b?T25kxZllaiBOb3bDvQ==?= <onovy@debian.org>
+Date: Thu, 27 Dec 2018 01:10:38 +0000
+Subject: Regenerate test crt
 
+Forwarded: https://github.com/tornadoweb/tornado/pull/2509
+---
+ tornado/test/test.crt | 31 ++++++++++++++++++-------------
+ tornado/test/test.key | 40 ++++++++++++++++++++++++++--------------
+ 2 files changed, 44 insertions(+), 27 deletions(-)
+
+diff --git a/tornado/test/test.crt b/tornado/test/test.crt
+index 25538c8..ffc49b0 100644
 --- a/tornado/test/test.crt
 +++ b/tornado/test/test.crt
 @@ -1,15 +1,20 @@
@@ -38,6 +46,8 @@ Forwarded: https://github.com/tornadoweb/tornado/pull/2509
 +atGXohijWJjYvU4mk0KFHORZrcBpsv9cfkFbmgVmiRwxRJ1tLauHM3Ne+VfqYE5M
 +4rTStSyz3ASqVKJ2iFMQueNR/tUOuDlfRt+0nhJMuYSSkW+KTgnwyOGU9cv+mxA=
  -----END CERTIFICATE-----
+diff --git a/tornado/test/test.key b/tornado/test/test.key
+index 577d518..7cb7d8d 100644
 --- a/tornado/test/test.key
 +++ b/tornado/test/test.key
 @@ -1,16 +1,28 @@
