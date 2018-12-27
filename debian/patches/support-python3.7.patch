@@ -1,4 +1,3 @@
-From 81376771172f62141a7755745b7ed97cbb835ddd Mon Sep 17 00:00:00 2001
 From: Benjamin Drung <benjamin.drung@cloud.ionos.com>
 Date: Thu, 15 Nov 2018 16:18:51 +0100
 Subject: [PATCH] Add support for Python 3.7
@@ -10,7 +9,7 @@ Subject: [PATCH] Add support for Python 3.7
  3 files changed, 3 insertions(+), 4 deletions(-)
 
 diff --git a/tornado/gen.py b/tornado/gen.py
-index 99f91066..bdb32ff3 100644
+index 99f9106..bdb32ff 100644
 --- a/tornado/gen.py
 +++ b/tornado/gen.py
 @@ -482,9 +482,8 @@ class WaitIterator(object):
@@ -25,7 +24,7 @@ index 99f91066..bdb32ff3 100644
      def __anext__(self):
          if self.done():
 diff --git a/tornado/queues.py b/tornado/queues.py
-index 0041a800..141c539b 100644
+index 0041a80..141c539 100644
 --- a/tornado/queues.py
 +++ b/tornado/queues.py
 @@ -253,7 +253,6 @@ class Queue(object):
@@ -37,7 +36,7 @@ index 0041a800..141c539b 100644
          return _QueueIterator(self)
  
 diff --git a/tornado/test/asyncio_test.py b/tornado/test/asyncio_test.py
-index d0e3f2b0..ae9125f9 100644
+index d0e3f2b..ae9125f 100644
 --- a/tornado/test/asyncio_test.py
 +++ b/tornado/test/asyncio_test.py
 @@ -46,7 +46,8 @@ class AsyncIOLoopTest(AsyncTestCase):
@@ -50,6 +49,3 @@ index d0e3f2b0..ae9125f9 100644
  
          x = yield ensure_future(
              asyncio.get_event_loop().run_in_executor(None, lambda: 42))
--- 
-2.17.1
-

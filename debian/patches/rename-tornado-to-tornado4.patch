@@ -1,4 +1,3 @@
-From 4b3779f54569a7cf76906848768ab484f32955b0 Mon Sep 17 00:00:00 2001
 From: Benjamin Drung <benjamin.drung@cloud.ionos.com>
 Date: Tue, 18 Dec 2018 18:32:04 +0100
 Subject: [PATCH] Rename tornado to tornado4
@@ -6,90 +5,90 @@ Subject: [PATCH] Rename tornado to tornado4
 To make tornado version 5 co-installable with tornado version 4, rename
 the older tornado to tornado4.
 ---
- setup.py                               | 10 +--
+ setup.py                               | 10 ++--
  tornado/_locale_data.py                |  2 +-
- tornado/auth.py                        | 70 +++++++++----------
- tornado/autoreload.py                  | 28 ++++----
- tornado/concurrent.py                  | 10 +--
- tornado/curl_httpclient.py             | 12 ++--
+ tornado/auth.py                        | 70 ++++++++++++-------------
+ tornado/autoreload.py                  | 28 +++++-----
+ tornado/concurrent.py                  | 10 ++--
+ tornado/curl_httpclient.py             | 12 ++---
  tornado/escape.py                      |  4 +-
- tornado/gen.py                         | 25 +++----
- tornado/http1connection.py             | 16 ++---
- tornado/httpclient.py                  | 22 +++---
- tornado/httpserver.py                  | 42 ++++++------
- tornado/httputil.py                    | 10 +--
- tornado/ioloop.py                      | 36 +++++-----
- tornado/iostream.py                    | 24 +++----
- tornado/locale.py                      | 12 ++--
- tornado/locks.py                       | 36 +++++-----
- tornado/log.py                         | 32 ++++-----
- tornado/netutil.py                     | 24 +++----
- tornado/options.py                     | 28 ++++----
- tornado/platform/asyncio.py            | 26 +++----
- tornado/platform/auto.py               | 12 ++--
+ tornado/gen.py                         | 25 ++++-----
+ tornado/http1connection.py             | 16 +++---
+ tornado/httpclient.py                  | 22 ++++----
+ tornado/httpserver.py                  | 42 +++++++--------
+ tornado/httputil.py                    | 10 ++--
+ tornado/ioloop.py                      | 36 ++++++-------
+ tornado/iostream.py                    | 24 ++++-----
+ tornado/locale.py                      | 12 ++---
+ tornado/locks.py                       | 36 ++++++-------
+ tornado/log.py                         | 32 ++++++------
+ tornado/netutil.py                     | 24 ++++-----
+ tornado/options.py                     | 28 +++++-----
+ tornado/platform/asyncio.py            | 26 +++++-----
+ tornado/platform/auto.py               | 12 ++---
  tornado/platform/caresresolver.py      |  8 +--
  tornado/platform/common.py             |  4 +-
  tornado/platform/epoll.py              |  2 +-
- tornado/platform/interface.py          |  6 +-
+ tornado/platform/interface.py          |  6 +--
  tornado/platform/kqueue.py             |  2 +-
  tornado/platform/posix.py              |  2 +-
  tornado/platform/select.py             |  2 +-
- tornado/platform/twisted.py            | 56 +++++++--------
- tornado/process.py                     | 18 ++---
- tornado/queues.py                      | 22 +++---
- tornado/routing.py                     | 12 ++--
- tornado/simple_httpclient.py           | 22 +++---
+ tornado/platform/twisted.py            | 56 ++++++++++----------
+ tornado/process.py                     | 18 +++----
+ tornado/queues.py                      | 22 ++++----
+ tornado/routing.py                     | 12 ++---
+ tornado/simple_httpclient.py           | 22 ++++----
  tornado/speedups.c                     |  2 +-
- tornado/stack_context.py               |  6 +-
- tornado/tcpclient.py                   | 12 ++--
- tornado/tcpserver.py                   | 32 ++++-----
- tornado/template.py                    | 14 ++--
- tornado/test/__main__.py               |  6 +-
- tornado/test/asyncio_test.py           | 10 +--
- tornado/test/auth_test.py              | 16 ++---
- tornado/test/concurrent_test.py        | 18 ++---
- tornado/test/curl_httpclient_test.py   | 16 ++---
- tornado/test/escape_test.py            | 10 +--
- tornado/test/gen_test.py               | 22 +++---
- tornado/test/http1connection_test.py   | 12 ++--
- tornado/test/httpclient_test.py        | 26 +++----
- tornado/test/httpserver_test.py        | 28 ++++----
- tornado/test/httputil_test.py          | 10 +--
- tornado/test/import_test.py            | 56 +++++++--------
- tornado/test/ioloop_test.py            | 14 ++--
- tornado/test/iostream_test.py          | 26 +++----
- tornado/test/locale_test.py            | 44 ++++++------
+ tornado/stack_context.py               |  6 +--
+ tornado/tcpclient.py                   | 12 ++---
+ tornado/tcpserver.py                   | 32 ++++++------
+ tornado/template.py                    | 14 ++---
+ tornado/test/__main__.py               |  6 +--
+ tornado/test/asyncio_test.py           | 10 ++--
+ tornado/test/auth_test.py              | 16 +++---
+ tornado/test/concurrent_test.py        | 18 +++----
+ tornado/test/curl_httpclient_test.py   | 16 +++---
+ tornado/test/escape_test.py            | 10 ++--
+ tornado/test/gen_test.py               | 22 ++++----
+ tornado/test/http1connection_test.py   | 12 ++---
+ tornado/test/httpclient_test.py        | 26 +++++-----
+ tornado/test/httpserver_test.py        | 28 +++++-----
+ tornado/test/httputil_test.py          | 10 ++--
+ tornado/test/import_test.py            | 56 ++++++++++----------
+ tornado/test/ioloop_test.py            | 14 ++---
+ tornado/test/iostream_test.py          | 26 +++++-----
+ tornado/test/locale_test.py            | 44 ++++++++--------
  tornado/test/locks_test.py             |  8 +--
- tornado/test/log_test.py               | 14 ++--
- tornado/test/netutil_test.py           | 14 ++--
- tornado/test/options_test.py           |  6 +-
- tornado/test/process_test.py           | 18 ++---
+ tornado/test/log_test.py               | 14 ++---
+ tornado/test/netutil_test.py           | 14 ++---
+ tornado/test/options_test.py           |  6 +--
+ tornado/test/process_test.py           | 18 +++----
  tornado/test/queues_test.py            |  8 +--
  tornado/test/resolve_test_helper.py    |  4 +-
- tornado/test/routing_test.py           | 20 +++---
- tornado/test/runtests.py               | 94 +++++++++++++-------------
- tornado/test/simple_httpclient_test.py | 28 ++++----
- tornado/test/stack_context_test.py     | 12 ++--
- tornado/test/tcpclient_test.py         | 14 ++--
- tornado/test/tcpserver_test.py         | 14 ++--
+ tornado/test/routing_test.py           | 20 ++++----
+ tornado/test/runtests.py               | 94 +++++++++++++++++-----------------
+ tornado/test/simple_httpclient_test.py | 28 +++++-----
+ tornado/test/stack_context_test.py     | 12 ++---
+ tornado/test/tcpclient_test.py         | 14 ++---
+ tornado/test/tcpserver_test.py         | 14 ++---
  tornado/test/template_test.py          |  8 +--
  tornado/test/testing_test.py           |  8 +--
- tornado/test/twisted_test.py           | 26 +++----
- tornado/test/util.py                   | 10 +--
- tornado/test/util_test.py              | 16 ++---
- tornado/test/web_test.py               | 34 +++++-----
- tornado/test/websocket_test.py         | 26 +++----
+ tornado/test/twisted_test.py           | 26 +++++-----
+ tornado/test/util.py                   | 10 ++--
+ tornado/test/util_test.py              | 16 +++---
+ tornado/test/web_test.py               | 34 ++++++------
+ tornado/test/websocket_test.py         | 26 +++++-----
  tornado/test/windows_test.py           |  2 +-
- tornado/test/wsgi_test.py              | 16 ++---
- tornado/testing.py                     | 56 +++++++--------
- tornado/util.py                        | 12 ++--
- tornado/web.py                         | 68 +++++++++----------
- tornado/websocket.py                   | 42 ++++++------
- tornado/wsgi.py                        | 46 ++++++-------
+ tornado/test/wsgi_test.py              | 16 +++---
+ tornado/testing.py                     | 56 ++++++++++----------
+ tornado/util.py                        | 12 ++---
+ tornado/web.py                         | 68 ++++++++++++------------
+ tornado/websocket.py                   | 42 +++++++--------
+ tornado/wsgi.py                        | 46 ++++++++---------
  80 files changed, 819 insertions(+), 822 deletions(-)
 
 diff --git a/setup.py b/setup.py
-index a1feea67..caaf246b 100644
+index a475920..24e87b6 100644
 --- a/setup.py
 +++ b/setup.py
 @@ -113,8 +113,8 @@ if (platform.python_implementation() == 'CPython' and
@@ -122,7 +121,7 @@ index a1feea67..caaf246b 100644
              "csv_translations/fr_FR.csv",
              "gettext_translations/fr_FR/LC_MESSAGES/tornado_test.mo",
 diff --git a/tornado/_locale_data.py b/tornado/_locale_data.py
-index 6fa2c297..20fdc609 100644
+index 6fa2c29..20fdc60 100644
 --- a/tornado/_locale_data.py
 +++ b/tornado/_locale_data.py
 @@ -15,7 +15,7 @@
@@ -135,7 +134,7 @@ index 6fa2c297..20fdc609 100644
  from __future__ import absolute_import, division, print_function
  
 diff --git a/tornado/auth.py b/tornado/auth.py
-index f02d2898..221242db 100644
+index f02d289..221242d 100644
 --- a/tornado/auth.py
 +++ b/tornado/auth.py
 @@ -18,7 +18,7 @@
@@ -286,7 +285,7 @@ index f02d2898..221242db 100644
                      new_entry = yield self.facebook_request(
                          "/me/feed",
 diff --git a/tornado/autoreload.py b/tornado/autoreload.py
-index 60571efe..8562ab43 100644
+index 60571ef..8562ab4 100644
 --- a/tornado/autoreload.py
 +++ b/tornado/autoreload.py
 @@ -18,7 +18,7 @@
@@ -375,7 +374,7 @@ index 60571efe..8562ab43 100644
      prevent the script from reaching its call to `wait`.
      """
 diff --git a/tornado/concurrent.py b/tornado/concurrent.py
-index 667e6b17..1483fb5a 100644
+index 667e6b1..1483fb5 100644
 --- a/tornado/concurrent.py
 +++ b/tornado/concurrent.py
 @@ -29,9 +29,9 @@ import textwrap
@@ -410,7 +409,7 @@ index 667e6b17..1483fb5a 100644
         be an alias for the thread-safe `concurrent.futures.Future`
         if that package was available and fall back to the thread-unsafe
 diff --git a/tornado/curl_httpclient.py b/tornado/curl_httpclient.py
-index 8558d65c..6e81ab58 100644
+index 8558d65..6e81ab5 100644
 --- a/tornado/curl_httpclient.py
 +++ b/tornado/curl_httpclient.py
 @@ -26,14 +26,14 @@ import threading
@@ -435,7 +434,7 @@ index 8558d65c..6e81ab58 100644
  
  class CurlAsyncHTTPClient(AsyncHTTPClient):
 diff --git a/tornado/escape.py b/tornado/escape.py
-index 2ca3fe3f..c588ec9b 100644
+index 2ca3fe3..c588ec9 100644
 --- a/tornado/escape.py
 +++ b/tornado/escape.py
 @@ -25,7 +25,7 @@ from __future__ import absolute_import, division, print_function
@@ -457,7 +456,7 @@ index 2ca3fe3f..c588ec9b 100644
  _URL_RE = re.compile(to_unicode(r"""\b((?:([\w-]+):(/{1,3})|www[.])(?:(?:(?:[^\s&()]|&amp;|&quot;)*(?:[^!"#$%&'()*+,.:;<=>?@\[\]^`{|}~\s]))|(?:\((?:[^\s&()]|&amp;|&quot;)*\)))+)"""))
  
 diff --git a/tornado/gen.py b/tornado/gen.py
-index bdb32ff3..4012cabb 100644
+index bdb32ff..4012cab 100644
 --- a/tornado/gen.py
 +++ b/tornado/gen.py
 @@ -1,4 +1,4 @@
@@ -531,7 +530,7 @@ index bdb32ff3..4012cabb 100644
 -        # Reference the imported module to make pyflakes happy.
 -        tornado
 diff --git a/tornado/http1connection.py b/tornado/http1connection.py
-index 32bed6c9..6d36ae72 100644
+index 32bed6c..6d36ae7 100644
 --- a/tornado/http1connection.py
 +++ b/tornado/http1connection.py
 @@ -23,14 +23,14 @@ from __future__ import absolute_import, division, print_function
@@ -558,7 +557,7 @@ index 32bed6c9..6d36ae72 100644
  
  class _QuietException(Exception):
 diff --git a/tornado/httpclient.py b/tornado/httpclient.py
-index 8436ece4..00f56e9b 100644
+index 8436ece..00f56e9 100644
 --- a/tornado/httpclient.py
 +++ b/tornado/httpclient.py
 @@ -35,7 +35,7 @@ and comments in curl_httpclient.py).
@@ -633,7 +632,7 @@ index 8436ece4..00f56e9b 100644
      define("print_body", type=bool, default=True)
      define("follow_redirects", type=bool, default=True)
 diff --git a/tornado/httpserver.py b/tornado/httpserver.py
-index d757be18..3d8c330e 100644
+index d757be1..3d8c330 100644
 --- a/tornado/httpserver.py
 +++ b/tornado/httpserver.py
 @@ -18,26 +18,26 @@
@@ -741,7 +740,7 @@ index d757be18..3d8c330e 100644
      .. versionchanged:: 4.5
         Added the ``trusted_downstream`` argument.
 diff --git a/tornado/httputil.py b/tornado/httputil.py
-index 818ea914..b9469786 100644
+index 818ea91..b946978 100644
 --- a/tornado/httputil.py
 +++ b/tornado/httputil.py
 @@ -17,7 +17,7 @@
@@ -776,7 +775,7 @@ index 818ea914..b9469786 100644
      def __init__(self, method=None, uri=None, version="HTTP/1.0", headers=None,
                   body=None, host=None, files=None, connection=None,
 diff --git a/tornado/ioloop.py b/tornado/ioloop.py
-index ad35787f..4b258c51 100644
+index ad35787..4b258c5 100644
 --- a/tornado/ioloop.py
 +++ b/tornado/ioloop.py
 @@ -44,11 +44,11 @@ import time
@@ -890,7 +889,7 @@ index ad35787f..4b258c51 100644
      def initialize(self, impl, time_func=None, **kwargs):
          super(PollIOLoop, self).initialize(**kwargs)
 diff --git a/tornado/iostream.py b/tornado/iostream.py
-index 639ed508..bf32e921 100644
+index 279e558..c9c34da 100644
 --- a/tornado/iostream.py
 +++ b/tornado/iostream.py
 @@ -34,15 +34,15 @@ import socket
@@ -945,7 +944,7 @@ index 639ed508..bf32e921 100644
      .. testoutput::
         :hide:
 diff --git a/tornado/locale.py b/tornado/locale.py
-index 7dba10d6..dc868d01 100644
+index 7dba10d..dc868d0 100644
 --- a/tornado/locale.py
 +++ b/tornado/locale.py
 @@ -18,10 +18,10 @@
@@ -978,7 +977,7 @@ index 7dba10d6..dc868d01 100644
  _default_locale = "en_US"
  _translations = {}  # type: dict
 diff --git a/tornado/locks.py b/tornado/locks.py
-index 4f9ecf6d..8f496652 100644
+index 4f9ecf6..8f49665 100644
 --- a/tornado/locks.py
 +++ b/tornado/locks.py
 @@ -16,8 +16,8 @@ from __future__ import absolute_import, division, print_function
@@ -1081,7 +1080,7 @@ index 4f9ecf6d..8f496652 100644
          """
          return self._block.acquire(timeout)
 diff --git a/tornado/log.py b/tornado/log.py
-index 654afc02..5303bfd8 100644
+index 654afc0..5303bfd 100644
 --- a/tornado/log.py
 +++ b/tornado/log.py
 @@ -17,15 +17,15 @@
@@ -1166,7 +1165,7 @@ index 654afc02..5303bfd8 100644
                     help=("Set the Python log level. If 'none', tornado won't touch the "
                           "logging configuration."),
 diff --git a/tornado/netutil.py b/tornado/netutil.py
-index 5233b20f..b2680af9 100644
+index b0e49fc..2acc84a 100644
 --- a/tornado/netutil.py
 +++ b/tornado/netutil.py
 @@ -24,10 +24,10 @@ import sys
@@ -1184,7 +1183,7 @@ index 5233b20f..b2680af9 100644
  
  try:
      import ssl
-@@ -307,15 +307,15 @@ class Resolver(Configurable):
+@@ -306,15 +306,15 @@ class Resolver(Configurable):
      chosen with the `Resolver.configure <.Configurable.configure>`
      class method::
  
@@ -1206,7 +1205,7 @@ index 5233b20f..b2680af9 100644
      """
      @classmethod
      def configurable_base(cls):
-@@ -414,7 +414,7 @@ class ThreadedResolver(ExecutorResolver):
+@@ -413,7 +413,7 @@ class ThreadedResolver(ExecutorResolver):
  
      The thread pool size can be configured with::
  
@@ -1215,7 +1214,7 @@ index 5233b20f..b2680af9 100644
                             num_threads=10)
  
      .. versionchanged:: 3.1
-@@ -520,7 +520,7 @@ def ssl_wrap_socket(socket, ssl_options, server_hostname=None, **kwargs):
+@@ -519,7 +519,7 @@ def ssl_wrap_socket(socket, ssl_options, server_hostname=None, **kwargs):
          if server_hostname is not None and getattr(ssl, 'HAS_SNI'):
              # Python doesn't have server-side SNI support so we can't
              # really unittest this, but it can be manually tested with
@@ -1225,7 +1224,7 @@ index 5233b20f..b2680af9 100644
                                         **kwargs)
          else:
 diff --git a/tornado/options.py b/tornado/options.py
-index 707fbd35..0e19b5ae 100644
+index 707fbd3..0e19b5a 100644
 --- a/tornado/options.py
 +++ b/tornado/options.py
 @@ -19,7 +19,7 @@
@@ -1310,7 +1309,7 @@ index 707fbd35..0e19b5ae 100644
              define('template_path', group='application')
              define('static_path', group='application')
 diff --git a/tornado/platform/asyncio.py b/tornado/platform/asyncio.py
-index 830ee1f3..1e16180f 100644
+index 830ee1f..1e16180 100644
 --- a/tornado/platform/asyncio.py
 +++ b/tornado/platform/asyncio.py
 @@ -22,10 +22,10 @@ loops.
@@ -1385,7 +1384,7 @@ index 830ee1f3..1e16180f 100644
  
  
 diff --git a/tornado/platform/auto.py b/tornado/platform/auto.py
-index 1f4d7001..bfa8bb9e 100644
+index 1f4d700..bfa8bb9 100644
 --- a/tornado/platform/auto.py
 +++ b/tornado/platform/auto.py
 @@ -16,11 +16,11 @@
@@ -1423,7 +1422,7 @@ index 1f4d7001..bfa8bb9e 100644
  try:
      # monotime monkey-patches the time module to have a monotonic function
 diff --git a/tornado/platform/caresresolver.py b/tornado/platform/caresresolver.py
-index fd6e9d27..85240a97 100644
+index fd6e9d2..85240a9 100644
 --- a/tornado/platform/caresresolver.py
 +++ b/tornado/platform/caresresolver.py
 @@ -2,9 +2,9 @@ from __future__ import absolute_import, division, print_function
@@ -1449,7 +1448,7 @@ index fd6e9d27..85240a97 100644
  
      .. versionchanged:: 4.1
 diff --git a/tornado/platform/common.py b/tornado/platform/common.py
-index b597748d..f2a10d23 100644
+index b597748..f2a10d2 100644
 --- a/tornado/platform/common.py
 +++ b/tornado/platform/common.py
 @@ -5,8 +5,8 @@ import errno
@@ -1464,7 +1463,7 @@ index b597748d..f2a10d23 100644
  
  def try_close(f):
 diff --git a/tornado/platform/epoll.py b/tornado/platform/epoll.py
-index 80bfd8af..438b1e91 100644
+index 80bfd8a..438b1e9 100644
 --- a/tornado/platform/epoll.py
 +++ b/tornado/platform/epoll.py
 @@ -18,7 +18,7 @@ from __future__ import absolute_import, division, print_function
@@ -1477,7 +1476,7 @@ index 80bfd8af..438b1e91 100644
  
  class EPollIOLoop(PollIOLoop):
 diff --git a/tornado/platform/interface.py b/tornado/platform/interface.py
-index c0ef2905..8ecb8669 100644
+index c0ef290..8ecb866 100644
 --- a/tornado/platform/interface.py
 +++ b/tornado/platform/interface.py
 @@ -17,8 +17,8 @@
@@ -1501,7 +1500,7 @@ index c0ef2905..8ecb8669 100644
      thread wants to wake up the loop, it calls `wake`.  Once it has woken
      up, it will call `consume` to do any necessary per-wake cleanup.  When
 diff --git a/tornado/platform/kqueue.py b/tornado/platform/kqueue.py
-index 3a5d4174..a85e34de 100644
+index 3a5d417..a85e34d 100644
 --- a/tornado/platform/kqueue.py
 +++ b/tornado/platform/kqueue.py
 @@ -18,7 +18,7 @@ from __future__ import absolute_import, division, print_function
@@ -1514,7 +1513,7 @@ index 3a5d4174..a85e34de 100644
  assert hasattr(select, 'kqueue'), 'kqueue not supported'
  
 diff --git a/tornado/platform/posix.py b/tornado/platform/posix.py
-index 9bf1f188..d8f4d77d 100644
+index 9bf1f18..d8f4d77 100644
 --- a/tornado/platform/posix.py
 +++ b/tornado/platform/posix.py
 @@ -21,7 +21,7 @@ from __future__ import absolute_import, division, print_function
@@ -1527,7 +1526,7 @@ index 9bf1f188..d8f4d77d 100644
  
  def set_close_exec(fd):
 diff --git a/tornado/platform/select.py b/tornado/platform/select.py
-index a18049f7..ee527564 100644
+index a18049f..ee52756 100644
 --- a/tornado/platform/select.py
 +++ b/tornado/platform/select.py
 @@ -21,7 +21,7 @@ from __future__ import absolute_import, division, print_function
@@ -1540,7 +1539,7 @@ index a18049f7..ee527564 100644
  
  class _Select(object):
 diff --git a/tornado/platform/twisted.py b/tornado/platform/twisted.py
-index 0f9787e8..3a36617e 100644
+index 0f9787e..3a36617 100644
 --- a/tornado/platform/twisted.py
 +++ b/tornado/platform/twisted.py
 @@ -42,15 +42,15 @@ import twisted.names.resolve  # type: ignore
@@ -1703,7 +1702,7 @@ index 0f9787e8..3a36617e 100644
          host_resolver = twisted.names.hosts.Resolver('/etc/hosts')
          cache_resolver = twisted.names.cache.CacheResolver(reactor=self.reactor)
 diff --git a/tornado/process.py b/tornado/process.py
-index fae94f3c..430defe4 100644
+index fae94f3..430defe 100644
 --- a/tornado/process.py
 +++ b/tornado/process.py
 @@ -29,13 +29,13 @@ import time
@@ -1746,7 +1745,7 @@ index fae94f3c..430defe4 100644
      * A new keyword argument ``io_loop`` may be used to pass in an IOLoop.
  
 diff --git a/tornado/queues.py b/tornado/queues.py
-index 141c539b..6025ffe5 100644
+index 141c539..6025ffe 100644
 --- a/tornado/queues.py
 +++ b/tornado/queues.py
 @@ -27,9 +27,9 @@ from __future__ import absolute_import, division, print_function
@@ -1821,7 +1820,7 @@ index 141c539b..6025ffe5 100644
          q = LifoQueue()
          q.put(3)
 diff --git a/tornado/routing.py b/tornado/routing.py
-index 6762dc05..7e176a19 100644
+index 6762dc0..7e176a1 100644
 --- a/tornado/routing.py
 +++ b/tornado/routing.py
 @@ -15,7 +15,7 @@
@@ -1851,7 +1850,7 @@ index 6762dc05..7e176a19 100644
  try:
      import typing  # noqa
 diff --git a/tornado/simple_httpclient.py b/tornado/simple_httpclient.py
-index 8fb70707..69854742 100644
+index c3b3d42..767fe7d 100644
 --- a/tornado/simple_httpclient.py
 +++ b/tornado/simple_httpclient.py
 @@ -1,17 +1,17 @@
@@ -1884,7 +1883,7 @@ index 8fb70707..69854742 100644
  import base64
  import collections
 diff --git a/tornado/speedups.c b/tornado/speedups.c
-index c59bda00..1623a019 100644
+index c59bda0..1623a01 100644
 --- a/tornado/speedups.c
 +++ b/tornado/speedups.c
 @@ -47,6 +47,6 @@ PyInit_speedups(void) {
@@ -1896,7 +1895,7 @@ index c59bda00..1623a019 100644
  }
  #endif
 diff --git a/tornado/stack_context.py b/tornado/stack_context.py
-index 61ae51f4..e8d9a459 100644
+index 61ae51f..e8d9a45 100644
 --- a/tornado/stack_context.py
 +++ b/tornado/stack_context.py
 @@ -18,7 +18,7 @@
@@ -1927,7 +1926,7 @@ index 61ae51f4..e8d9a459 100644
  
  class StackContextInconsistentError(Exception):
 diff --git a/tornado/tcpclient.py b/tornado/tcpclient.py
-index bb5e9f34..6ce5fa00 100644
+index bb5e9f3..6ce5fa0 100644
 --- a/tornado/tcpclient.py
 +++ b/tornado/tcpclient.py
 @@ -21,12 +21,12 @@ from __future__ import absolute_import, division, print_function
@@ -1950,7 +1949,7 @@ index bb5e9f34..6ce5fa00 100644
  _INITIAL_CONNECT_TIMEOUT = 0.3
  
 diff --git a/tornado/tcpserver.py b/tornado/tcpserver.py
-index f47ec89a..78687589 100644
+index f47ec89..7868758 100644
 --- a/tornado/tcpserver.py
 +++ b/tornado/tcpserver.py
 @@ -21,13 +21,13 @@ import errno
@@ -2030,7 +2029,7 @@ index f47ec89a..78687589 100644
          When using multiple processes, no IOLoops can be created or
          referenced until after the call to ``TCPServer.start(n)``.
 diff --git a/tornado/template.py b/tornado/template.py
-index 3b2fa3fe..01f9d38f 100644
+index 3b2fa3f..01f9d38 100644
 --- a/tornado/template.py
 +++ b/tornado/template.py
 @@ -82,7 +82,7 @@ We provide the functions `escape() <.xhtml_escape>`, `.url_escape()`,
@@ -2080,7 +2079,7 @@ index 3b2fa3fe..01f9d38f 100644
              directives.
          :arg bool compress_whitespace: Deprecated since Tornado 4.3.
 diff --git a/tornado/test/__main__.py b/tornado/test/__main__.py
-index c78478cb..0e1ec3d4 100644
+index c78478c..0e1ec3d 100644
 --- a/tornado/test/__main__.py
 +++ b/tornado/test/__main__.py
 @@ -1,12 +1,12 @@
@@ -2100,7 +2099,7 @@ index c78478cb..0e1ec3d4 100644
  # The following line prevents a pyflakes warning.
  all = all
 diff --git a/tornado/test/asyncio_test.py b/tornado/test/asyncio_test.py
-index ae9125f9..052b2592 100644
+index ae9125f..052b259 100644
 --- a/tornado/test/asyncio_test.py
 +++ b/tornado/test/asyncio_test.py
 @@ -12,16 +12,16 @@
@@ -2126,7 +2125,7 @@ index ae9125f9..052b2592 100644
      to_asyncio_future
  
 diff --git a/tornado/test/auth_test.py b/tornado/test/auth_test.py
-index 400fc4f4..9252c671 100644
+index 400fc4f..9252c67 100644
 --- a/tornado/test/auth_test.py
 +++ b/tornado/test/auth_test.py
 @@ -5,14 +5,14 @@
@@ -2153,7 +2152,7 @@ index 400fc4f4..9252c671 100644
  
  class OpenIdClientLoginHandler(RequestHandler, OpenIdMixin):
 diff --git a/tornado/test/concurrent_test.py b/tornado/test/concurrent_test.py
-index 4d89f572..22b9d030 100644
+index 4d89f57..22b9d03 100644
 --- a/tornado/test/concurrent_test.py
 +++ b/tornado/test/concurrent_test.py
 @@ -22,15 +22,15 @@ import socket
@@ -2182,7 +2181,7 @@ index 4d89f572..22b9d030 100644
  
  try:
 diff --git a/tornado/test/curl_httpclient_test.py b/tornado/test/curl_httpclient_test.py
-index eb6f89d6..d25cb237 100644
+index eb6f89d..d25cb23 100644
 --- a/tornado/test/curl_httpclient_test.py
 +++ b/tornado/test/curl_httpclient_test.py
 @@ -3,13 +3,13 @@ from __future__ import absolute_import, division, print_function
@@ -2216,7 +2215,7 @@ index eb6f89d6..d25cb237 100644
  
  @unittest.skipIf(pycurl is None, "pycurl module not present")
 diff --git a/tornado/test/escape_test.py b/tornado/test/escape_test.py
-index 5ae75d00..c741b40b 100644
+index 5ae75d0..c741b40 100644
 --- a/tornado/test/escape_test.py
 +++ b/tornado/test/escape_test.py
 @@ -2,11 +2,11 @@
@@ -2245,7 +2244,7 @@ index 5ae75d00..c741b40b 100644
  
      def test_xhtml_escape(self):
 diff --git a/tornado/test/gen_test.py b/tornado/test/gen_test.py
-index fea4c644..1a257ba7 100644
+index fea4c64..1a257ba 100644
 --- a/tornado/test/gen_test.py
 +++ b/tornado/test/gen_test.py
 @@ -9,17 +9,17 @@ import textwrap
@@ -2278,7 +2277,7 @@ index fea4c644..1a257ba7 100644
  try:
      from concurrent import futures
 diff --git a/tornado/test/http1connection_test.py b/tornado/test/http1connection_test.py
-index 8aaaaf35..e6fc6231 100644
+index 8aaaaf3..e6fc623 100644
 --- a/tornado/test/http1connection_test.py
 +++ b/tornado/test/http1connection_test.py
 @@ -2,12 +2,12 @@ from __future__ import absolute_import, division, print_function
@@ -2301,7 +2300,7 @@ index 8aaaaf35..e6fc6231 100644
  
  class HTTP1ConnectionTest(AsyncTestCase):
 diff --git a/tornado/test/httpclient_test.py b/tornado/test/httpclient_test.py
-index 320454e4..9ebb3c7b 100644
+index 320454e..9ebb3c7 100644
 --- a/tornado/test/httpclient_test.py
 +++ b/tornado/test/httpclient_test.py
 @@ -12,19 +12,19 @@ import threading
@@ -2338,7 +2337,7 @@ index 320454e4..9ebb3c7b 100644
  
  class HelloWorldHandler(RequestHandler):
 diff --git a/tornado/test/httpserver_test.py b/tornado/test/httpserver_test.py
-index 59eb6fd1..cbd5b96f 100644
+index 5da7271..301305c 100644
 --- a/tornado/test/httpserver_test.py
 +++ b/tornado/test/httpserver_test.py
 @@ -2,19 +2,19 @@
@@ -2384,7 +2383,7 @@ index 59eb6fd1..cbd5b96f 100644
          # protocol-relative urls.
          response = self.fetch("//doubleslash")
 diff --git a/tornado/test/httputil_test.py b/tornado/test/httputil_test.py
-index d1278567..4c663f21 100644
+index d127856..4c663f2 100644
 --- a/tornado/test/httputil_test.py
 +++ b/tornado/test/httputil_test.py
 @@ -3,11 +3,11 @@
@@ -2405,7 +2404,7 @@ index d1278567..4c663f21 100644
  import copy
  import datetime
 diff --git a/tornado/test/import_test.py b/tornado/test/import_test.py
-index 88d02e02..fbde23d3 100644
+index 88d02e0..fbde23d 100644
 --- a/tornado/test/import_test.py
 +++ b/tornado/test/import_test.py
 @@ -1,6 +1,6 @@
@@ -2482,7 +2481,7 @@ index 88d02e02..fbde23d3 100644
 -            import tornado.curl_httpclient
 +            import tornado4.curl_httpclient
 diff --git a/tornado/test/ioloop_test.py b/tornado/test/ioloop_test.py
-index 1601813f..c2a00843 100644
+index 1601813..c2a0084 100644
 --- a/tornado/test/ioloop_test.py
 +++ b/tornado/test/ioloop_test.py
 @@ -11,13 +11,13 @@ import threading
@@ -2507,7 +2506,7 @@ index 1601813f..c2a00843 100644
  try:
      from concurrent import futures
 diff --git a/tornado/test/iostream_test.py b/tornado/test/iostream_test.py
-index 56fffe60..3f2c1228 100644
+index b1d5f5d..ebd4fe6 100644
 --- a/tornado/test/iostream_test.py
 +++ b/tornado/test/iostream_test.py
 @@ -1,16 +1,16 @@
@@ -2539,7 +2538,7 @@ index 56fffe60..3f2c1228 100644
  import errno
  import logging
  import os
-@@ -461,7 +461,7 @@ class TestIOStreamMixin(object):
+@@ -463,7 +463,7 @@ class TestIOStreamMixin(object):
      def test_read_until_close_with_error(self):
          server, client = self.make_iostream_pair()
          try:
@@ -2549,7 +2548,7 @@ index 56fffe60..3f2c1228 100644
                  with self.assertRaisesRegexp(IOError, 'boom'):
                      client.read_until_close(self.stop)
 diff --git a/tornado/test/locale_test.py b/tornado/test/locale_test.py
-index d548ffb8..38d99ab6 100644
+index d548ffb..38d99ab 100644
 --- a/tornado/test/locale_test.py
 +++ b/tornado/test/locale_test.py
 @@ -5,10 +5,10 @@ import os
@@ -2667,7 +2666,7 @@ index d548ffb8..38d99ab6 100644
          self.assertEqual(locale.format_day(date=date, dow=True), 'Sunday, April 28')
          self.assertEqual(locale.format_day(date=date, dow=False), 'April 28')
 diff --git a/tornado/test/locks_test.py b/tornado/test/locks_test.py
-index 844d4fb0..c624d44f 100644
+index 844d4fb..c624d44 100644
 --- a/tornado/test/locks_test.py
 +++ b/tornado/test/locks_test.py
 @@ -14,10 +14,10 @@
@@ -2686,7 +2685,7 @@ index 844d4fb0..c624d44f 100644
  
  class ConditionTest(AsyncTestCase):
 diff --git a/tornado/test/log_test.py b/tornado/test/log_test.py
-index 888964e7..e821f6cf 100644
+index 888964e..e821f6c 100644
 --- a/tornado/test/log_test.py
 +++ b/tornado/test/log_test.py
 @@ -25,11 +25,11 @@ import sys
@@ -2725,7 +2724,7 @@ index 888964e7..e821f6cf 100644
          program = ';'.join([IMPORT, statement, LOG_INFO])
          proc = subprocess.Popen(
 diff --git a/tornado/test/netutil_test.py b/tornado/test/netutil_test.py
-index 9564290a..d56f4607 100644
+index 611d6ff..f7d4f77 100644
 --- a/tornado/test/netutil_test.py
 +++ b/tornado/test/netutil_test.py
 @@ -8,10 +8,10 @@ from subprocess import Popen
@@ -2761,7 +2760,7 @@ index 9564290a..d56f4607 100644
  
  
  class _ResolverTestMixin(object):
-@@ -133,7 +133,7 @@ class ThreadedResolverImportTest(unittest.TestCase):
+@@ -135,7 +135,7 @@ class ThreadedResolverImportTest(unittest.TestCase):
          command = [
              sys.executable,
              '-c',
@@ -2771,7 +2770,7 @@ index 9564290a..d56f4607 100644
          start = time.time()
          popen = Popen(command, preexec_fn=lambda: signal.alarm(TIMEOUT))
 diff --git a/tornado/test/options_test.py b/tornado/test/options_test.py
-index 1a0ac8fb..62d732d4 100644
+index 1a0ac8f..62d732d 100644
 --- a/tornado/test/options_test.py
 +++ b/tornado/test/options_test.py
 @@ -5,9 +5,9 @@ import datetime
@@ -2788,7 +2787,7 @@ index 1a0ac8fb..62d732d4 100644
  if PY3:
      from io import StringIO
 diff --git a/tornado/test/process_test.py b/tornado/test/process_test.py
-index 74c10abf..2f5bf1ce 100644
+index 74c10ab..2f5bf1c 100644
 --- a/tornado/test/process_test.py
 +++ b/tornado/test/process_test.py
 @@ -7,15 +7,15 @@ import os
@@ -2817,7 +2816,7 @@ index 74c10abf..2f5bf1ce 100644
  
  def skip_if_twisted():
 diff --git a/tornado/test/queues_test.py b/tornado/test/queues_test.py
-index 48ed5e20..510cabeb 100644
+index 48ed5e2..510cabe 100644
 --- a/tornado/test/queues_test.py
 +++ b/tornado/test/queues_test.py
 @@ -15,10 +15,10 @@ from __future__ import absolute_import, division, print_function
@@ -2836,7 +2835,7 @@ index 48ed5e20..510cabeb 100644
  
  class QueueBasicTest(AsyncTestCase):
 diff --git a/tornado/test/resolve_test_helper.py b/tornado/test/resolve_test_helper.py
-index 42967196..de81425b 100644
+index 4296719..de81425 100644
 --- a/tornado/test/resolve_test_helper.py
 +++ b/tornado/test/resolve_test_helper.py
 @@ -1,6 +1,6 @@
@@ -2849,7 +2848,7 @@ index 42967196..de81425b 100644
  # When this module is imported, it runs getaddrinfo on a thread. Since
  # the hostname is unicode, getaddrinfo attempts to import encodings.idna
 diff --git a/tornado/test/routing_test.py b/tornado/test/routing_test.py
-index a1040df3..6f68c3c3 100644
+index a1040df..6f68c3c 100644
 --- a/tornado/test/routing_test.py
 +++ b/tornado/test/routing_test.py
 @@ -13,11 +13,11 @@
@@ -2903,7 +2902,7 @@ index a1040df3..6f68c3c3 100644
          response = self.fetch("/wsgi")
          self.assertEqual(response.body, b"WSGI")
 diff --git a/tornado/test/runtests.py b/tornado/test/runtests.py
-index b81c5f22..50bd23ab 100644
+index b4b2569..f0988ec 100644
 --- a/tornado/test/runtests.py
 +++ b/tornado/test/runtests.py
 @@ -2,17 +2,17 @@
@@ -3010,7 +3009,7 @@ index b81c5f22..50bd23ab 100644
  ]
  
  
-@@ -130,7 +130,7 @@ def main():
+@@ -131,7 +131,7 @@ def main():
      warnings.filterwarnings("ignore", category=DeprecationWarning,
                              message=".*legacy __aiter__ protocol")
  
@@ -3019,7 +3018,7 @@ index b81c5f22..50bd23ab 100644
  
      define('httpclient', type=str, default=None,
             callback=lambda s: AsyncHTTPClient.configure(
-@@ -152,7 +152,7 @@ def main():
+@@ -153,7 +153,7 @@ def main():
      def configure_ioloop():
          kwargs = {}
          if options.ioloop_time_monotonic:
@@ -3028,7 +3027,7 @@ index b81c5f22..50bd23ab 100644
              if monotonic_time is None:
                  raise RuntimeError("monotonic clock not found")
              kwargs['time_func'] = monotonic_time
-@@ -164,7 +164,7 @@ def main():
+@@ -165,7 +165,7 @@ def main():
      add_parse_callback(
          lambda: logging.getLogger().handlers[0].addFilter(log_counter))
  
@@ -3037,7 +3036,7 @@ index b81c5f22..50bd23ab 100644
      kwargs = {}
      if sys.version_info >= (3, 2):
          # HACK:  unittest.main will make its own changes to the warning
-@@ -175,7 +175,7 @@ def main():
+@@ -176,7 +176,7 @@ def main():
          kwargs['warnings'] = False
      kwargs['testRunner'] = TornadoTextTestRunner
      try:
@@ -3047,7 +3046,7 @@ index b81c5f22..50bd23ab 100644
          # The tests should run clean; consider it a failure if they logged
          # any warnings or errors. We'd like to ban info logs too, but
 diff --git a/tornado/test/simple_httpclient_test.py b/tornado/test/simple_httpclient_test.py
-index 0e75e530..e73fb335 100644
+index 0e75e53..e73fb33 100644
 --- a/tornado/test/simple_httpclient_test.py
 +++ b/tornado/test/simple_httpclient_test.py
 @@ -11,20 +11,20 @@ import socket
@@ -3086,7 +3085,7 @@ index 0e75e530..e73fb335 100644
  
  class SimpleHTTPClientCommonTestCase(httpclient_test.HTTPClientCommonTestCase):
 diff --git a/tornado/test/stack_context_test.py b/tornado/test/stack_context_test.py
-index 59d25474..fea371e6 100644
+index 59d2547..fea371e 100644
 --- a/tornado/test/stack_context_test.py
 +++ b/tornado/test/stack_context_test.py
 @@ -1,13 +1,13 @@
@@ -3110,7 +3109,7 @@ index 59d25474..fea371e6 100644
  import functools
  import logging
 diff --git a/tornado/test/tcpclient_test.py b/tornado/test/tcpclient_test.py
-index 76206e85..d0519c81 100644
+index 76206e8..d0519c8 100644
 --- a/tornado/test/tcpclient_test.py
 +++ b/tornado/test/tcpclient_test.py
 @@ -20,13 +20,13 @@ from contextlib import closing
@@ -3135,7 +3134,7 @@ index 76206e85..d0519c81 100644
  # Fake address families for testing.  Used in place of AF_INET
  # and AF_INET6 because some installations do not have AF_INET6.
 diff --git a/tornado/test/tcpserver_test.py b/tornado/test/tcpserver_test.py
-index 9afb5420..74b6e533 100644
+index 9afb542..74b6e53 100644
 --- a/tornado/test/tcpserver_test.py
 +++ b/tornado/test/tcpserver_test.py
 @@ -2,13 +2,13 @@ from __future__ import absolute_import, division, print_function
@@ -3160,7 +3159,7 @@ index 9afb5420..74b6e533 100644
  
  class TCPServerTest(AsyncTestCase):
 diff --git a/tornado/test/template_test.py b/tornado/test/template_test.py
-index 2f1e88c1..da47578d 100644
+index 2f1e88c..da47578 100644
 --- a/tornado/test/template_test.py
 +++ b/tornado/test/template_test.py
 @@ -4,10 +4,10 @@ import os
@@ -3179,7 +3178,7 @@ index 2f1e88c1..da47578d 100644
  
  class TemplateTest(unittest.TestCase):
 diff --git a/tornado/test/testing_test.py b/tornado/test/testing_test.py
-index b3d6d8c5..2d73401d 100644
+index b3d6d8c..2d73401 100644
 --- a/tornado/test/testing_test.py
 +++ b/tornado/test/testing_test.py
 @@ -2,10 +2,10 @@
@@ -3198,7 +3197,7 @@ index b3d6d8c5..2d73401d 100644
  import os
  import traceback
 diff --git a/tornado/test/twisted_test.py b/tornado/test/twisted_test.py
-index 1604ce52..4c8f3191 100644
+index 1604ce5..4c8f319 100644
 --- a/tornado/test/twisted_test.py
 +++ b/tornado/test/twisted_test.py
 @@ -28,17 +28,17 @@ import tempfile
@@ -3249,7 +3248,7 @@ index 1604ce52..4c8f3191 100644
                  def setUp(self):
                      # Twisted's tests expect to be run from a temporary
 diff --git a/tornado/test/util.py b/tornado/test/util.py
-index 90a9c7b8..eb0cdc88 100644
+index 126d426..a307603 100644
 --- a/tornado/test/util.py
 +++ b/tornado/test/util.py
 @@ -7,17 +7,17 @@ import socket
@@ -3284,7 +3283,7 @@ index 90a9c7b8..eb0cdc88 100644
      try:
          subTest = test.subTest  # py34+
 diff --git a/tornado/test/util_test.py b/tornado/test/util_test.py
-index 459cb9c3..35aa8b25 100644
+index 459cb9c..35aa8b2 100644
 --- a/tornado/test/util_test.py
 +++ b/tornado/test/util_test.py
 @@ -4,10 +4,10 @@ import re
@@ -3327,7 +3326,7 @@ index 459cb9c3..35aa8b25 100644
  
  class ReUnescapeTest(unittest.TestCase):
 diff --git a/tornado/test/web_test.py b/tornado/test/web_test.py
-index 013c2ac2..c6bf85ce 100644
+index 013c2ac..c6bf85c 100644
 --- a/tornado/test/web_test.py
 +++ b/tornado/test/web_test.py
 @@ -1,18 +1,18 @@
@@ -3384,7 +3383,7 @@ index 013c2ac2..c6bf85ce 100644
  
      def test_handler_by_name(self):
 diff --git a/tornado/test/websocket_test.py b/tornado/test/websocket_test.py
-index 95a5ecd4..f249d708 100644
+index 95a5ecd..f249d70 100644
 --- a/tornado/test/websocket_test.py
 +++ b/tornado/test/websocket_test.py
 @@ -4,18 +4,18 @@ import functools
@@ -3439,7 +3438,7 @@ index 95a5ecd4..f249d708 100644
      def mask(self, mask, data):
          return speedups.websocket_mask(mask, data)
 diff --git a/tornado/test/windows_test.py b/tornado/test/windows_test.py
-index e5cb3381..78ee9c81 100644
+index e5cb338..78ee9c8 100644
 --- a/tornado/test/windows_test.py
 +++ b/tornado/test/windows_test.py
 @@ -4,7 +4,7 @@ import os
@@ -3452,7 +3451,7 @@ index e5cb3381..78ee9c81 100644
  skipIfNonWindows = unittest.skipIf(os.name != 'nt', 'non-windows platform')
  
 diff --git a/tornado/test/wsgi_test.py b/tornado/test/wsgi_test.py
-index e6ccc82a..7603a8cc 100644
+index e6ccc82..7603a8c 100644
 --- a/tornado/test/wsgi_test.py
 +++ b/tornado/test/wsgi_test.py
 @@ -1,14 +1,14 @@
@@ -3479,7 +3478,7 @@ index e6ccc82a..7603a8cc 100644
  
  class WSGIContainerTest(AsyncHTTPTestCase):
 diff --git a/tornado/testing.py b/tornado/testing.py
-index 82a3b937..0e90aa3f 100644
+index 82a3b93..0e90aa3 100644
 --- a/tornado/testing.py
 +++ b/tornado/testing.py
 @@ -7,19 +7,19 @@
@@ -3639,7 +3638,7 @@ index 82a3b937..0e90aa3f 100644
      define('exception_on_interrupt', type=bool, default=True,
             help=("If true (default), ctrl-c raises a KeyboardInterrupt "
 diff --git a/tornado/util.py b/tornado/util.py
-index 981b94c8..128c08bf 100644
+index 981b94c..128c08b 100644
 --- a/tornado/util.py
 +++ b/tornado/util.py
 @@ -149,14 +149,14 @@ def import_object(name):
@@ -3672,7 +3671,7 @@ index 981b94c8..128c08bf 100644
          if os.environ.get('TORNADO_EXTENSION') == '1':
              raise
 diff --git a/tornado/web.py b/tornado/web.py
-index e8d102b5..b9d24473 100644
+index e8d102b..b9d2447 100644
 --- a/tornado/web.py
 +++ b/tornado/web.py
 @@ -14,7 +14,7 @@
@@ -3862,7 +3861,7 @@ index e8d102b5..b9d24473 100644
              (r".*", FallbackHandler, dict(fallback=wsgi_app),
          ])
 diff --git a/tornado/websocket.py b/tornado/websocket.py
-index 0e9d339f..01d42e6a 100644
+index 0e9d339..01d42e6 100644
 --- a/tornado/websocket.py
 +++ b/tornado/websocket.py
 @@ -24,19 +24,19 @@ import collections
@@ -3974,7 +3973,7 @@ index 0e9d339f..01d42e6a 100644
          self._message_bytes_out += len(message)
          flags = 0
 diff --git a/tornado/wsgi.py b/tornado/wsgi.py
-index 68a7615a..39de743a 100644
+index 68a7615..39de743 100644
 --- a/tornado/wsgi.py
 +++ b/tornado/wsgi.py
 @@ -20,7 +20,7 @@ WSGI is the Python standard for web servers, and allows for interoperability
@@ -4096,6 +4095,3 @@ index 68a7615a..39de743a 100644
          """
          hostport = request.host.split(":")
          if len(hostport) == 2:
--- 
-2.17.1
-

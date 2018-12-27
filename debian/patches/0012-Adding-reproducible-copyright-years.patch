@@ -1,0 +1,21 @@
+From: Emmanuel Arias <emamnuelarias30@gmail.com>
+Date: Thu, 27 Dec 2018 01:19:41 +0000
+Subject: Adding reproducible copyright years
+
+---
+ docs/conf.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/docs/conf.py b/docs/conf.py
+index 13a098d..1372878 100644
+--- a/docs/conf.py
++++ b/docs/conf.py
+@@ -8,7 +8,7 @@ import tornado
+ master_doc = "index"
+ 
+ project = "Tornado"
+-copyright = "2009-%s, The Tornado Authors" % time.strftime("%Y")
++copyright = "2009-2018, The Tornado Authors" 
+ 
+ version = release = tornado.version
+ 

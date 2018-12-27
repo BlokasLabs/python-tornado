@@ -1,8 +1,7 @@
-From d2f9e204430b258a05de0d81776a41b654809788 Mon Sep 17 00:00:00 2001
 From: Mattia Rizzolo <mattia@debian.org>
 Date: Sat, 21 May 2016 21:55:27 +0000
-Subject: skip UnixSocketTest on hurd, as unix sockets with SO_REUSEADDR are
- not supported there
+Subject: skip UnixSocketTest on hurd,
+ as unix sockets with SO_REUSEADDR are not supported there
 
  A little discussion about unix sockets with SO_REUSEADDR can be found on
  https://lists.gnu.org/archive/html/bug-hurd/2016-01/msg00039.html

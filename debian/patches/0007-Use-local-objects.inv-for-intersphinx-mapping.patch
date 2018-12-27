@@ -1,5 +1,4 @@
-From cc6316374c95737dbd2233796aec410306c93d03 Mon Sep 17 00:00:00 2001
-From: =?UTF-8?q?Ond=C5=99ej=20Nov=C3=BD?= <onovy@debian.org>
+From: =?utf-8?b?T25kxZllaiBOb3bDvQ==?= <onovy@debian.org>
 Date: Wed, 3 Aug 2016 19:02:48 +0200
 Subject: Use local objects.inv for intersphinx mapping
 
