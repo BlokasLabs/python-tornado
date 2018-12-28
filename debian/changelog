@@ -1,8 +1,15 @@
 python-tornado (5.1.1-3) UNRELEASED; urgency=medium
 
+  [ Ondřej Nový ]
   * Set TRAVIS env variable to "true"
 
- -- Ondřej Nový <onovy@debian.org>  Mon, 01 Oct 2018 20:18:14 +0200
+  [ Emmanuel Arias ]
+  * Adding-reproducible-copyright-years
+  * deleting last patch
+  * Use SOURCE_DATE_EPOCH if is on os.environ, either use
+    time.time() (UTC)
+
+ -- Emmanuel Arias <emamnuelarias30@gmail.com>  Fri, 28 Dec 2018 01:19:46 +0000
 
 python-tornado (5.1.1-2) unstable; urgency=medium
 
