@@ -1,3 +1,10 @@
+python-tornado4 (4.5.3-3) UNRELEASED; urgency=medium
+
+ * Use SOURCE_DATE_EPOCH if is on os.environ, either use
+   time.time() (UTC)
+
+ -- Emmanuel Arias <emamnuelarias30@gmail.com>  Fri, 28 Dec 2018 01:39:46 +0000
+
 python-tornado4 (4.5.3-2) unstable; urgency=medium
 
   [ Benjamin Drung ]
