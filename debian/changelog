@@ -1,7 +1,11 @@
 python-tornado4 (4.5.3-3) UNRELEASED; urgency=medium
 
  * Use SOURCE_DATE_EPOCH if is on os.environ, either use
+  [ Emmanuel Arias ]
    time.time() (UTC)
+
+  [ Ondřej Nový ]
+  * d/control: Set tornado4 branch in Vcs-Git
 
  -- Emmanuel Arias <emamnuelarias30@gmail.com>  Fri, 28 Dec 2018 01:39:46 +0000
 
