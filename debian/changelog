@@ -6,6 +6,7 @@ python-tornado4 (4.5.3-3) UNRELEASED; urgency=medium
 
   [ Ondřej Nový ]
   * d/control: Set tornado4 branch in Vcs-Git
+  * d/watch: Limit upstream version to major 4
 
  -- Emmanuel Arias <emamnuelarias30@gmail.com>  Fri, 28 Dec 2018 01:39:46 +0000
 
