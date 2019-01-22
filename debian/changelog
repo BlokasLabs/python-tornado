@@ -3,6 +3,7 @@ python-tornado4 (4.5.3-3) UNRELEASED; urgency=medium
   * d/control: Set tornado4 branch in Vcs-Git
   * d/watch: Limit upstream version to major 4
   * Use SOURCE_DATE_EPOCH for copyright year to make build reproducible
+  * Bump Standards-Version to 4.3.0 (no changes)
 
  -- Ondřej Nový <onovy@debian.org>  Tue, 22 Jan 2019 16:52:06 +0100
 
