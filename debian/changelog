@@ -1,4 +1,4 @@
-python-tornado4 (4.5.3-3) UNRELEASED; urgency=medium
+python-tornado4 (4.5.3-3) unstable; urgency=medium
 
   * d/control: Set tornado4 branch in Vcs-Git
   * d/watch: Limit upstream version to major 4
@@ -6,7 +6,7 @@ python-tornado4 (4.5.3-3) UNRELEASED; urgency=medium
   * Bump Standards-Version to 4.3.0 (no changes)
   * d/patches/without-certifi.patch: Fix typo
 
- -- Ondřej Nový <onovy@debian.org>  Tue, 22 Jan 2019 16:52:06 +0100
+ -- Ondřej Nový <onovy@debian.org>  Tue, 22 Jan 2019 17:11:23 +0100
 
 python-tornado4 (4.5.3-2) unstable; urgency=medium
 
