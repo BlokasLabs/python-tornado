@@ -2,6 +2,7 @@ python-tornado (5.1.1-3) UNRELEASED; urgency=medium
 
   * Set TRAVIS env variable to "true"
   * Use SOURCE_DATE_EPOCH for copyright year to make build reproducible
+  * Bump Standards-Version to 4.3.0 (no changes)
 
  -- Ondřej Nový <onovy@debian.org>  Tue, 22 Jan 2019 16:52:06 +0100
 
