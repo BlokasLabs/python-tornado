@@ -1,6 +1,6 @@
 From: Julien Puydt <julien.puydt@laposte.net>
 Date: Thu, 8 Oct 2015 13:13:34 -0700
-Subject: remove dependance on certifi
+Subject: remove dependence on certifi
 
  Since Debian is a distribution, we know where the certificates are
  and don't need certifi to find them.
