@@ -1,0 +1,25 @@
+From: Ondřej Nový <onovy@debian.org>
+Date: Tue, 22 Jan 2019 14:51:28 +0000
+Subject: Use SOURCE_DATE_EPOCH for copyright year to make build reproducible
+
+---
+ docs/conf.py | 8 +++++++-
+ 1 file changed, 7 insertions(+), 1 deletion(-)
+
+--- a/docs/conf.py
++++ b/docs/conf.py
+@@ -8,7 +8,13 @@
+ master_doc = "index"
+ 
+ project = "Tornado"
+-copyright = "2009-%s, The Tornado Authors" % time.strftime("%Y")
++
++this_year = datetime.date.today().year
++if 'SOURCE_DATE_EPOCH' in os.environ:
++    this_year = datetime.datetime.utcfromtimestamp(float(os.environ['SOURCE_DATE_EPOCH'])).year
++else:
++    this_year = datetime.date.today().year
++copyright = "2009-%d, The Tornado Authors" % this_year
+ 
+ version = release = tornado.version
+ 
