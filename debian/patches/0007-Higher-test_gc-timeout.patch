@@ -1,0 +1,15 @@
+Description: Set timeout in test_gc to higher value
+Author: Ondřej Nový <onovy@debian.org>
+Forwarded: not-needed
+
+--- a/tornado/test/gen_test.py
++++ b/tornado/test/gen_test.py
+@@ -1762,7 +1762,7 @@
+             yield fut
+ 
+         yield gen.with_timeout(
+-            datetime.timedelta(seconds=0.2),
++            datetime.timedelta(seconds=1),
+             tester()
+         )
+ 

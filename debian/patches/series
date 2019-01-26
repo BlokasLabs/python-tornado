@@ -4,3 +4,4 @@ fix-ftbfs-on-hurd.patch
 0006-Use-local-objects.inv-for-intersphinx-mapping.patch
 New_test_crt.patch
 0006-Use-SOURCE_DATE_EPOCH-for-copyright-year-to-make-build-reproducible.patch
+0007-Higher-test_gc-timeout.patch
