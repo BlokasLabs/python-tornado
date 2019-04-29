@@ -1,3 +1,13 @@
+python-tornado (5.1.1-5) UNRELEASED; urgency=medium
+
+  [ Michael Hudson-Doyle ]
+  * Bump ASYNC_TEST_TIMEOUT when running the autopkgtests as well.
+
+  [ Gianfranco Costamagna ]
+  * Commit Ubuntu delta in Debian packaging repo
+
+ -- Michael Hudson-Doyle <michael.hudson@ubuntu.com>  Fri, 02 Nov 2018 11:02:38 +1300
+
 python-tornado (5.1.1-4) unstable; urgency=medium
 
   * d/patches/0007-Higher-test_gc-timeout.patch: Added, fixies FTBS on mipsel

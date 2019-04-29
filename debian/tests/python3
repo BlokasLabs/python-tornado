@@ -1,6 +1,8 @@
 #!/bin/sh
 set -efu
 
+export ASYNC_TEST_TIMEOUT=30
+
 PYS=${PYS:-"$(py3versions -r 2>/dev/null)"}
 
 cd "$AUTOPKGTEST_TMP"
