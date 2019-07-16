@@ -2,14 +2,48 @@ Description: Set timeout in test_gc to higher value
 Author: Ondřej Nový <onovy@debian.org>
 Forwarded: not-needed
 
---- a/tornado/test/gen_test.py
-+++ b/tornado/test/gen_test.py
-@@ -1762,7 +1762,7 @@
-             yield fut
+--- python-tornado.orig/tornado/test/gen_test.py
++++ python-tornado/tornado/test/gen_test.py
+@@ -734,13 +734,13 @@
+     @gen_test
+     def test_timeout(self):
+         with self.assertRaises(gen.TimeoutError):
+-            yield gen.with_timeout(datetime.timedelta(seconds=0.1), Future())
++            yield gen.with_timeout(datetime.timedelta(seconds=1), Future())
  
-         yield gen.with_timeout(
--            datetime.timedelta(seconds=0.2),
+     @gen_test
+     def test_completes_before_timeout(self):
+         future = Future()  # type: Future[str]
+         self.io_loop.add_timeout(
+-            datetime.timedelta(seconds=0.1), lambda: future.set_result("asdf")
++            datetime.timedelta(seconds=1), lambda: future.set_result("asdf")
+         )
+         result = yield gen.with_timeout(datetime.timedelta(seconds=3600), future)
+         self.assertEqual(result, "asdf")
+@@ -749,7 +749,7 @@
+     def test_fails_before_timeout(self):
+         future = Future()  # type: Future[str]
+         self.io_loop.add_timeout(
+-            datetime.timedelta(seconds=0.1),
 +            datetime.timedelta(seconds=1),
-             tester()
+             lambda: future.set_exception(ZeroDivisionError()),
+         )
+         with self.assertRaises(ZeroDivisionError):
+@@ -942,7 +942,7 @@
+         # WaitIterator uses weak references internally to improve GC
+         # performance, this used to cause problems.
+         yield gen.with_timeout(
+-            datetime.timedelta(seconds=0.1), gen.WaitIterator(gen.sleep(0)).next()
++            datetime.timedelta(seconds=1), gen.WaitIterator(gen.sleep(0)).next()
          )
  
+ 
+@@ -967,7 +967,7 @@
+             self.io_loop.add_callback(callback)
+             yield fut
+ 
+-        yield gen.with_timeout(datetime.timedelta(seconds=0.2), tester())
++        yield gen.with_timeout(datetime.timedelta(seconds=1), tester())
+ 
+     def test_gc_infinite_coro(self):
+         # Github issue 2229: suspended coroutines should be GCed when
