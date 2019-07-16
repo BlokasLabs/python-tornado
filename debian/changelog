@@ -1,4 +1,4 @@
-python-tornado (5.1.1-5) UNRELEASED; urgency=medium
+python-tornado (6.0.3-1) UNRELEASED; urgency=medium
 
   [ Michael Hudson-Doyle ]
   * Bump ASYNC_TEST_TIMEOUT when running the autopkgtests as well.
@@ -6,7 +6,10 @@ python-tornado (5.1.1-5) UNRELEASED; urgency=medium
   [ Gianfranco Costamagna ]
   * Commit Ubuntu delta in Debian packaging repo
 
- -- Michael Hudson-Doyle <michael.hudson@ubuntu.com>  Fri, 02 Nov 2018 11:02:38 +1300
+  [ Julien Puydt ]
+  * New upstream release 6.0.3.
+
+ -- Julien Puydt <jpuydt@debian.org>  Tue, 16 Jul 2019 13:50:32 +0200
 
 python-tornado (5.1.1-4) unstable; urgency=medium
 
