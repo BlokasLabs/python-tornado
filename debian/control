@@ -28,7 +28,7 @@ Build-Depends: ca-certificates,
                python3-sphinx,
                python3-sphinx-rtd-theme,
                python3-twisted,
-Standards-Version: 4.3.0
+Standards-Version: 4.4.0
 Homepage: http://www.tornadoweb.org/
 Vcs-Git: https://salsa.debian.org/python-team/modules/python-tornado.git
 Vcs-Browser: https://salsa.debian.org/python-team/modules/python-tornado
