@@ -14,6 +14,7 @@ python-tornado (6.0.3-1) UNRELEASED; urgency=medium
 
   [ Ondřej Nový ]
   * Use debhelper-compat instead of debian/compat.
+  * Bump Standards-Version to 4.4.1.
 
  -- Julien Puydt <jpuydt@debian.org>  Tue, 16 Jul 2019 13:50:32 +0200
 
