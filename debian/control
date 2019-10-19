@@ -5,7 +5,7 @@ Maintainer: Debian Python Modules Team <python-modules-team@lists.alioth.debian.
 Uploaders: Carl Chenet <chaica@debian.org>,
            Yaroslav Halchenko <debian@onerussian.com>,
            Julian Taylor <jtaylor.debian@googlemail.com>,
-           Julien Puydt <julien.puydt@laposte.net>,
+           Julien Puydt <jpuydt@debian.org>,
            Ondřej Nový <onovy@debian.org>,
 Build-Depends: ca-certificates,
                debhelper-compat (= 11),
