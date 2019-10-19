@@ -1,4 +1,4 @@
-python-tornado (6.0.3-1) UNRELEASED; urgency=medium
+python-tornado (6.0.3-1) unstable; urgency=medium
 
   [ Michael Hudson-Doyle ]
   * Bump ASYNC_TEST_TIMEOUT when running the autopkgtests as well.
@@ -21,7 +21,7 @@ python-tornado (6.0.3-1) UNRELEASED; urgency=medium
   * Use my debian.org mail address.
   * Update lintian overrides.
 
- -- Julien Puydt <jpuydt@debian.org>  Tue, 16 Jul 2019 13:50:32 +0200
+ -- Julien Puydt <jpuydt@debian.org>  Sat, 19 Oct 2019 22:48:34 +0200
 
 python-tornado (5.1.1-4) unstable; urgency=medium
 
