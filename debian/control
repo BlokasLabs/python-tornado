@@ -18,6 +18,7 @@ Build-Depends: ca-certificates,
                python3-setuptools,
                python3-singledispatch,
                python3-sphinx,
+               python3-sphinxcontrib-asyncio,
                python3-sphinx-rtd-theme,
                python3-twisted,
 Standards-Version: 4.4.1

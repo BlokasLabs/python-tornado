@@ -16,6 +16,9 @@ python-tornado (6.0.3-1) UNRELEASED; urgency=medium
   * Use debhelper-compat instead of debian/compat.
   * Bump Standards-Version to 4.4.1.
 
+  [ Julien Puydt ]
+  * Add python3-sphinxcontrib-asyncio as new build-dep.
+
  -- Julien Puydt <jpuydt@debian.org>  Tue, 16 Jul 2019 13:50:32 +0200
 
 python-tornado (5.1.1-4) unstable; urgency=medium
