@@ -1,3 +1,34 @@
+python-tornado (6.0.3+really5.1.1-1) unstable; urgency=medium
+
+  * Re-upload old version so deps can follow.
+
+ -- Julien Puydt <jpuydt@debian.org>  Sun, 20 Oct 2019 10:45:08 +0200
+
+python-tornado (6.0.3-1) unstable; urgency=medium
+
+  [ Michael Hudson-Doyle ]
+  * Bump ASYNC_TEST_TIMEOUT when running the autopkgtests as well.
+
+  [ Gianfranco Costamagna ]
+  * Commit Ubuntu delta in Debian packaging repo
+
+  [ Julien Puydt ]
+  * New upstream release 6.0.3 (Closes: #939271)
+  * Bump std-vers to 4.4.0.
+  * Update patches (and drop those upstreamed [new CRT and reproducible]).
+  * Adapt to upstream only supporting Python 3 (Closes: #938220)
+
+  [ Ondřej Nový ]
+  * Use debhelper-compat instead of debian/compat.
+  * Bump Standards-Version to 4.4.1.
+
+  [ Julien Puydt ]
+  * Add python3-sphinxcontrib-asyncio as new build-dep.
+  * Use my debian.org mail address.
+  * Update lintian overrides.
+
+ -- Julien Puydt <jpuydt@debian.org>  Sat, 19 Oct 2019 22:48:34 +0200
+
 python-tornado (5.1.1-4) unstable; urgency=medium
 
   * d/patches/0007-Higher-test_gc-timeout.patch: Added, fixies FTBS on mipsel
