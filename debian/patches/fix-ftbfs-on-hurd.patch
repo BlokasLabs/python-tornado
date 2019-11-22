@@ -12,16 +12,16 @@ Patch-Name: fix-ftbfs-on-hurd.patch
  tornado/test/httpserver_test.py | 2 ++
  1 file changed, 2 insertions(+)
 
---- python-tornado.orig/tornado/test/httpserver_test.py
-+++ python-tornado/tornado/test/httpserver_test.py
-@@ -680,6 +680,10 @@
-     not hasattr(socket, "AF_UNIX") or sys.platform == "cygwin",
-     "unix sockets not supported on this platform",
- )
-+@unittest.skipIf(
-+    sys.platform == 'gnu0',
-+    'unix sockets with SO_REUSEADDR not supported on this platform'
-+)
+diff --git a/tornado/test/httpserver_test.py b/tornado/test/httpserver_test.py
+index acaf2a0..e727d9c 100644
+--- a/tornado/test/httpserver_test.py
++++ b/tornado/test/httpserver_test.py
+@@ -597,6 +597,8 @@ class ManualProtocolTest(HandlerBaseTestCase):
+ 
+ @unittest.skipIf(not hasattr(socket, 'AF_UNIX') or sys.platform == 'cygwin',
+                  "unix sockets not supported on this platform")
++@unittest.skipIf(sys.platform == 'gnu0',
++                 "unix sockets with SO_REUSEADDR not supported on this platform")
  class UnixSocketTest(AsyncTestCase):
      """HTTPServers can listen on Unix sockets too.
  
