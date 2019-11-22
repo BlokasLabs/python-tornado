@@ -7,5 +7,6 @@ Utilities
    concurrent
    log
    options
+   stack_context
    testing
    util

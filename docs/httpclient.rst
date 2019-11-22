@@ -47,9 +47,7 @@ Implementations
 ~~~~~~~~~~~~~~~
 
 .. automodule:: tornado.simple_httpclient
-   
-   .. autoclass:: SimpleAsyncHTTPClient
-      :members:
+   :members:
 
 .. module:: tornado.curl_httpclient
 
