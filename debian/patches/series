@@ -5,3 +5,5 @@ fix-ftbfs-on-hurd.patch
 New_test_crt.patch
 0006-Use-SOURCE_DATE_EPOCH-for-copyright-year-to-make-build-reproducible.patch
 0007-Higher-test_gc-timeout.patch
+py38-0001-test-silence-deprecation-warning.patch
+py38-0002-dont-log-CancelledError.patch
