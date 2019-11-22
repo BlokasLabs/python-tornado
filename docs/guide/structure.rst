@@ -178,7 +178,7 @@ In addition to ``get()``/``post()``/etc, certain other methods in
 necessary. On every request, the following sequence of calls takes
 place:
 
-1. A new `.RequestHandler` object is created on each request.
+1. A new `.RequestHandler` object is created on each request
 2. `~.RequestHandler.initialize()` is called with the initialization
    arguments from the `.Application` configuration. ``initialize``
    should typically just save the arguments passed into member
@@ -193,8 +193,9 @@ place:
    etc. If the URL regular expression contains capturing groups, they
    are passed as arguments to this method.
 5. When the request is finished, `~.RequestHandler.on_finish()` is
-   called. This is generally after ``get()`` or another HTTP method
-   returns.
+   called. For most handlers this is immediately after ``get()`` (etc)
+   return; for handlers using the `tornado.web.asynchronous` decorator
+   it is after the call to `~.RequestHandler.finish()`.
 
 All methods designed to be overridden are noted as such in the
 `.RequestHandler` documentation.  Some of the most commonly
@@ -206,12 +207,12 @@ overridden methods include:
   disconnects; applications may choose to detect this case and halt
   further processing.  Note that there is no guarantee that a closed
   connection can be detected promptly.
-- `~.RequestHandler.get_current_user` - see :ref:`user-authentication`.
+- `~.RequestHandler.get_current_user` - see :ref:`user-authentication`
 - `~.RequestHandler.get_user_locale` - returns `.Locale` object to use
-  for the current user.
+  for the current user
 - `~.RequestHandler.set_default_headers` - may be used to set
   additional headers on the response (such as a custom ``Server``
-  header).
+  header)
 
 Error Handling
 ~~~~~~~~~~~~~~
@@ -260,7 +261,7 @@ redirect users elsewhere. There is also an optional parameter
 considered permanent.  The default value of ``permanent`` is
 ``False``, which generates a ``302 Found`` HTTP response code and is
 appropriate for things like redirecting users after successful
-``POST`` requests.  If ``permanent`` is ``True``, the ``301 Moved
+``POST`` requests.  If ``permanent`` is true, the ``301 Moved
 Permanently`` HTTP response code is used, which is useful for
 e.g. redirecting to a canonical URL for a page in an SEO-friendly
 manner.
@@ -297,6 +298,11 @@ Asynchronous handlers
 Certain handler methods (including ``prepare()`` and the HTTP verb
 methods ``get()``/``post()``/etc) may be overridden as coroutines to
 make the handler asynchronous.
+
+Tornado also supports a callback-based style of asynchronous handler
+with the `tornado.web.asynchronous` decorator, but this style is
+deprecated and will be removed in Tornado 6.0. New applications should
+use coroutines instead.
 
 For example, here is a simple handler using a coroutine:
 

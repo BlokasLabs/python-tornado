@@ -8,7 +8,7 @@ from urllib.parse import urljoin, urldefrag
 
 from tornado import gen, httpclient, ioloop, queues
 
-base_url = "http://www.tornadoweb.org/en/stable/"
+base_url = 'http://www.tornadoweb.org/en/stable/'
 concurrency = 10
 
 
@@ -20,10 +20,11 @@ async def get_links_from_url(url):
     'http://www.tornadoweb.org/en/stable/gen.html'.
     """
     response = await httpclient.AsyncHTTPClient().fetch(url)
-    print("fetched %s" % url)
+    print('fetched %s' % url)
 
-    html = response.body.decode(errors="ignore")
-    return [urljoin(url, remove_fragment(new_url)) for new_url in get_links(html)]
+    html = response.body.decode(errors='ignore')
+    return [urljoin(url, remove_fragment(new_url))
+            for new_url in get_links(html)]
 
 
 def remove_fragment(url):
@@ -38,8 +39,8 @@ def get_links(html):
             self.urls = []
 
         def handle_starttag(self, tag, attrs):
-            href = dict(attrs).get("href")
-            if href and tag == "a":
+            href = dict(attrs).get('href')
+            if href and tag == 'a':
                 self.urls.append(href)
 
     url_seeker = URLSeeker()
@@ -56,7 +57,7 @@ async def main():
         if current_url in fetching:
             return
 
-        print("fetching %s" % current_url)
+        print('fetching %s' % current_url)
         fetching.add(current_url)
         urls = await get_links_from_url(current_url)
         fetched.add(current_url)
@@ -73,7 +74,7 @@ async def main():
             try:
                 await fetch_url(url)
             except Exception as e:
-                print("Exception: %s %s" % (e, url))
+                print('Exception: %s %s' % (e, url))
             finally:
                 q.task_done()
 
@@ -83,7 +84,8 @@ async def main():
     workers = gen.multi([worker() for _ in range(concurrency)])
     await q.join(timeout=timedelta(seconds=300))
     assert fetching == fetched
-    print("Done in %d seconds, fetched %s URLs." % (time.time() - start, len(fetched)))
+    print('Done in %d seconds, fetched %s URLs.' % (
+        time.time() - start, len(fetched)))
 
     # Signal all the workers to exit.
     for _ in range(concurrency):
@@ -91,6 +93,6 @@ async def main():
     await workers
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     io_loop = ioloop.IOLoop.current()
     io_loop.run_sync(main)
