@@ -1,3 +1,12 @@
+python-tornado (6.0.3+really5.1.1-3) UNRELEASED; urgency=medium
+
+  * Use secure URI in Homepage field.
+  * Bump debhelper from old 11 to 12.
+  * Remove obsolete field Name from debian/upstream/metadata (already
+    present in machine-readable debian/copyright).
+
+ -- Debian Janitor <janitor@jelmer.uk>  Wed, 01 Jan 2020 07:29:38 +0000
+
 python-tornado (6.0.3+really5.1.1-2) unstable; urgency=medium
 
   * Applied patches from Ubuntu to fix Python 3.8 FTBFS:
