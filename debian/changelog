@@ -1,3 +1,16 @@
+python-tornado (6.0.4-1) UNRELEASED; urgency=medium
+
+  * New upstream release: 6.0.4 (Closes: #939271, again)
+  * Refresh patches:
+     - Applied upstream:
+       + d/p/py38-0001-test-silence-deprecation-warning.patch
+       + d/p/py38-0002-dont-log-CancelledError.patch
+       + d/p/New_test_crt.patch
+     - No longer needed:
+       + d/p/0006-Use-SOURCE_DATE_EPOCH-for-copyright-year-to-make-build-reproducible.patch
+
+ -- Gordon Ball <gordon@chronitis.net>  Thu, 02 Apr 2020 10:26:19 +0000
+
 python-tornado (6.0.3+really5.1.1-3) unstable; urgency=medium
 
   [ Debian Janitor ]

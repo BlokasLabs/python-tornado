@@ -13,13 +13,13 @@ Patch-Name: fix-ftbfs-on-hurd.patch
  1 file changed, 2 insertions(+)
 
 diff --git a/tornado/test/httpserver_test.py b/tornado/test/httpserver_test.py
-index acaf2a0..e727d9c 100644
+index 2a8b6a5..9385590 100644
 --- a/tornado/test/httpserver_test.py
 +++ b/tornado/test/httpserver_test.py
-@@ -597,6 +597,8 @@ class ManualProtocolTest(HandlerBaseTestCase):
- 
- @unittest.skipIf(not hasattr(socket, 'AF_UNIX') or sys.platform == 'cygwin',
-                  "unix sockets not supported on this platform")
+@@ -680,6 +680,8 @@ class ManualProtocolTest(HandlerBaseTestCase):
+     not hasattr(socket, "AF_UNIX") or sys.platform == "cygwin",
+     "unix sockets not supported on this platform",
+ )
 +@unittest.skipIf(sys.platform == 'gnu0',
 +                 "unix sockets with SO_REUSEADDR not supported on this platform")
  class UnixSocketTest(AsyncTestCase):
