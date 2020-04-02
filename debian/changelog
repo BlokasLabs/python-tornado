@@ -9,6 +9,7 @@ python-tornado (6.0.4-1) UNRELEASED; urgency=medium
      - No longer needed:
        + d/p/0006-Use-SOURCE_DATE_EPOCH-for-copyright-year-to-make-build-reproducible.patch
   * Reintroduce dependency on python3-sphinxcontrib-asyncio
+  * Update to Standards-Version 4.5.0
 
  -- Gordon Ball <gordon@chronitis.net>  Thu, 02 Apr 2020 10:26:19 +0000
 
