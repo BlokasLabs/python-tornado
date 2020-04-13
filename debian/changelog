@@ -1,3 +1,9 @@
+python-tornado4 (4.5.3-4) UNRELEASED; urgency=medium
+
+  * Use secure URI in Homepage field.
+
+ -- Debian Janitor <janitor@jelmer.uk>  Mon, 13 Apr 2020 22:58:31 +0000
+
 python-tornado4 (4.5.3-3) unstable; urgency=medium
 
   * d/control: Set tornado4 branch in Vcs-Git
