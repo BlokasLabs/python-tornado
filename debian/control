@@ -1,7 +1,7 @@
 Source: python-tornado
 Section: web
 Priority: optional
-Maintainer: Debian Python Modules Team <python-modules-team@lists.alioth.debian.org>
+Maintainer: Debian Python Team <team+python@tracker.debian.org>
 Uploaders: Carl Chenet <chaica@debian.org>,
            Yaroslav Halchenko <debian@onerussian.com>,
            Julian Taylor <jtaylor.debian@googlemail.com>,
