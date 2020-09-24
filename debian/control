@@ -22,8 +22,8 @@ Build-Depends: ca-certificates,
                python3-twisted,
 Standards-Version: 4.5.0
 Homepage: https://www.tornadoweb.org/
-Vcs-Git: https://salsa.debian.org/python-team/modules/python-tornado.git
-Vcs-Browser: https://salsa.debian.org/python-team/modules/python-tornado
+Vcs-Git: https://salsa.debian.org/python-team/packages/python-tornado.git
+Vcs-Browser: https://salsa.debian.org/python-team/packages/python-tornado
 Rules-Requires-Root: no
 
 Package: python3-tornado
