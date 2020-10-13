@@ -9,6 +9,7 @@ python-tornado (6.0.4-3) UNRELEASED; urgency=medium
   [ Julien Puydt ]
   * Update patch headers so lintian doesn't complain.
   * Update lintian overrides.
+  * Use my @debian.org mail address.
 
  -- Ondřej Nový <onovy@debian.org>  Thu, 24 Sep 2020 08:51:32 +0200
 

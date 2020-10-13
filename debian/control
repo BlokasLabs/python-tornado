@@ -5,7 +5,7 @@ Maintainer: Debian Python Team <team+python@tracker.debian.org>
 Uploaders: Carl Chenet <chaica@debian.org>,
            Yaroslav Halchenko <debian@onerussian.com>,
            Julian Taylor <jtaylor.debian@googlemail.com>,
-           Julien Puydt <julien.puydt@laposte.net>,
+           Julien Puydt <jpuydt@debian.org>,
            Ondřej Nový <onovy@debian.org>,
 Build-Depends: ca-certificates,
                debhelper-compat (= 12),
