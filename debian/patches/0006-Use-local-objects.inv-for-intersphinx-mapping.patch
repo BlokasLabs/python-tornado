@@ -1,6 +1,7 @@
-From: =?utf-8?b?T25kxZllaiBOb3bDvQ==?= <onovy@debian.org>
+Author: Ondřej Nový <onovy@debian.org>
 Date: Wed, 3 Aug 2016 19:02:48 +0200
-Subject: Use local objects.inv for intersphinx mapping
+Description: Use local objects.inv for intersphinx mapping
+Forwarded: Debian-specific
 
 ---
  docs/conf.py | 4 +++-
