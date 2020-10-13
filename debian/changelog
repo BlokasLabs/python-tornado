@@ -10,6 +10,7 @@ python-tornado (6.0.4-3) UNRELEASED; urgency=medium
   * Update patch headers so lintian doesn't complain.
   * Update lintian overrides.
   * Use my @debian.org mail address.
+  * Bump dh compat to 13.
 
  -- Ondřej Nový <onovy@debian.org>  Thu, 24 Sep 2020 08:51:32 +0200
 
