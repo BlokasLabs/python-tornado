@@ -13,10 +13,10 @@ Patch-Name: fix-ftbfs-on-hurd.patch
  1 file changed, 2 insertions(+)
 
 diff --git a/tornado/test/httpserver_test.py b/tornado/test/httpserver_test.py
-index 2a8b6a5..9385590 100644
+index 614dec7..93da50d 100644
 --- a/tornado/test/httpserver_test.py
 +++ b/tornado/test/httpserver_test.py
-@@ -680,6 +680,8 @@ class ManualProtocolTest(HandlerBaseTestCase):
+@@ -709,6 +709,8 @@ class ManualProtocolTest(HandlerBaseTestCase):
      not hasattr(socket, "AF_UNIX") or sys.platform == "cygwin",
      "unix sockets not supported on this platform",
  )

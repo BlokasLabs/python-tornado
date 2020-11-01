@@ -8,7 +8,7 @@ Forwarded: not-needed
  1 file changed, 4 insertions(+), 1 deletion(-)
 
 diff --git a/tornado/test/gen_test.py b/tornado/test/gen_test.py
-index 659e226..6e80666 100644
+index 73c3387..f8373df 100644
 --- a/tornado/test/gen_test.py
 +++ b/tornado/test/gen_test.py
 @@ -967,7 +967,10 @@ class RunnerGCTest(AsyncTestCase):
@@ -22,4 +22,4 @@ index 659e226..6e80666 100644
 +        )
  
      def test_gc_infinite_coro(self):
-         # Github issue 2229: suspended coroutines should be GCed when
+         # GitHub issue 2229: suspended coroutines should be GCed when
