@@ -9,12 +9,12 @@
 .. |Tornado Web Server| image:: tornado.png
     :alt: Tornado Web Server
 
-`Tornado <http://www.tornadoweb.org>`_ is a Python web framework and
+`Tornado <https://www.tornadoweb.org>`_ is a Python web framework and
 asynchronous networking library, originally developed at `FriendFeed
-<http://friendfeed.com>`_.  By using non-blocking network I/O, Tornado
+<https://en.wikipedia.org/wiki/FriendFeed>`_.  By using non-blocking network I/O, Tornado
 can scale to tens of thousands of open connections, making it ideal for
-`long polling <http://en.wikipedia.org/wiki/Push_technology#Long_polling>`_,
-`WebSockets <http://en.wikipedia.org/wiki/WebSocket>`_, and other
+`long polling <https://en.wikipedia.org/wiki/Push_technology#Long_polling>`_,
+`WebSockets <https://en.wikipedia.org/wiki/WebSocket>`_, and other
 applications that require a long-lived connection to each user.
 
 Quick links
@@ -22,8 +22,8 @@ Quick links
 
 * Current version: |version| (`download from PyPI <https://pypi.python.org/pypi/tornado>`_, :doc:`release notes <releases>`)
 * `Source (GitHub) <https://github.com/tornadoweb/tornado>`_
-* Mailing lists: `discussion <http://groups.google.com/group/python-tornado>`_ and `announcements <http://groups.google.com/group/python-tornado-announce>`_
-* `Stack Overflow <http://stackoverflow.com/questions/tagged/tornado>`_
+* Mailing lists: `discussion <https://groups.google.com/forum/#!forum/python-tornado>`_ and `announcements <https://groups.google.com/forum/#!forum/python-tornado-announce>`_
+* `Stack Overflow <https://stackoverflow.com/questions/tagged/tornado>`_
 * `Wiki <https://github.com/tornadoweb/tornado/wiki/Links>`_
 
 Hello, world
@@ -89,7 +89,7 @@ Installation
 
     pip install tornado
 
-Tornado is listed in `PyPI <http://pypi.python.org/pypi/tornado>`_ and
+Tornado is listed in `PyPI <https://pypi.org/project/tornado/>`_ and
 can be installed with ``pip``. Note that the source distribution
 includes demo applications that are not present when Tornado is
 installed in this way, so you may wish to download a copy of the
@@ -101,31 +101,24 @@ source tarball or clone the `git repository
 compatibility with Python 2.7 is required). The following optional
 packages may be useful:
 
-* `pycurl <http://pycurl.sourceforge.net>`_ is used by the optional
+* `pycurl <http://pycurl.io/>`_ is used by the optional
   ``tornado.curl_httpclient``.  Libcurl version 7.22 or higher is required.
-* `Twisted <http://www.twistedmatrix.com>`_ may be used with the classes in
+* `Twisted <https://www.twistedmatrix.com/>`_ may be used with the classes in
   `tornado.platform.twisted`.
-* `pycares <https://pypi.python.org/pypi/pycares>`_ is an alternative
+* `pycares <https://pypi.org/project/pycares/>`_ is an alternative
   non-blocking DNS resolver that can be used when threads are not
   appropriate.
 
-**Platforms**: Tornado should run on any Unix-like platform, although
-for the best performance and scalability only Linux (with ``epoll``)
-and BSD (with ``kqueue``) are recommended for production deployment
-(even though Mac OS X is derived from BSD and supports kqueue, its
-networking performance is generally poor so it is recommended only for
-development use).  Tornado will also run on Windows, although this
-configuration is not officially supported and is recommended only for
-development use. Without reworking Tornado IOLoop interface, it's not
-possible to add a native Tornado Windows IOLoop implementation or
-leverage Windows' IOCP support from frameworks like AsyncIO or Twisted.
+**Platforms**: Tornado is designed for Unix-like platforms, with best
+performance and scalability on systems supporting ``epoll`` (Linux),
+``kqueue`` (BSD/macOS), or ``/dev/poll`` (Solaris).
 
-On Windows, Tornado requires the ``WindowsSelectorEventLoop``. This is
-the default in Python 3.7 and older, but Python 3.8 defaults to an
-event loop that is not compatible with Tornado. Applications that use
-Tornado on Windows with Python 3.8 must call
-``asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())``
-at the beginning of their ``main`` file/function.
+Tornado will also run on Windows, although this configuration is not
+officially supported or recommended for production use. Some features
+are missing on Windows (including multi-process mode) and scalability
+is limited (Even though Tornado is built on ``asyncio``, which
+supports Windows, Tornado does not use the APIs that are necessary for
+scalable networking on Windows).
 
 Documentation
 -------------
@@ -154,17 +147,17 @@ Discussion and support
 ----------------------
 
 You can discuss Tornado on `the Tornado developer mailing list
-<http://groups.google.com/group/python-tornado>`_, and report bugs on
+<https://groups.google.com/forum/#!forum/python-tornado>`_, and report bugs on
 the `GitHub issue tracker
 <https://github.com/tornadoweb/tornado/issues>`_.  Links to additional
 resources can be found on the `Tornado wiki
 <https://github.com/tornadoweb/tornado/wiki/Links>`_.  New releases are
 announced on the `announcements mailing list
-<http://groups.google.com/group/python-tornado-announce>`_.
+<https://groups.google.com/forum/#!forum/python-tornado-announce>`_.
 
 Tornado is available under
 the `Apache License, Version 2.0
 <http://www.apache.org/licenses/LICENSE-2.0.html>`_.
 
 This web site and all documentation is licensed under `Creative
-Commons 3.0 <http://creativecommons.org/licenses/by/3.0/>`_.
+Commons 3.0 <https://creativecommons.org/licenses/by/3.0/>`_.
