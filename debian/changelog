@@ -1,9 +1,9 @@
-python-tornado (6.1.0-1) UNRELEASED; urgency=medium
+python-tornado (6.1.0-1) unstable; urgency=medium
 
   * New upstream version 6.1.0
   * Rebase patches, drop fix_971108.patch (fixed upstream)
 
- -- Gordon Ball <gordon@chronitis.net>  Fri, 13 Nov 2020 13:41:06 +0000
+ -- Gordon Ball <gordon@chronitis.net>  Fri, 13 Nov 2020 19:13:45 +0000
 
 python-tornado (6.0.4-3) unstable; urgency=medium
 
