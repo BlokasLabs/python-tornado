@@ -1,12 +1,13 @@
-python-tornado (6.1.0-2) UNRELEASED; urgency=medium
+python-tornado (6.1.0-2) unstable; urgency=medium
+
+  [ Stefano Rivera ]
+  * Team upload.
+  * Patch: Ignore known DeprecationWarnings in Python 3.10 (Closes: #1000287)
 
   [ Debian Janitor ]
   * Update standards version to 4.5.1, no changes needed.
 
-  [ Stefano Rivera ]
-  * Patch: Ignore known DeprecationWarnings in Python 3.10 (Closes: #1000287)
-
- -- Debian Janitor <janitor@jelmer.uk>  Thu, 26 Aug 2021 03:08:43 -0000
+ -- Stefano Rivera <stefanor@debian.org>  Sat, 20 Nov 2021 22:10:29 -0400
 
 python-tornado (6.1.0-1) unstable; urgency=medium
 
