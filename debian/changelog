@@ -1,3 +1,9 @@
+python-tornado (6.1.0-3) UNRELEASED; urgency=medium
+
+  * Drop a dead link. (Closes: #988772)
+
+ -- Julien Puydt <jpuydt@debian.org>  Fri, 03 Dec 2021 09:32:11 +0100
+
 python-tornado (6.1.0-2) unstable; urgency=medium
 
   [ Stefano Rivera ]
