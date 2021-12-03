@@ -2,6 +2,7 @@ python-tornado (6.1.0-3) UNRELEASED; urgency=medium
 
   * Drop a dead link. (Closes: #988772)
   * Add a patch replace_deprecated_unittest_aliases.patch.
+  * Bump standards-version to 4.6.0.
 
  -- Julien Puydt <jpuydt@debian.org>  Fri, 03 Dec 2021 09:32:11 +0100
 
