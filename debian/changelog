@@ -1,6 +1,7 @@
 python-tornado (6.2.0-1) UNRELEASED; urgency=medium
 
   * New upstream release.
+  * Bump standards-version to 4.6.1.
 
  -- Julien Puydt <jpuydt@debian.org>  Sun, 10 Jul 2022 19:20:23 +0200
 
