@@ -13,11 +13,9 @@ Forwarded: not-needed
  tornado/test/runtests.py | 12 ++++++++++++
  1 file changed, 12 insertions(+)
 
-diff --git a/tornado/test/runtests.py b/tornado/test/runtests.py
-index 2f1fd95..4bcfc78 100644
---- a/tornado/test/runtests.py
-+++ b/tornado/test/runtests.py
-@@ -160,6 +160,18 @@ def main():
+--- python-tornado.orig/tornado/test/runtests.py
++++ python-tornado/tornado/test/runtests.py
+@@ -160,6 +160,18 @@
          category=DeprecationWarning,
          message="PY_SSIZE_T_CLEAN will be required",
      )
