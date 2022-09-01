@@ -35,8 +35,7 @@ Depends: ca-certificates,
 Suggests: python3-pycurl,
           python-tornado-doc,
           python3-twisted,
-Breaks: python3-zmq (<< 17.0.0-1~),
-        pcs (<< 0.10.5-1~),
+Breaks: pcs (<< 0.10.5-1~),
         mitmproxy (<< 5.0~)
 Description: scalable, non-blocking web server and tools - Python 3 package
  Tornado is a Python web framework and asynchronous networking library,
