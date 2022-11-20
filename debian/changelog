@@ -1,9 +1,9 @@
-python-tornado (6.2.0-3) UNRELEASED; urgency=medium
+python-tornado (6.2.0-3) unstable; urgency=medium
 
   [ Debian Janitor ]
   * Apply multi-arch hints. + python-tornado-doc: Add Multi-Arch: foreign.
 
- -- Jelmer Vernooĳ <jelmer@debian.org>  Sun, 20 Nov 2022 12:24:09 +0000
+ -- Jelmer Vernooĳ <jelmer@debian.org>  Sun, 20 Nov 2022 12:24:11 +0000
 
 python-tornado (6.2.0-2) unstable; urgency=medium
 
