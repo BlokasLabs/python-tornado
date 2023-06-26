@@ -1,10 +1,10 @@
-python-tornado (6.3.2-1) UNRELEASED; urgency=medium
+python-tornado (6.3.2-1) unstable; urgency=medium
 
   * New upstream release (Closes: #1036875).
   * Refresh patches.
   * Bump standards-version to 4.6.2.
 
- -- Julien Puydt <jpuydt@debian.org>  Mon, 26 Jun 2023 07:33:38 +0200
+ -- Julien Puydt <jpuydt@debian.org>  Mon, 26 Jun 2023 07:42:05 +0200
 
 python-tornado (6.2.0-3) unstable; urgency=medium
 
