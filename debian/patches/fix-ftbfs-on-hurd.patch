@@ -6,7 +6,7 @@ Subject: skip UnixSocketTest on hurd,
  A little discussion about unix sockets with SO_REUSEADDR can be found on
  https://lists.gnu.org/archive/html/bug-hurd/2016-01/msg00039.html
 
-Forwarded: no
+Forwarded: https://github.com/tornadoweb/tornado/issues/3290
 Patch-Name: fix-ftbfs-on-hurd.patch
 ---
  tornado/test/httpserver_test.py | 2 ++

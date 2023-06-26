@@ -1,8 +1,7 @@
 From: =?utf-8?b?T25kxZllaiBOb3bDvQ==?= <onovy@debian.org>
 Date: Wed, 3 Aug 2016 19:02:48 +0200
 Subject: Use local objects.inv for intersphinx mapping
-
-Forwarded: Debian-specific
+Forwarded: not-needed
 ---
  docs/conf.py | 4 +++-
  1 file changed, 3 insertions(+), 1 deletion(-)

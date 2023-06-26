@@ -1,6 +1,7 @@
 python-tornado (6.3.2-1) UNRELEASED; urgency=medium
 
   * New upstream release (Closes: #1036875).
+  * Refresh patches.
 
  -- Julien Puydt <jpuydt@debian.org>  Mon, 26 Jun 2023 07:33:38 +0200
 
