@@ -6,14 +6,14 @@ Forwarded: not-needed
  docs/conf.py | 4 +++-
  1 file changed, 3 insertions(+), 1 deletion(-)
 
---- python-tornado.orig/docs/conf.py
-+++ python-tornado/docs/conf.py
-@@ -82,7 +82,7 @@
+--- a/docs/conf.py
++++ b/docs/conf.py
+@@ -84,7 +84,7 @@
      )
  ]
  
 -intersphinx_mapping = {"python": ("https://docs.python.org/3/", None)}
 +intersphinx_mapping = {"python": ("/usr/share/doc/python3-doc/html", None)}
  
- on_rtd = os.environ.get("READTHEDOCS", None) == "True"
- 
+ html_theme = "sphinx_rtd_theme"
+ html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
