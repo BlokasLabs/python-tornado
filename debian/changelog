@@ -1,8 +1,12 @@
 python-tornado (6.4.0-1) UNRELEASED; urgency=medium
 
+  [ Alexandre Detiste ]
   * Team upload.
   * New upstream version 6.4.0 (Closes: #1042594, #1056508, #1058128)
   * remove old dependency on python3-mock, upstream uses unittest.mock
+
+  [ Stefano Rivera ]
+  * Patch: Handle PYTHONPATH in autoreload_test.
 
  -- Alexandre Detiste <tchet@debian.org>  Thu, 18 Jan 2024 23:07:32 +0100
 
